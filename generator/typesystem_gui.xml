@@ -17,6 +17,63 @@
   <rejection class="*" field-name="d_ptr"/>
   <rejection class="*" field-name="d"/>
 
+  <rejection class="QWheelEvent" enum-name="enum_1"/>
+
+<rejection class="QAccessible"/>
+<rejection class="QAccessibleActionInterface"/>
+<rejection class="QAccessibleBridge"/>
+<rejection class="QAccessibleImageInterface"/>
+<rejection class="QAccessibleInterface"/>
+<rejection class="QAccessibleObject"/>
+<rejection class="QAccessiblePlugin"/>
+<rejection class="QAccessibleStateChangeEvent"/>
+<rejection class="QAccessibleTableCellInterface"/>
+<rejection class="QAccessibleTableInterface"/>
+<rejection class="QAccessibleTableModelChangeEvent"/>
+<rejection class="QAccessibleTextCursorEvent"/>
+<rejection class="QAccessibleTextInsertEvent"/>
+<rejection class="QAccessibleTextRemoveEvent"/>
+<rejection class="QAccessibleTextSelectionEvent"/>
+<rejection class="QAccessibleTextUpdateEvent"/>
+<rejection class="QAccessibleValueChangeEvent"/>
+<rejection class="QAccessibleWidget"/>
+<rejection class="QOpenGLDebugLogger"/>
+<rejection class="QOpenGLDebugMessage"/>
+<rejection class="QOpenGLExtraFunctions"/>
+<rejection class="QOpenGLExtraFunctionsPrivate"/>
+<rejection class="QOpenGLFunctionsPrivate"/>
+<rejection class="QOpenGLFunctions_1_0_CoreBackend"/>
+<rejection class="QOpenGLFunctions_1_0_DeprecatedBackend"/>
+<rejection class="QOpenGLFunctions_1_1_CoreBackend"/>
+<rejection class="QOpenGLFunctions_1_1_DeprecatedBackend"/>
+<rejection class="QOpenGLFunctions_1_2_CoreBackend"/>
+<rejection class="QOpenGLFunctions_1_2_DeprecatedBackend"/>
+<rejection class="QOpenGLFunctions_1_3_CoreBackend"/>
+<rejection class="QOpenGLFunctions_1_3_DeprecatedBackend"/>
+<rejection class="QOpenGLFunctions_1_4_CoreBackend"/>
+<rejection class="QOpenGLFunctions_1_4_DeprecatedBackend"/>
+<rejection class="QOpenGLFunctions_1_5_CoreBackend"/>
+<rejection class="QOpenGLFunctions_2_0_CoreBackend"/>
+<rejection class="QOpenGLFunctions_2_0_DeprecatedBackend"/>
+<rejection class="QOpenGLFunctions_2_1_CoreBackend"/>
+<rejection class="QOpenGLFunctions_3_0_CoreBackend"/>
+<rejection class="QOpenGLFunctions_3_0_DeprecatedBackend"/>
+<rejection class="QOpenGLFunctions_3_1_CoreBackend"/>
+<rejection class="QOpenGLFunctions_3_2_CoreBackend"/>
+<rejection class="QOpenGLFunctions_3_3_CoreBackend"/>
+<rejection class="QOpenGLFunctions_3_3_DeprecatedBackend"/>
+<rejection class="QOpenGLFunctions_4_0_CoreBackend"/>
+<rejection class="QOpenGLFunctions_4_1_CoreBackend"/>
+<rejection class="QOpenGLFunctions_4_2_CoreBackend"/>
+<rejection class="QOpenGLFunctions_4_3_CoreBackend"/>
+<rejection class="QOpenGLFunctions_4_4_CoreBackend"/>
+<rejection class="QOpenGLFunctions_4_5_CoreBackend"/>
+<rejection class="QOpenGLFunctions_4_5_DeprecatedBackend"/>
+<rejection class="QOpenGLPixelTransferOptions"/>
+<rejection class="QOpenGLVersionFunctionsBackend"/>
+<rejection class="QOpenGLVersionStatus"/>
+<rejection class="QOpenGLVertexArrayObject::Binder"/>
+<rejection class="QSizePolicy::Bits"/>
 
   <rejection class="QGenericMatrix"/>  
   <rejection class="QPixmapFilterPrivate"/>
@@ -105,6 +162,7 @@
   <rejection class="QGradient" function-name="setInterpolationMode"/>
   <rejection class="QGradient" function-name="interpolationMode"/>
   <rejection class="QAbstractTextDocumentLayout" function-name="handlerForObject"/>
+    <rejection class="QPixmap" function-name="fromImageInPlace"/>
   
   <enum-type name="QStaticText::PerformanceHint"/>
   <enum-type name="QTextBlockFormat::LineHeightTypes"/>
@@ -226,6 +284,7 @@
   <enum-type name="QImage::Format"/>
   <enum-type name="QImage::InvertMode"/>
   <enum-type name="QImageIOHandler::ImageOption"/>
+  <enum-type name="QImageIOHandler::Transformation"/>
   <enum-type name="QImageReader::ImageReaderError"/>
   <enum-type name="QImageWriter::ImageWriterError"/>
   <enum-type name="QInputContext::StandardFormat"/>
@@ -429,6 +488,17 @@
   <enum-type name="QWizard::WizardStyle"/>
   <enum-type name="QImageIOPlugin::Capability" flags="QImageIOPlugin::Capabilities"/>
   <enum-type name="QStackedLayout::StackingMode"/>
+
+<enum-type name="QOpenGLWidget::UpdateBehavior"/>
+<enum-type name="QOpenGLWindow::UpdateBehavior"/>
+<enum-type name="QPixelFormat::AlphaPosition"/>
+<enum-type name="QPixelFormat::AlphaPremultiplied"/>
+<enum-type name="QPixelFormat::AlphaUsage"/>
+<enum-type name="QPixelFormat::ByteOrder"/>
+<enum-type name="QPixelFormat::ColorModel"/>
+<enum-type name="QPixelFormat::TypeInterpretation"/>
+<enum-type name="QPixelFormat::YUVLayout"/>
+<enum-type name="QPlatformSurfaceEvent::SurfaceEventType"/>
 
   <enum-type name="QWizard::WizardButton">
     <reject-enum-value name="NStandardButtons"/>
@@ -1237,6 +1307,17 @@ PyObject* constScanLine(QImage* image, int line) {
   <object-type name="QWizard">
     <!-- ### Requires correct class name in meta object -->
     <modify-function signature="setDefaultProperty(const char *, const char *, const char *)" remove="all"/>
+    
+    <modify-function signature="addPage(QWizardPage*)">
+      <modify-argument index="1">
+        <define-ownership owner="c++" />
+      </modify-argument>
+    </modify-function>
+    <modify-function signature="setButton(QWizard::WizardButton, QAbstractButton*)">
+      <modify-argument index="2">
+        <define-ownership owner="c++" />
+      </modify-argument>
+    </modify-function>
   </object-type>
   <object-type name="QWizardPage">
   </object-type>
@@ -1375,8 +1456,6 @@ PyObject* constScanLine(QImage* image, int line) {
   <object-type name="QShortcut">
   </object-type>
   <object-type name="QSizeGrip"/>
-  <object-type name="QSound"/>
-  <enum-type name="QSound::Loop"/>
   <object-type name="QSpacerItem"/>
   <object-type name="QStandardItem">
     <modify-function signature="appendColumn(const QList&lt;QStandardItem *&gt; &amp;)">
@@ -1537,6 +1616,8 @@ PyObject* constScanLine(QImage* image, int line) {
   </object-type>
 
   <object-type name="QActionEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::ActionAdded || %1-&gt;type() == QEvent::ActionRemoved || %1-&gt;type() == QEvent::ActionChanged"/>
+  <object-type name="QPlatformSurfaceEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::PlatformSurface"/>
+  <object-type name="QScreenOrientationChangeEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::OrientationChange"/>
   <object-type name="QClipboardEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::Clipboard"/>
   <object-type name="QCloseEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::Close"/>
   <object-type name="QContextMenuEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::ContextMenu"/>
@@ -1562,9 +1643,6 @@ PyObject* constScanLine(QImage* image, int line) {
 
   <object-type name="QFileOpenEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::FileOpen"/>
   <object-type name="QFocusEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::FocusIn || %1-&gt;type() == QEvent::FocusOut">
-        <modify-function signature="reason()const">
-            <remove/>
-        </modify-function>
   </object-type>
 
   <object-type name="QGraphicsSceneContextMenuEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::GraphicsSceneContextMenu"/>
@@ -1608,7 +1686,7 @@ PyObject* constScanLine(QImage* image, int line) {
   </object-type>
   <object-type name="QShowEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::Show"/>
   <object-type name="QStatusTipEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::StatusTip"/>
-  <object-type name="QTabletEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::TabletMove || %1-&gt;type() == QEvent::TabletPress || %1-&gt;type() == QEvent::TabletRelease"/>
+  <object-type name="QTabletEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::TabletMove || %1-&gt;type() == QEvent::TabletPress || %1-&gt;type() == QEvent::TabletRelease || %1-&gt;type() == QEvent::TabletEnterProximity || %1-&gt;type() == QEvent::TabletLeaveProximity"/>
   <object-type name="QToolBarChangeEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::ToolBarChange"/>
   <object-type name="QWhatsThisClickedEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::WhatsThisClicked"/>
   <object-type name="QWheelEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::Wheel"/>
@@ -1625,7 +1703,7 @@ PyObject* constScanLine(QImage* image, int line) {
 
   <object-type name="QAbstractButton"/>
 
-  <object-type name="QStyle">
+  <object-type name="QStyle" create-shell="no">
       <modify-function signature="standardIconImplementation(QStyle::StandardPixmap, const QStyleOption *, const QWidget *)const" virtual-slot="yes"/>
       <modify-function signature="layoutSpacingImplementation(QSizePolicy::ControlType, QSizePolicy::ControlType, Qt::Orientation, const QStyleOption *, const QWidget *) const" virtual-slot="yes"/>
       <modify-function signature="itemTextRect(QFontMetrics,QRect,int,bool,QString)const" remove="all"/>
@@ -1762,6 +1840,7 @@ PyObject* constScanLine(QImage* image, int line) {
 
     <modify-function signature="addWidget(QWidget *)" remove="all"/>
     <modify-function signature="getItemPosition(int,int*,int*,int*,int*)" remove="all"/>
+    <modify-function signature="getItemPosition(int,int*,int*,int*,int*)const" remove="all"/>
   </object-type>
 
   <object-type name="QGraphicsView">
@@ -2654,6 +2733,7 @@ PyObject* constScanLine(QImage* image, int line) {
       <modify-function signature="setAutoCompletionCaseSensitivity(Qt::CaseSensitivity)" remove="all"/> <!--### Obsolete in 4.3-->
   </object-type>
 
+
   <object-type name="QTextEdit">
     <extra-includes>
         <include file-name="QTextCursor" location="global"/>
@@ -2978,26 +3058,22 @@ PyObject* constScanLine(QImage* image, int line) {
   <object-type name="QInputMethod"/>
   <object-type name="QNativeGestureEvent" polymorphic-id-expression="%1-&gt;type() == QEvent::NativeGesture"/>
   <object-type name="QOffscreenSurface"/>
-  <object-type name="QOpenGLBuffer"/>
-  <object-type name="QOpenGLContext"/>
-  <object-type name="QOpenGLContextGroup"/>
-  <object-type name="QOpenGLFramebufferObject"/>
-  <object-type name="QOpenGLFramebufferObjectFormat"/>
-  <object-type name="QOpenGLFunctions"/>
-  <object-type name="QOpenGLShader"/>
-  <object-type name="QOpenGLShaderProgram">
-    <modify-function signature="setUniformValue(const char*,Array)">
-        <remove/>
-    </modify-function>
-    <modify-function signature="setUniformValue(int,Array)">
-        <remove/>
-    </modify-function>
-  </object-type>
-  <object-type name="QOpenGLTexture"/>
-  <object-type name="QOpenGLTimeMonitor"/>
-  <object-type name="QOpenGLTimerQuery"/>
-  <object-type name="QOpenGLVersionProfile"/>
-  <object-type name="QOpenGLVertexArrayObject"/>
+  <rejection class="QOpenGLBuffer"/>
+  <enum-type name="QOpenGLBuffer::RangeAccessFlag"/>
+  <enum-type name="QOpenGLTexture::ComparisonFunction"/>
+  <enum-type name="QOpenGLTexture::ComparisonMode"/>
+  <rejection class="QOpenGLContext"/>
+  <rejection class="QOpenGLContextGroup"/>
+  <rejection class="QOpenGLFramebufferObject"/>
+  <rejection class="QOpenGLFramebufferObjectFormat"/>
+  <rejection class="QOpenGLFunctions"/>
+  <rejection class="QOpenGLShader"/>
+  <rejection class="QOpenGLShaderProgram"/>
+  <rejection class="QOpenGLTexture"/>
+  <rejection class="QOpenGLTimeMonitor"/>
+  <rejection class="QOpenGLTimerQuery"/>
+  <rejection class="QOpenGLVersionProfile"/>
+  <rejection class="QOpenGLVertexArrayObject"/>
   <object-type name="QPageLayout"/>
   <object-type name="QPageSize"/>
   <object-type name="QPdfWriter"/>
@@ -3020,11 +3096,18 @@ PyObject* constScanLine(QImage* image, int line) {
    <interface-type name="QSurface"/>
    <object-type name="QSurfaceFormat"/>
   <value-type name="QPainter::PixmapFragment"/>
-  <object-type name="QOpenGLPaintDevice">
-    <modify-function signature="QOpenGLPaintDevice(const QOpenGLPaintDevice&amp;)" remove="all"/>
-    <modify-function signature="operator=(const QOpenGLPaintDevice&amp;)" remove="all"/>
-  </object-type>
+  <rejection class="QOpenGLPaintDevice"/>
   <value-type name="QPagedPaintDevice::Margins"/>
+
+  <object-type name="QKeySequenceEdit"/>
+  <rejection class="QOpenGLWindow"/>
+  <rejection class="QOpenGLWidget"/>
+  <object-type name="QPaintDeviceWindow"/>
+  <object-type name="QRasterWindow"/>
+  <object-type name="QPixelFormat"/>
+  <value-type name="QRgba64">
+    <modify-function signature="operator quint64() const" remove="all"/>
+  </value-type>
 
   <enum-type name="QScrollerProperties::ScrollMetric"/>
   <enum-type name="QScrollerProperties::OvershootPolicy"/>
