@@ -251,6 +251,12 @@ void ShellHeaderGenerator::write(QTextStream &s, const AbstractMetaClass *meta_c
 
   // Wrapper-------------------------------------------------------------------
 
+  if (meta_class->name() == "QBitArray") {
+    s << "#if defined(truncate)" << endl;
+    s << "# undef truncate" << endl;
+    s << "#endif" << endl << endl;
+  }
+
   s << "class " << wrapperClassName(meta_class)
     << " : public QObject" << endl
     << "{ Q_OBJECT" << endl;
