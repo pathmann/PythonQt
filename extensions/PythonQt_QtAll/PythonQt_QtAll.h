@@ -35,9 +35,9 @@
 
 #ifdef WIN32
 #ifdef PYTHONQT_QTALL_EXPORTS
-#define PYTHONQT_QTALL_EXPORT __declspec(dllexport)
+//#define PYTHONQT_QTALL_EXPORT __declspec(dllexport)
 #else
-#define PYTHONQT_QTALL_EXPORT __declspec(dllimport)
+//#define PYTHONQT_QTALL_EXPORT __declspec(dllimport)
 #endif
 #else
 #define PYTHONQT_QTALL_EXPORT
