@@ -8,11 +8,9 @@ PythonQt is a dynamic [Python](http://www.python.org) binding for [Qt](http://qt
 It offers an easy way to embed the Python scripting language into
 your Qt applications. It makes heavy use of the QMetaObject system and thus requires Qt4.x.
 
-This project is a fork of the [official PythonQt](http://pythonqt.sourceforge.net/) repository 
-hosted on sourceforge.
+This project is a fork of [commontk's PythonQt](https://github.com/commontk/PythonQt).
 
-It serves as *staging area* to contain patches that will then be contributed back to the 
-official repository.
+Basic changes are made to the generator to run with Qt 5.5. The typesystem is bypassed to generate only classes, that are compatible with the TeamSpeak 3's Qt libraries.
 
 Prerequisites
 -------------
