@@ -51,7 +51,7 @@ void PythonQt_init_QtUiTools(PyObject*);
 
 namespace PythonQt_QtAll
 {
-  PYTHONQT_QTALL_EXPORT void init() {
+  /*PYTHONQT_QTALL_EXPORT*/ void init() {
     PythonQt_init_QtCore(0);
     PythonQt_init_QtNetwork(0);
     PythonQt_init_QtGui(0);
