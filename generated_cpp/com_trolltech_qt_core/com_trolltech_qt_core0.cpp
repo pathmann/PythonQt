@@ -1511,7 +1511,7 @@ QModelIndex  PythonQtWrapper_QAbstractItemModel::createIndex(QAbstractItemModel*
   return ( ((PythonQtPublicPromoter_QAbstractItemModel*)theWrappedObject)->promoted_createIndex(row, column, id));
 }
 
-QModelIndex  PythonQtWrapper_QAbstractItemModel::createIndex(QAbstractItemModel* theWrappedObject, int  row, int  column, void*  data) const
+QModelIndex  PythonQtWrapper_QAbstractItemModel::createIndex(QAbstractItemModel* theWrappedObject, int  row, int  column, QObject*  data) const
 {
   return ( ((PythonQtPublicPromoter_QAbstractItemModel*)theWrappedObject)->promoted_createIndex(row, column, data));
 }
