@@ -7,24 +7,6 @@
 #include <qtransform.h>
 #include <qwidget.h>
 
-PythonQtShell_QStyleOptionComboBox::~PythonQtShell_QStyleOptionComboBox() {
-  PythonQtPrivate* priv = PythonQt::priv();
-  if (priv) { priv->shellClassDeleted(this); }
-}
-QStyleOptionComboBox* PythonQtWrapper_QStyleOptionComboBox::new_QStyleOptionComboBox()
-{ 
-return new PythonQtShell_QStyleOptionComboBox(); }
-
-QStyleOptionComboBox* PythonQtWrapper_QStyleOptionComboBox::new_QStyleOptionComboBox(const QStyleOptionComboBox&  other)
-{ 
-return new PythonQtShell_QStyleOptionComboBox(other); }
-
-QStyleOptionComboBox* PythonQtWrapper_QStyleOptionComboBox::new_QStyleOptionComboBox(int  version)
-{ 
-return new PythonQtShell_QStyleOptionComboBox(version); }
-
-
-
 PythonQtShell_QStyleOptionDockWidget::~PythonQtShell_QStyleOptionDockWidget() {
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
@@ -477,5 +459,15 @@ return new PythonQtShell_QStyleOptionViewItem(other); }
 QStyleOptionViewItem* PythonQtWrapper_QStyleOptionViewItem::new_QStyleOptionViewItem(int  version)
 { 
 return new PythonQtShell_QStyleOptionViewItem(version); }
+
+
+
+PythonQtShell_QStyleOptionViewItemV2::~PythonQtShell_QStyleOptionViewItemV2() {
+  PythonQtPrivate* priv = PythonQt::priv();
+  if (priv) { priv->shellClassDeleted(this); }
+}
+QStyleOptionViewItemV2* PythonQtWrapper_QStyleOptionViewItemV2::new_QStyleOptionViewItemV2()
+{ 
+return new PythonQtShell_QStyleOptionViewItemV2(); }
 
 

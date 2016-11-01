@@ -21,4 +21,6 @@ PythonQt::priv()->registerCPPClass("QSqlResult", "", "QtSql", PythonQtCreateObje
 PythonQt::priv()->registerClass(&QSqlTableModel::staticMetaObject, "QtSql", PythonQtCreateObject<PythonQtWrapper_QSqlTableModel>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QSqlTableModel>, module, 0);
 
 
+PythonQtRegisterListTemplateConverterForKnownClass(QList, QModelIndex);
+PythonQtRegisterListTemplateConverterForKnownClass(QList, QPersistentModelIndex);
 }
