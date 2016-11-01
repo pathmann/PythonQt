@@ -193,21 +193,17 @@ QString PythonQtWrapper_QBitArray::py_toString(QBitArray* obj) {
 
 
 
-PythonQtShell_QByteArray::~PythonQtShell_QByteArray() {
-  PythonQtPrivate* priv = PythonQt::priv();
-  if (priv) { priv->shellClassDeleted(this); }
-}
 QByteArray* PythonQtWrapper_QByteArray::new_QByteArray()
 { 
-return new PythonQtShell_QByteArray(); }
+return new QByteArray(); }
 
 QByteArray* PythonQtWrapper_QByteArray::new_QByteArray(const QByteArray&  arg__1)
 { 
-return new PythonQtShell_QByteArray(arg__1); }
+return new QByteArray(arg__1); }
 
 QByteArray* PythonQtWrapper_QByteArray::new_QByteArray(int  size, char  c)
 { 
-return new PythonQtShell_QByteArray(size, c); }
+return new QByteArray(size, c); }
 
 QByteArray*  PythonQtWrapper_QByteArray::append(QByteArray* theWrappedObject, char  c)
 {

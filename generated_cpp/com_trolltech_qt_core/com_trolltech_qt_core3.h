@@ -1,6 +1,5 @@
 #include <PythonQt.h>
 #include <QObject>
-#include <QTextCodec>
 #include <QVariant>
 #include <qanimationgroup.h>
 #include <qbytearray.h>
@@ -32,91 +31,6 @@
 #include <qvector.h>
 #include <qwaitcondition.h>
 #include <qxmlstream.h>
-
-
-
-class PythonQtShell_QTextCodec : public QTextCodec
-{
-public:
-    PythonQtShell_QTextCodec():QTextCodec(),_wrapper(NULL) {};
-
-   ~PythonQtShell_QTextCodec();
-
-virtual QList<QByteArray >  aliases() const;
-virtual QByteArray  convertFromUnicode(const QChar*  in, int  length, QTextCodec::ConverterState*  state) const;
-virtual QString  convertToUnicode(const char*  in, int  length, QTextCodec::ConverterState*  state) const;
-virtual int  mibEnum() const;
-virtual QByteArray  name() const;
-
-  PythonQtInstanceWrapper* _wrapper; 
-};
-
-class PythonQtPublicPromoter_QTextCodec : public QTextCodec
-{ public:
-inline QByteArray  promoted_convertFromUnicode(const QChar*  in, int  length, QTextCodec::ConverterState*  state) const { return this->convertFromUnicode(in, length, state); }
-inline QString  promoted_convertToUnicode(const char*  in, int  length, QTextCodec::ConverterState*  state) const { return this->convertToUnicode(in, length, state); }
-inline QList<QByteArray >  py_q_aliases() const { return QTextCodec::aliases(); }
-inline QByteArray  py_q_convertFromUnicode(const QChar*  in, int  length, QTextCodec::ConverterState*  state) const { return this->convertFromUnicode(in, length, state); }
-inline QString  py_q_convertToUnicode(const char*  in, int  length, QTextCodec::ConverterState*  state) const { return this->convertToUnicode(in, length, state); }
-inline int  py_q_mibEnum() const { return this->mibEnum(); }
-inline QByteArray  py_q_name() const { return this->name(); }
-};
-
-class PythonQtWrapper_QTextCodec : public QObject
-{ Q_OBJECT
-public:
-Q_ENUMS(ConversionFlag )
-Q_FLAGS(ConversionFlags )
-enum ConversionFlag{
-  DefaultConversion = QTextCodec::DefaultConversion,   ConvertInvalidToNull = QTextCodec::ConvertInvalidToNull,   IgnoreHeader = QTextCodec::IgnoreHeader,   FreeFunction = QTextCodec::FreeFunction};
-Q_DECLARE_FLAGS(ConversionFlags, ConversionFlag)
-public slots:
-QTextCodec* new_QTextCodec();
-   QList<QByteArray >  aliases(QTextCodec* theWrappedObject) const;
-   QList<QByteArray >  py_q_aliases(QTextCodec* theWrappedObject) const{  return (((PythonQtPublicPromoter_QTextCodec*)theWrappedObject)->py_q_aliases());}
-   QList<QByteArray >  static_QTextCodec_availableCodecs();
-   QList<int >  static_QTextCodec_availableMibs();
-   bool  canEncode(QTextCodec* theWrappedObject, QChar  arg__1) const;
-   bool  canEncode(QTextCodec* theWrappedObject, const QString&  arg__1) const;
-   QTextCodec*  static_QTextCodec_codecForHtml(const QByteArray&  ba);
-   QTextCodec*  static_QTextCodec_codecForHtml(const QByteArray&  ba, QTextCodec*  defaultCodec);
-   QTextCodec*  static_QTextCodec_codecForLocale();
-   QTextCodec*  static_QTextCodec_codecForMib(int  mib);
-   QTextCodec*  static_QTextCodec_codecForName(const QByteArray&  name);
-   QTextCodec*  static_QTextCodec_codecForName(const char*  name);
-   QTextCodec*  static_QTextCodec_codecForUtfText(const QByteArray&  ba);
-   QTextCodec*  static_QTextCodec_codecForUtfText(const QByteArray&  ba, QTextCodec*  defaultCodec);
-   QByteArray  convertFromUnicode(QTextCodec* theWrappedObject, const QChar*  in, int  length, QTextCodec::ConverterState*  state) const;
-   QByteArray  py_q_convertFromUnicode(QTextCodec* theWrappedObject, const QChar*  in, int  length, QTextCodec::ConverterState*  state) const{  return (((PythonQtPublicPromoter_QTextCodec*)theWrappedObject)->py_q_convertFromUnicode(in, length, state));}
-   QString  convertToUnicode(QTextCodec* theWrappedObject, const char*  in, int  length, QTextCodec::ConverterState*  state) const;
-   QString  py_q_convertToUnicode(QTextCodec* theWrappedObject, const char*  in, int  length, QTextCodec::ConverterState*  state) const{  return (((PythonQtPublicPromoter_QTextCodec*)theWrappedObject)->py_q_convertToUnicode(in, length, state));}
-   QByteArray  fromUnicode(QTextCodec* theWrappedObject, const QString&  uc) const;
-   QTextDecoder*  makeDecoder(QTextCodec* theWrappedObject, QTextCodec::ConversionFlags  flags = QTextCodec::DefaultConversion) const;
-   QTextEncoder*  makeEncoder(QTextCodec* theWrappedObject, QTextCodec::ConversionFlags  flags = QTextCodec::DefaultConversion) const;
-   int  mibEnum(QTextCodec* theWrappedObject) const;
-   int  py_q_mibEnum(QTextCodec* theWrappedObject) const{  return (((PythonQtPublicPromoter_QTextCodec*)theWrappedObject)->py_q_mibEnum());}
-   QByteArray  name(QTextCodec* theWrappedObject) const;
-   QByteArray  py_q_name(QTextCodec* theWrappedObject) const{  return (((PythonQtPublicPromoter_QTextCodec*)theWrappedObject)->py_q_name());}
-   void static_QTextCodec_setCodecForLocale(QTextCodec*  c);
-   QString  toUnicode(QTextCodec* theWrappedObject, const QByteArray&  arg__1) const;
-};
-
-
-
-
-
-class PythonQtWrapper_QTextDecoder : public QObject
-{ Q_OBJECT
-public:
-public slots:
-QTextDecoder* new_QTextDecoder(const QTextCodec*  codec);
-QTextDecoder* new_QTextDecoder(const QTextCodec*  codec, QTextCodec::ConversionFlags  flags);
-void delete_QTextDecoder(QTextDecoder* obj) { delete obj; } 
-   bool  hasFailure(QTextDecoder* theWrappedObject) const;
-   QString  toUnicode(QTextDecoder* theWrappedObject, const QByteArray&  ba);
-};
-
-
 
 
 
@@ -180,6 +94,7 @@ void delete_QTextStream(QTextStream* obj) { delete obj; }
    QTextStream::NumberFlags  numberFlags(QTextStream* theWrappedObject) const;
    QTextStream*  __lshift__(QTextStream* theWrappedObject, QLatin1String  s);
    QTextStream*  writeByte(QTextStream* theWrappedObject, char  ch);
+   QTextStream*  __lshift__(QTextStream* theWrappedObject, const QStringRef&  s);
    QTextStream*  writeDouble(QTextStream* theWrappedObject, double  f);
    QTextStream*  writeFloat(QTextStream* theWrappedObject, float  f);
    QTextStream*  writeLongLong(QTextStream* theWrappedObject, qlonglong  i);
@@ -227,15 +142,15 @@ void delete_QTextStream(QTextStream* obj) { delete obj; }
 class PythonQtShell_QThreadPool : public QThreadPool
 {
 public:
-    PythonQtShell_QThreadPool(QObject*  parent = 0):QThreadPool(parent),_wrapper(NULL) {};
+    PythonQtShell_QThreadPool(QObject*  parent = NULL):QThreadPool(parent),_wrapper(NULL) {};
 
    ~PythonQtShell_QThreadPool();
 
-virtual void childEvent(QChildEvent*  arg__1);
-virtual void customEvent(QEvent*  arg__1);
-virtual bool  event(QEvent*  arg__1);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
-virtual void timerEvent(QTimerEvent*  arg__1);
+virtual void childEvent(QChildEvent*  event);
+virtual void customEvent(QEvent*  event);
+virtual bool  event(QEvent*  event);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
+virtual void timerEvent(QTimerEvent*  event);
 
   PythonQtInstanceWrapper* _wrapper; 
 };
@@ -244,7 +159,7 @@ class PythonQtWrapper_QThreadPool : public QObject
 { Q_OBJECT
 public:
 public slots:
-QThreadPool* new_QThreadPool(QObject*  parent = 0);
+QThreadPool* new_QThreadPool(QObject*  parent = NULL);
 void delete_QThreadPool(QThreadPool* obj) { delete obj; } 
    int  activeThreadCount(QThreadPool* theWrappedObject) const;
    void cancel(QThreadPool* theWrappedObject, QRunnable*  runnable);
@@ -268,14 +183,14 @@ void delete_QThreadPool(QThreadPool* obj) { delete obj; }
 class PythonQtShell_QTimeLine : public QTimeLine
 {
 public:
-    PythonQtShell_QTimeLine(int  duration = 1000, QObject*  parent = 0):QTimeLine(duration, parent),_wrapper(NULL) {};
+    PythonQtShell_QTimeLine(int  duration = 1000, QObject*  parent = NULL):QTimeLine(duration, parent),_wrapper(NULL) {};
 
    ~PythonQtShell_QTimeLine();
 
-virtual void childEvent(QChildEvent*  arg__1);
-virtual void customEvent(QEvent*  arg__1);
-virtual bool  event(QEvent*  arg__1);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
+virtual void childEvent(QChildEvent*  event);
+virtual void customEvent(QEvent*  event);
+virtual bool  event(QEvent*  event);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
 virtual void timerEvent(QTimerEvent*  event);
 virtual qreal  valueForTime(int  msec) const;
 
@@ -300,7 +215,7 @@ enum Direction{
 enum State{
   NotRunning = QTimeLine::NotRunning,   Paused = QTimeLine::Paused,   Running = QTimeLine::Running};
 public slots:
-QTimeLine* new_QTimeLine(int  duration = 1000, QObject*  parent = 0);
+QTimeLine* new_QTimeLine(int  duration = 1000, QObject*  parent = NULL);
 void delete_QTimeLine(QTimeLine* obj) { delete obj; } 
    int  currentFrame(QTimeLine* theWrappedObject) const;
    int  currentTime(QTimeLine* theWrappedObject) const;
@@ -389,14 +304,14 @@ void delete_QTimeZone(QTimeZone* obj) { delete obj; }
 class PythonQtShell_QTimer : public QTimer
 {
 public:
-    PythonQtShell_QTimer(QObject*  parent = 0):QTimer(parent),_wrapper(NULL) {};
+    PythonQtShell_QTimer(QObject*  parent = NULL):QTimer(parent),_wrapper(NULL) {};
 
    ~PythonQtShell_QTimer();
 
-virtual void childEvent(QChildEvent*  arg__1);
-virtual void customEvent(QEvent*  arg__1);
-virtual bool  event(QEvent*  arg__1);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
+virtual void childEvent(QChildEvent*  event);
+virtual void customEvent(QEvent*  event);
+virtual bool  event(QEvent*  event);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
   PythonQtInstanceWrapper* _wrapper; 
@@ -412,7 +327,7 @@ class PythonQtWrapper_QTimer : public QObject
 { Q_OBJECT
 public:
 public slots:
-QTimer* new_QTimer(QObject*  parent = 0);
+QTimer* new_QTimer(QObject*  parent = NULL);
 void delete_QTimer(QTimer* obj) { delete obj; } 
    int  interval(QTimer* theWrappedObject) const;
    bool  isActive(QTimer* theWrappedObject) const;
@@ -459,17 +374,17 @@ void delete_QTimerEvent(QTimerEvent* obj) { delete obj; }
 class PythonQtShell_QTranslator : public QTranslator
 {
 public:
-    PythonQtShell_QTranslator(QObject*  parent = 0):QTranslator(parent),_wrapper(NULL) {};
+    PythonQtShell_QTranslator(QObject*  parent = NULL):QTranslator(parent),_wrapper(NULL) {};
 
    ~PythonQtShell_QTranslator();
 
-virtual void childEvent(QChildEvent*  arg__1);
-virtual void customEvent(QEvent*  arg__1);
-virtual bool  event(QEvent*  arg__1);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
+virtual void childEvent(QChildEvent*  event);
+virtual void customEvent(QEvent*  event);
+virtual bool  event(QEvent*  event);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
 virtual bool  isEmpty() const;
-virtual void timerEvent(QTimerEvent*  arg__1);
-virtual QString  translate(const char*  context, const char*  sourceText, const char*  disambiguation = 0, int  n = -1) const;
+virtual void timerEvent(QTimerEvent*  event);
+virtual QString  translate(const char*  context, const char*  sourceText, const char*  disambiguation = NULL, int  n = -1) const;
 
   PythonQtInstanceWrapper* _wrapper; 
 };
@@ -483,7 +398,7 @@ class PythonQtWrapper_QTranslator : public QObject
 { Q_OBJECT
 public:
 public slots:
-QTranslator* new_QTranslator(QObject*  parent = 0);
+QTranslator* new_QTranslator(QObject*  parent = NULL);
 void delete_QTranslator(QTranslator* obj) { delete obj; } 
    bool  isEmpty(QTranslator* theWrappedObject) const;
    bool  py_q_isEmpty(QTranslator* theWrappedObject) const{  return (((PythonQtPublicPromoter_QTranslator*)theWrappedObject)->py_q_isEmpty());}
@@ -603,17 +518,17 @@ ushort  py_get_data3(QUuid* theWrappedObject){ return theWrappedObject->data3; }
 class PythonQtShell_QVariantAnimation : public QVariantAnimation
 {
 public:
-    PythonQtShell_QVariantAnimation(QObject*  parent = 0):QVariantAnimation(parent),_wrapper(NULL) {};
+    PythonQtShell_QVariantAnimation(QObject*  parent = NULL):QVariantAnimation(parent),_wrapper(NULL) {};
 
    ~PythonQtShell_QVariantAnimation();
 
-virtual void childEvent(QChildEvent*  arg__1);
-virtual void customEvent(QEvent*  arg__1);
+virtual void childEvent(QChildEvent*  event);
+virtual void customEvent(QEvent*  event);
 virtual int  duration() const;
 virtual bool  event(QEvent*  event);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
 virtual QVariant  interpolated(const QVariant&  from, const QVariant&  to, qreal  progress) const;
-virtual void timerEvent(QTimerEvent*  arg__1);
+virtual void timerEvent(QTimerEvent*  event);
 virtual void updateCurrentTime(int  arg__1);
 virtual void updateCurrentValue(const QVariant&  value);
 virtual void updateDirection(QAbstractAnimation::Direction  direction);
@@ -641,7 +556,7 @@ class PythonQtWrapper_QVariantAnimation : public QObject
 { Q_OBJECT
 public:
 public slots:
-QVariantAnimation* new_QVariantAnimation(QObject*  parent = 0);
+QVariantAnimation* new_QVariantAnimation(QObject*  parent = NULL);
 void delete_QVariantAnimation(QVariantAnimation* obj) { delete obj; } 
    QVariant  currentValue(QVariantAnimation* theWrappedObject) const;
    int  py_q_duration(QVariantAnimation* theWrappedObject) const{  return (((PythonQtPublicPromoter_QVariantAnimation*)theWrappedObject)->py_q_duration());}

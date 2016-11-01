@@ -39,8 +39,7 @@ static void* polymorphichandler_QEvent(const void *ptr, const char **class_name)
 
 void PythonQt_init_QtCore(PyObject* module) {
 PythonQt::priv()->registerClass(&QAbstractAnimation::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QAbstractAnimation>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QAbstractAnimation>, module, 0);
-PythonQt::priv()->registerClass(&QAbstractItemModel::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QAbstractItemModel>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QAbstractItemModel>, module, 0);
-PythonQt::priv()->registerClass(&QAbstractListModel::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QAbstractListModel>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QAbstractListModel>, module, 0);
+PythonQt::priv()->registerClass(&QAbstractListModel::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QAbstractListModel>, NULL, module, 0);
 PythonQt::priv()->registerClass(&QAbstractState::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QAbstractState>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QAbstractState>, module, 0);
 PythonQt::priv()->registerClass(&QAbstractTransition::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QAbstractTransition>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QAbstractTransition>, module, 0);
 PythonQt::priv()->registerClass(&QAnimationGroup::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QAnimationGroup>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QAnimationGroup>, module, 0);
@@ -94,7 +93,6 @@ PythonQt::priv()->registerCPPClass("QMetaType", "", "QtCore", PythonQtCreateObje
 PythonQt::priv()->registerClass(&QMimeData::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QMimeData>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QMimeData>, module, 0);
 PythonQt::priv()->registerCPPClass("QMimeDatabase", "", "QtCore", PythonQtCreateObject<PythonQtWrapper_QMimeDatabase>, NULL, module, 0);
 PythonQt::priv()->registerCPPClass("QMimeType", "", "QtCore", PythonQtCreateObject<PythonQtWrapper_QMimeType>, NULL, module, PythonQt::Type_RichCompare);
-PythonQt::priv()->registerCPPClass("QModelIndex", "", "QtCore", PythonQtCreateObject<PythonQtWrapper_QModelIndex>, NULL, module, PythonQt::Type_RichCompare);
 PythonQt::priv()->registerCPPClass("QMutex", "QBasicMutex", "QtCore", PythonQtCreateObject<PythonQtWrapper_QMutex>, NULL, module, 0);
 PythonQt::priv()->registerClass(&QObject::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QObject>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QObject>, module, 0);
 PythonQt::priv()->registerClass(&QParallelAnimationGroup::staticMetaObject, "QtCore", PythonQtCreateObject<PythonQtWrapper_QParallelAnimationGroup>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QParallelAnimationGroup>, module, 0);
@@ -149,6 +147,4 @@ PythonQt::self()->addPolymorphicHandler("QEvent", polymorphichandler_QEvent);
 PythonQtRegisterListTemplateConverterForKnownClass(QList, QCommandLineOption);
 PythonQtRegisterListTemplateConverterForKnownClass(QList, QFileInfo);
 PythonQtRegisterListTemplateConverterForKnownClass(QList, QMimeType);
-PythonQtRegisterListTemplateConverterForKnownClass(QList, QModelIndex);
-PythonQtRegisterListTemplateConverterForKnownClass(QList, QPersistentModelIndex);
 }
