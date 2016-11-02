@@ -295,13 +295,13 @@ void* PythonQtConv::handlePythonToQtAutoConversion(int typeId, PyObject* obj, vo
 {
   void* ptr = alreadyAllocatedCPPObject;
 
-  static int penId = QMetaType::type("QPen");
-  static int brushId = QMetaType::type("QBrush");
-  static int cursorId = QMetaType::type("QCursor");
-  static int colorId = QMetaType::type("QColor");
-  static PyObject* qtGlobalColorEnum = PythonQtClassInfo::findEnumWrapper("Qt::GlobalColor", NULL);
+  int penId = QMetaType::type("QPen");
+  int brushId = QMetaType::type("QBrush");
+  int cursorId = QMetaType::type("QCursor");
+  int colorId = QMetaType::type("QColor");
+  PyObject* qtGlobalColorEnum = PythonQtClassInfo::findEnumWrapper("Qt::GlobalColor", NULL);
   if (typeId == cursorId) {
-    static PyObject* qtCursorShapeEnum = PythonQtClassInfo::findEnumWrapper("Qt::CursorShape", NULL);
+    PyObject* qtCursorShapeEnum = PythonQtClassInfo::findEnumWrapper("Qt::CursorShape", NULL);
     if ((PyObject*)obj->ob_type == qtCursorShapeEnum) {
       Qt::CursorShape val = (Qt::CursorShape)PyInt_AsLong(obj);
       if (!ptr) {
@@ -313,7 +313,7 @@ void* PythonQtConv::handlePythonToQtAutoConversion(int typeId, PyObject* obj, vo
     }
   } else if (typeId == penId) {
     // brushes can be created from QColor and from Qt::GlobalColor (and from brushes, but that's the default)
-    static PyObject* qtColorClass = PythonQt::priv()->getClassInfo("QColor")->pythonQtClassWrapper();
+    PyObject* qtColorClass = PythonQt::priv()->getClassInfo("QColor")->pythonQtClassWrapper();
     if ((PyObject*)obj->ob_type == qtGlobalColorEnum) {
       Qt::GlobalColor val = (Qt::GlobalColor)PyInt_AsLong(obj);
       if (!ptr) {
@@ -332,7 +332,7 @@ void* PythonQtConv::handlePythonToQtAutoConversion(int typeId, PyObject* obj, vo
     }
   } else if (typeId == brushId) {
     // brushes can be created from QColor and from Qt::GlobalColor (and from brushes, but that's the default)
-    static PyObject* qtColorClass = PythonQt::priv()->getClassInfo("QColor")->pythonQtClassWrapper();
+    PyObject* qtColorClass = PythonQt::priv()->getClassInfo("QColor")->pythonQtClassWrapper();
     if ((PyObject*)obj->ob_type == qtGlobalColorEnum) {
       Qt::GlobalColor val = (Qt::GlobalColor)PyInt_AsLong(obj);
       if (!ptr) {
