@@ -130,20 +130,20 @@ void delete_QSqlDatabase(QSqlDatabase* obj) { delete obj; }
 class PythonQtShell_QSqlDriver : public QSqlDriver
 {
 public:
-    PythonQtShell_QSqlDriver(QObject*  parent = 0):QSqlDriver(parent),_wrapper(NULL) {};
+    PythonQtShell_QSqlDriver(QObject*  parent = NULL):QSqlDriver(parent),_wrapper(NULL) {};
 
    ~PythonQtShell_QSqlDriver();
 
 virtual bool  beginTransaction();
 virtual bool  cancelQuery();
-virtual void childEvent(QChildEvent*  arg__1);
+virtual void childEvent(QChildEvent*  event);
 virtual void close();
 virtual bool  commitTransaction();
 virtual QSqlResult*  createResult() const;
-virtual void customEvent(QEvent*  arg__1);
+virtual void customEvent(QEvent*  event);
 virtual QString  escapeIdentifier(const QString&  identifier, QSqlDriver::IdentifierType  type) const;
-virtual bool  event(QEvent*  arg__1);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
+virtual bool  event(QEvent*  event);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
 virtual QString  formatValue(const QSqlField&  field, bool  trimStrings = false) const;
 virtual QVariant  handle() const;
 virtual bool  hasFeature(QSqlDriver::DriverFeature  f) const;
@@ -161,7 +161,7 @@ virtual QString  stripDelimiters(const QString&  identifier, QSqlDriver::Identif
 virtual bool  subscribeToNotification(const QString&  name);
 virtual QStringList  subscribedToNotifications() const;
 virtual QStringList  tables(QSql::TableType  tableType) const;
-virtual void timerEvent(QTimerEvent*  arg__1);
+virtual void timerEvent(QTimerEvent*  event);
 virtual bool  unsubscribeFromNotification(const QString&  name);
 
   PythonQtInstanceWrapper* _wrapper; 
@@ -211,7 +211,7 @@ enum NotificationSource{
 enum StatementType{
   WhereStatement = QSqlDriver::WhereStatement,   SelectStatement = QSqlDriver::SelectStatement,   UpdateStatement = QSqlDriver::UpdateStatement,   InsertStatement = QSqlDriver::InsertStatement,   DeleteStatement = QSqlDriver::DeleteStatement};
 public slots:
-QSqlDriver* new_QSqlDriver(QObject*  parent = 0);
+QSqlDriver* new_QSqlDriver(QObject*  parent = NULL);
 void delete_QSqlDriver(QSqlDriver* obj) { delete obj; } 
    bool  beginTransaction(QSqlDriver* theWrappedObject);
    bool  py_q_beginTransaction(QSqlDriver* theWrappedObject){  return (((PythonQtPublicPromoter_QSqlDriver*)theWrappedObject)->py_q_beginTransaction());}
@@ -459,21 +459,21 @@ void delete_QSqlQuery(QSqlQuery* obj) { delete obj; }
 class PythonQtShell_QSqlQueryModel : public QSqlQueryModel
 {
 public:
-    PythonQtShell_QSqlQueryModel(QObject*  parent = 0):QSqlQueryModel(parent),_wrapper(NULL) {};
+    PythonQtShell_QSqlQueryModel(QObject*  parent = NULL):QSqlQueryModel(parent),_wrapper(NULL) {};
 
    ~PythonQtShell_QSqlQueryModel();
 
 virtual QModelIndex  buddy(const QModelIndex&  index) const;
 virtual bool  canDropMimeData(const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent) const;
 virtual bool  canFetchMore(const QModelIndex&  parent = QModelIndex()) const;
-virtual void childEvent(QChildEvent*  arg__1);
+virtual void childEvent(QChildEvent*  event);
 virtual void clear();
 virtual int  columnCount(const QModelIndex&  parent = QModelIndex()) const;
-virtual void customEvent(QEvent*  arg__1);
+virtual void customEvent(QEvent*  event);
 virtual QVariant  data(const QModelIndex&  item, int  role = Qt::DisplayRole) const;
 virtual bool  dropMimeData(const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent);
-virtual bool  event(QEvent*  arg__1);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
+virtual bool  event(QEvent*  event);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
 virtual void fetchMore(const QModelIndex&  parent = QModelIndex());
 virtual Qt::ItemFlags  flags(const QModelIndex&  index) const;
 virtual QVariant  headerData(int  section, Qt::Orientation  orientation, int  role = Qt::DisplayRole) const;
@@ -502,7 +502,7 @@ virtual QSize  span(const QModelIndex&  index) const;
 virtual bool  submit();
 virtual Qt::DropActions  supportedDragActions() const;
 virtual Qt::DropActions  supportedDropActions() const;
-virtual void timerEvent(QTimerEvent*  arg__1);
+virtual void timerEvent(QTimerEvent*  event);
 
   PythonQtInstanceWrapper* _wrapper; 
 };
@@ -540,7 +540,7 @@ class PythonQtWrapper_QSqlQueryModel : public QObject
 { Q_OBJECT
 public:
 public slots:
-QSqlQueryModel* new_QSqlQueryModel(QObject*  parent = 0);
+QSqlQueryModel* new_QSqlQueryModel(QObject*  parent = NULL);
 void delete_QSqlQueryModel(QSqlQueryModel* obj) { delete obj; } 
    void beginInsertColumns(QSqlQueryModel* theWrappedObject, const QModelIndex&  parent, int  first, int  last);
    void beginInsertRows(QSqlQueryModel* theWrappedObject, const QModelIndex&  parent, int  first, int  last);
@@ -646,22 +646,22 @@ void delete_QSqlRelation(QSqlRelation* obj) { delete obj; }
 class PythonQtShell_QSqlRelationalTableModel : public QSqlRelationalTableModel
 {
 public:
-    PythonQtShell_QSqlRelationalTableModel(QObject*  parent = 0, QSqlDatabase  db = QSqlDatabase()):QSqlRelationalTableModel(parent, db),_wrapper(NULL) {};
+    PythonQtShell_QSqlRelationalTableModel(QObject*  parent = NULL, QSqlDatabase  db = QSqlDatabase()):QSqlRelationalTableModel(parent, db),_wrapper(NULL) {};
 
    ~PythonQtShell_QSqlRelationalTableModel();
 
 virtual QModelIndex  buddy(const QModelIndex&  index) const;
 virtual bool  canDropMimeData(const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent) const;
 virtual bool  canFetchMore(const QModelIndex&  parent = QModelIndex()) const;
-virtual void childEvent(QChildEvent*  arg__1);
+virtual void childEvent(QChildEvent*  event);
 virtual void clear();
 virtual int  columnCount(const QModelIndex&  parent = QModelIndex()) const;
-virtual void customEvent(QEvent*  arg__1);
+virtual void customEvent(QEvent*  event);
 virtual QVariant  data(const QModelIndex&  item, int  role = Qt::DisplayRole) const;
 virtual bool  deleteRowFromTable(int  row);
 virtual bool  dropMimeData(const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent);
-virtual bool  event(QEvent*  arg__1);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
+virtual bool  event(QEvent*  event);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
 virtual void fetchMore(const QModelIndex&  parent = QModelIndex());
 virtual Qt::ItemFlags  flags(const QModelIndex&  index) const;
 virtual QVariant  headerData(int  section, Qt::Orientation  orientation, int  role = Qt::DisplayRole) const;
@@ -702,7 +702,7 @@ virtual QSize  span(const QModelIndex&  index) const;
 virtual bool  submit();
 virtual Qt::DropActions  supportedDragActions() const;
 virtual Qt::DropActions  supportedDropActions() const;
-virtual void timerEvent(QTimerEvent*  arg__1);
+virtual void timerEvent(QTimerEvent*  event);
 virtual bool  updateRowInTable(int  row, const QSqlRecord&  values);
 
   PythonQtInstanceWrapper* _wrapper; 
@@ -736,7 +736,7 @@ Q_ENUMS(JoinMode )
 enum JoinMode{
   InnerJoin = QSqlRelationalTableModel::InnerJoin,   LeftJoin = QSqlRelationalTableModel::LeftJoin};
 public slots:
-QSqlRelationalTableModel* new_QSqlRelationalTableModel(QObject*  parent = 0, QSqlDatabase  db = QSqlDatabase());
+QSqlRelationalTableModel* new_QSqlRelationalTableModel(QObject*  parent = NULL, QSqlDatabase  db = QSqlDatabase());
 void delete_QSqlRelationalTableModel(QSqlRelationalTableModel* obj) { delete obj; } 
    void py_q_clear(QSqlRelationalTableModel* theWrappedObject){  (((PythonQtPublicPromoter_QSqlRelationalTableModel*)theWrappedObject)->py_q_clear());}
    QVariant  py_q_data(QSqlRelationalTableModel* theWrappedObject, const QModelIndex&  item, int  role = Qt::DisplayRole) const{  return (((PythonQtPublicPromoter_QSqlRelationalTableModel*)theWrappedObject)->py_q_data(item, role));}
@@ -984,22 +984,22 @@ void delete_QSqlResult(QSqlResult* obj) { delete obj; }
 class PythonQtShell_QSqlTableModel : public QSqlTableModel
 {
 public:
-    PythonQtShell_QSqlTableModel(QObject*  parent = 0, QSqlDatabase  db = QSqlDatabase()):QSqlTableModel(parent, db),_wrapper(NULL) {};
+    PythonQtShell_QSqlTableModel(QObject*  parent = NULL, QSqlDatabase  db = QSqlDatabase()):QSqlTableModel(parent, db),_wrapper(NULL) {};
 
    ~PythonQtShell_QSqlTableModel();
 
 virtual QModelIndex  buddy(const QModelIndex&  index) const;
 virtual bool  canDropMimeData(const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent) const;
 virtual bool  canFetchMore(const QModelIndex&  parent = QModelIndex()) const;
-virtual void childEvent(QChildEvent*  arg__1);
+virtual void childEvent(QChildEvent*  event);
 virtual void clear();
 virtual int  columnCount(const QModelIndex&  parent = QModelIndex()) const;
-virtual void customEvent(QEvent*  arg__1);
+virtual void customEvent(QEvent*  event);
 virtual QVariant  data(const QModelIndex&  idx, int  role = Qt::DisplayRole) const;
 virtual bool  deleteRowFromTable(int  row);
 virtual bool  dropMimeData(const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent);
-virtual bool  event(QEvent*  arg__1);
-virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
+virtual bool  event(QEvent*  event);
+virtual bool  eventFilter(QObject*  watched, QEvent*  event);
 virtual void fetchMore(const QModelIndex&  parent = QModelIndex());
 virtual Qt::ItemFlags  flags(const QModelIndex&  index) const;
 virtual QVariant  headerData(int  section, Qt::Orientation  orientation, int  role = Qt::DisplayRole) const;
@@ -1038,7 +1038,7 @@ virtual QSize  span(const QModelIndex&  index) const;
 virtual bool  submit();
 virtual Qt::DropActions  supportedDragActions() const;
 virtual Qt::DropActions  supportedDropActions() const;
-virtual void timerEvent(QTimerEvent*  arg__1);
+virtual void timerEvent(QTimerEvent*  event);
 virtual bool  updateRowInTable(int  row, const QSqlRecord&  values);
 
   PythonQtInstanceWrapper* _wrapper; 
@@ -1089,7 +1089,7 @@ Q_ENUMS(EditStrategy )
 enum EditStrategy{
   OnFieldChange = QSqlTableModel::OnFieldChange,   OnRowChange = QSqlTableModel::OnRowChange,   OnManualSubmit = QSqlTableModel::OnManualSubmit};
 public slots:
-QSqlTableModel* new_QSqlTableModel(QObject*  parent = 0, QSqlDatabase  db = QSqlDatabase());
+QSqlTableModel* new_QSqlTableModel(QObject*  parent = NULL, QSqlDatabase  db = QSqlDatabase());
 void delete_QSqlTableModel(QSqlTableModel* obj) { delete obj; } 
    void py_q_clear(QSqlTableModel* theWrappedObject){  (((PythonQtPublicPromoter_QSqlTableModel*)theWrappedObject)->py_q_clear());}
    QVariant  py_q_data(QSqlTableModel* theWrappedObject, const QModelIndex&  idx, int  role = Qt::DisplayRole) const{  return (((PythonQtPublicPromoter_QSqlTableModel*)theWrappedObject)->py_q_data(idx, role));}

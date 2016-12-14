@@ -48,15 +48,15 @@ PythonQtShell_QPauseAnimation::~PythonQtShell_QPauseAnimation() {
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
 }
-void PythonQtShell_QPauseAnimation::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QPauseAnimation::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -65,17 +65,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QPauseAnimation::childEvent(arg__1);
+  QPauseAnimation::childEvent(event0);
 }
-void PythonQtShell_QPauseAnimation::customEvent(QEvent*  arg__1)
+void PythonQtShell_QPauseAnimation::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -84,16 +84,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QPauseAnimation::customEvent(arg__1);
+  QPauseAnimation::customEvent(event0);
 }
 int  PythonQtShell_QPauseAnimation::duration() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("duration");
+  PyObject* name = PyString_FromString("duration");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       int returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -119,11 +119,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QPauseAnimation::event(QEvent*  e0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&e0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -146,16 +146,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QPauseAnimation::event(e0);
 }
-bool  PythonQtShell_QPauseAnimation::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QPauseAnimation::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -174,17 +174,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QPauseAnimation::eventFilter(arg__1, arg__2);
+  return QPauseAnimation::eventFilter(watched0, event1);
 }
-void PythonQtShell_QPauseAnimation::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QPauseAnimation::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -193,16 +193,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QPauseAnimation::timerEvent(arg__1);
+  QPauseAnimation::timerEvent(event0);
 }
 void PythonQtShell_QPauseAnimation::updateCurrentTime(int  arg__1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateCurrentTime");
+  PyObject* name = PyString_FromString("updateCurrentTime");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&arg__1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -217,11 +217,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QPauseAnimation::updateDirection(QAbstractAnimation::Direction  direction0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateDirection");
+  PyObject* name = PyString_FromString("updateDirection");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QAbstractAnimation::Direction"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QAbstractAnimation::Direction"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&direction0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -236,11 +236,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QPauseAnimation::updateState(QAbstractAnimation::State  newState0, QAbstractAnimation::State  oldState1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateState");
+  PyObject* name = PyString_FromString("updateState");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QAbstractAnimation::State" , "QAbstractAnimation::State"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"" , "QAbstractAnimation::State" , "QAbstractAnimation::State"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
     void* args[3] = {NULL, (void*)&newState0, (void*)&oldState1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -380,11 +380,11 @@ PythonQtShell_QProcess::~PythonQtShell_QProcess() {
 bool  PythonQtShell_QProcess::atEnd() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("atEnd");
+  PyObject* name = PyString_FromString("atEnd");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -410,11 +410,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QProcess::bytesAvailable() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("bytesAvailable");
+  PyObject* name = PyString_FromString("bytesAvailable");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -440,11 +440,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QProcess::bytesToWrite() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("bytesToWrite");
+  PyObject* name = PyString_FromString("bytesToWrite");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -470,11 +470,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QProcess::canReadLine() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("canReadLine");
+  PyObject* name = PyString_FromString("canReadLine");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -497,15 +497,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QProcess::canReadLine();
 }
-void PythonQtShell_QProcess::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QProcess::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -514,16 +514,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QProcess::childEvent(arg__1);
+  QProcess::childEvent(event0);
 }
 void PythonQtShell_QProcess::close()
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("close");
+  PyObject* name = PyString_FromString("close");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={""};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={""};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -535,15 +535,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   QProcess::close();
 }
-void PythonQtShell_QProcess::customEvent(QEvent*  arg__1)
+void PythonQtShell_QProcess::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -552,18 +552,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QProcess::customEvent(arg__1);
+  QProcess::customEvent(event0);
 }
-bool  PythonQtShell_QProcess::event(QEvent*  arg__1)
+bool  PythonQtShell_QProcess::event(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
-    void* args[2] = {NULL, (void*)&arg__1};
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -582,18 +582,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QProcess::event(arg__1);
+  return QProcess::event(event0);
 }
-bool  PythonQtShell_QProcess::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QProcess::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -612,16 +612,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QProcess::eventFilter(arg__1, arg__2);
+  return QProcess::eventFilter(watched0, event1);
 }
 bool  PythonQtShell_QProcess::isSequential() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("isSequential");
+  PyObject* name = PyString_FromString("isSequential");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -647,11 +647,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QProcess::open(QIODevice::OpenMode  mode0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("open");
+  PyObject* name = PyString_FromString("open");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QIODevice::OpenMode"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QIODevice::OpenMode"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&mode0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -677,11 +677,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QProcess::pos() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("pos");
+  PyObject* name = PyString_FromString("pos");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -707,11 +707,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QProcess::readData(char*  data0, qint64  maxlen1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("readData");
+  PyObject* name = PyString_FromString("readData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&maxlen1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -737,11 +737,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QProcess::readLineData(char*  data0, qint64  maxlen1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("readLineData");
+  PyObject* name = PyString_FromString("readLineData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&maxlen1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -767,11 +767,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QProcess::reset()
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("reset");
+  PyObject* name = PyString_FromString("reset");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -797,11 +797,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QProcess::seek(qint64  pos0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("seek");
+  PyObject* name = PyString_FromString("seek");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&pos0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -827,11 +827,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QProcess::setupChildProcess()
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("setupChildProcess");
+  PyObject* name = PyString_FromString("setupChildProcess");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={""};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={""};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -846,11 +846,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QProcess::size() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("size");
+  PyObject* name = PyString_FromString("size");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -873,15 +873,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QProcess::size();
 }
-void PythonQtShell_QProcess::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QProcess::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -890,16 +890,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QProcess::timerEvent(arg__1);
+  QProcess::timerEvent(event0);
 }
 bool  PythonQtShell_QProcess::waitForBytesWritten(int  msecs0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("waitForBytesWritten");
+  PyObject* name = PyString_FromString("waitForBytesWritten");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&msecs0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -925,11 +925,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QProcess::waitForReadyRead(int  msecs0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("waitForReadyRead");
+  PyObject* name = PyString_FromString("waitForReadyRead");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&msecs0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -955,11 +955,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QProcess::writeData(const char*  data0, qint64  len1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("writeData");
+  PyObject* name = PyString_FromString("writeData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "const char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "const char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&len1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -1287,15 +1287,15 @@ PythonQtShell_QPropertyAnimation::~PythonQtShell_QPropertyAnimation() {
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
 }
-void PythonQtShell_QPropertyAnimation::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QPropertyAnimation::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -1304,17 +1304,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QPropertyAnimation::childEvent(arg__1);
+  QPropertyAnimation::childEvent(event0);
 }
-void PythonQtShell_QPropertyAnimation::customEvent(QEvent*  arg__1)
+void PythonQtShell_QPropertyAnimation::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -1323,16 +1323,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QPropertyAnimation::customEvent(arg__1);
+  QPropertyAnimation::customEvent(event0);
 }
 int  PythonQtShell_QPropertyAnimation::duration() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("duration");
+  PyObject* name = PyString_FromString("duration");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       int returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -1358,11 +1358,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QPropertyAnimation::event(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -1385,16 +1385,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QPropertyAnimation::event(event0);
 }
-bool  PythonQtShell_QPropertyAnimation::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QPropertyAnimation::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -1413,16 +1413,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QPropertyAnimation::eventFilter(arg__1, arg__2);
+  return QPropertyAnimation::eventFilter(watched0, event1);
 }
 QVariant  PythonQtShell_QPropertyAnimation::interpolated(const QVariant&  from0, const QVariant&  to1, qreal  progress2) const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("interpolated");
+  PyObject* name = PyString_FromString("interpolated");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"QVariant" , "const QVariant&" , "const QVariant&" , "qreal"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(4, argumentList);
+    const char* argumentList[] ={"QVariant" , "const QVariant&" , "const QVariant&" , "qreal"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(4, argumentList);
       QVariant returnValue;
     void* args[4] = {NULL, (void*)&from0, (void*)&to1, (void*)&progress2};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -1445,15 +1445,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QPropertyAnimation::interpolated(from0, to1, progress2);
 }
-void PythonQtShell_QPropertyAnimation::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QPropertyAnimation::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -1462,16 +1462,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QPropertyAnimation::timerEvent(arg__1);
+  QPropertyAnimation::timerEvent(event0);
 }
 void PythonQtShell_QPropertyAnimation::updateCurrentTime(int  arg__1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateCurrentTime");
+  PyObject* name = PyString_FromString("updateCurrentTime");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&arg__1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -1486,11 +1486,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QPropertyAnimation::updateCurrentValue(const QVariant&  value0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateCurrentValue");
+  PyObject* name = PyString_FromString("updateCurrentValue");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "const QVariant&"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "const QVariant&"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&value0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -1505,11 +1505,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QPropertyAnimation::updateDirection(QAbstractAnimation::Direction  direction0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateDirection");
+  PyObject* name = PyString_FromString("updateDirection");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QAbstractAnimation::Direction"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QAbstractAnimation::Direction"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&direction0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -1524,11 +1524,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QPropertyAnimation::updateState(QAbstractAnimation::State  newState0, QAbstractAnimation::State  oldState1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateState");
+  PyObject* name = PyString_FromString("updateState");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QAbstractAnimation::State" , "QAbstractAnimation::State"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"" , "QAbstractAnimation::State" , "QAbstractAnimation::State"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
     void* args[3] = {NULL, (void*)&newState0, (void*)&oldState1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -2016,11 +2016,11 @@ PythonQtShell_QRunnable::~PythonQtShell_QRunnable() {
 void PythonQtShell_QRunnable::run()
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("run");
+  PyObject* name = PyString_FromString("run");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={""};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={""};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -2060,11 +2060,11 @@ PythonQtShell_QSaveFile::~PythonQtShell_QSaveFile() {
 bool  PythonQtShell_QSaveFile::atEnd() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("atEnd");
+  PyObject* name = PyString_FromString("atEnd");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2090,11 +2090,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QSaveFile::bytesAvailable() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("bytesAvailable");
+  PyObject* name = PyString_FromString("bytesAvailable");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2120,11 +2120,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QSaveFile::bytesToWrite() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("bytesToWrite");
+  PyObject* name = PyString_FromString("bytesToWrite");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2150,11 +2150,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSaveFile::canReadLine() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("canReadLine");
+  PyObject* name = PyString_FromString("canReadLine");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2177,15 +2177,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QSaveFile::canReadLine();
 }
-void PythonQtShell_QSaveFile::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QSaveFile::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -2194,17 +2194,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSaveFile::childEvent(arg__1);
+  QSaveFile::childEvent(event0);
 }
-void PythonQtShell_QSaveFile::customEvent(QEvent*  arg__1)
+void PythonQtShell_QSaveFile::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -2213,18 +2213,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSaveFile::customEvent(arg__1);
+  QSaveFile::customEvent(event0);
 }
-bool  PythonQtShell_QSaveFile::event(QEvent*  arg__1)
+bool  PythonQtShell_QSaveFile::event(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
-    void* args[2] = {NULL, (void*)&arg__1};
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -2243,18 +2243,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSaveFile::event(arg__1);
+  return QSaveFile::event(event0);
 }
-bool  PythonQtShell_QSaveFile::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QSaveFile::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -2273,16 +2273,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSaveFile::eventFilter(arg__1, arg__2);
+  return QSaveFile::eventFilter(watched0, event1);
 }
 QString  PythonQtShell_QSaveFile::fileName() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("fileName");
+  PyObject* name = PyString_FromString("fileName");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"QString"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"QString"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       QString returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2308,11 +2308,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSaveFile::isSequential() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("isSequential");
+  PyObject* name = PyString_FromString("isSequential");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2338,11 +2338,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSaveFile::open(QIODevice::OpenMode  flags0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("open");
+  PyObject* name = PyString_FromString("open");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QIODevice::OpenMode"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QIODevice::OpenMode"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&flags0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2368,11 +2368,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 QFileDevice::Permissions  PythonQtShell_QSaveFile::permissions() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("permissions");
+  PyObject* name = PyString_FromString("permissions");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"QFileDevice::Permissions"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"QFileDevice::Permissions"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       QFileDevice::Permissions returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2398,11 +2398,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QSaveFile::pos() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("pos");
+  PyObject* name = PyString_FromString("pos");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2428,11 +2428,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QSaveFile::readData(char*  data0, qint64  maxlen1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("readData");
+  PyObject* name = PyString_FromString("readData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&maxlen1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2458,11 +2458,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QSaveFile::readLineData(char*  data0, qint64  maxlen1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("readLineData");
+  PyObject* name = PyString_FromString("readLineData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&maxlen1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2488,11 +2488,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSaveFile::reset()
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("reset");
+  PyObject* name = PyString_FromString("reset");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2518,11 +2518,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSaveFile::resize(qint64  sz0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("resize");
+  PyObject* name = PyString_FromString("resize");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&sz0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2548,11 +2548,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSaveFile::seek(qint64  offset0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("seek");
+  PyObject* name = PyString_FromString("seek");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&offset0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2578,11 +2578,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSaveFile::setPermissions(QFileDevice::Permissions  permissionSpec0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("setPermissions");
+  PyObject* name = PyString_FromString("setPermissions");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QFileDevice::Permissions"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QFileDevice::Permissions"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&permissionSpec0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2608,11 +2608,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QSaveFile::size() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("size");
+  PyObject* name = PyString_FromString("size");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2635,15 +2635,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QSaveFile::size();
 }
-void PythonQtShell_QSaveFile::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QSaveFile::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -2652,16 +2652,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSaveFile::timerEvent(arg__1);
+  QSaveFile::timerEvent(event0);
 }
 bool  PythonQtShell_QSaveFile::waitForBytesWritten(int  msecs0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("waitForBytesWritten");
+  PyObject* name = PyString_FromString("waitForBytesWritten");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&msecs0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2687,11 +2687,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSaveFile::waitForReadyRead(int  msecs0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("waitForReadyRead");
+  PyObject* name = PyString_FromString("waitForReadyRead");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&msecs0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2717,11 +2717,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QSaveFile::writeData(const char*  data0, qint64  len1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("writeData");
+  PyObject* name = PyString_FromString("writeData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "const char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "const char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&len1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2818,15 +2818,15 @@ PythonQtShell_QSequentialAnimationGroup::~PythonQtShell_QSequentialAnimationGrou
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
 }
-void PythonQtShell_QSequentialAnimationGroup::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QSequentialAnimationGroup::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -2835,17 +2835,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSequentialAnimationGroup::childEvent(arg__1);
+  QSequentialAnimationGroup::childEvent(event0);
 }
-void PythonQtShell_QSequentialAnimationGroup::customEvent(QEvent*  arg__1)
+void PythonQtShell_QSequentialAnimationGroup::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -2854,16 +2854,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSequentialAnimationGroup::customEvent(arg__1);
+  QSequentialAnimationGroup::customEvent(event0);
 }
 int  PythonQtShell_QSequentialAnimationGroup::duration() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("duration");
+  PyObject* name = PyString_FromString("duration");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       int returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2889,11 +2889,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QSequentialAnimationGroup::event(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -2916,16 +2916,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QSequentialAnimationGroup::event(event0);
 }
-bool  PythonQtShell_QSequentialAnimationGroup::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QSequentialAnimationGroup::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -2944,17 +2944,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSequentialAnimationGroup::eventFilter(arg__1, arg__2);
+  return QSequentialAnimationGroup::eventFilter(watched0, event1);
 }
-void PythonQtShell_QSequentialAnimationGroup::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QSequentialAnimationGroup::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -2963,16 +2963,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSequentialAnimationGroup::timerEvent(arg__1);
+  QSequentialAnimationGroup::timerEvent(event0);
 }
 void PythonQtShell_QSequentialAnimationGroup::updateCurrentTime(int  arg__1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateCurrentTime");
+  PyObject* name = PyString_FromString("updateCurrentTime");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&arg__1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -2987,11 +2987,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QSequentialAnimationGroup::updateDirection(QAbstractAnimation::Direction  direction0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateDirection");
+  PyObject* name = PyString_FromString("updateDirection");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QAbstractAnimation::Direction"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QAbstractAnimation::Direction"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&direction0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -3006,11 +3006,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QSequentialAnimationGroup::updateState(QAbstractAnimation::State  newState0, QAbstractAnimation::State  oldState1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("updateState");
+  PyObject* name = PyString_FromString("updateState");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QAbstractAnimation::State" , "QAbstractAnimation::State"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"" , "QAbstractAnimation::State" , "QAbstractAnimation::State"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
     void* args[3] = {NULL, (void*)&newState0, (void*)&oldState1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -3047,15 +3047,15 @@ PythonQtShell_QSettings::~PythonQtShell_QSettings() {
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
 }
-void PythonQtShell_QSettings::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QSettings::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3064,17 +3064,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSettings::childEvent(arg__1);
+  QSettings::childEvent(event0);
 }
-void PythonQtShell_QSettings::customEvent(QEvent*  arg__1)
+void PythonQtShell_QSettings::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3083,16 +3083,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSettings::customEvent(arg__1);
+  QSettings::customEvent(event0);
 }
 bool  PythonQtShell_QSettings::event(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -3115,16 +3115,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QSettings::event(event0);
 }
-bool  PythonQtShell_QSettings::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QSettings::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -3143,17 +3143,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSettings::eventFilter(arg__1, arg__2);
+  return QSettings::eventFilter(watched0, event1);
 }
-void PythonQtShell_QSettings::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QSettings::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3162,7 +3162,7 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSettings::timerEvent(arg__1);
+  QSettings::timerEvent(event0);
 }
 QSettings* PythonQtWrapper_QSettings::new_QSettings(QObject*  parent)
 { 
@@ -3345,15 +3345,15 @@ PythonQtShell_QSharedMemory::~PythonQtShell_QSharedMemory() {
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
 }
-void PythonQtShell_QSharedMemory::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QSharedMemory::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3362,17 +3362,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSharedMemory::childEvent(arg__1);
+  QSharedMemory::childEvent(event0);
 }
-void PythonQtShell_QSharedMemory::customEvent(QEvent*  arg__1)
+void PythonQtShell_QSharedMemory::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3381,18 +3381,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSharedMemory::customEvent(arg__1);
+  QSharedMemory::customEvent(event0);
 }
-bool  PythonQtShell_QSharedMemory::event(QEvent*  arg__1)
+bool  PythonQtShell_QSharedMemory::event(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
-    void* args[2] = {NULL, (void*)&arg__1};
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -3411,18 +3411,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSharedMemory::event(arg__1);
+  return QSharedMemory::event(event0);
 }
-bool  PythonQtShell_QSharedMemory::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QSharedMemory::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -3441,17 +3441,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSharedMemory::eventFilter(arg__1, arg__2);
+  return QSharedMemory::eventFilter(watched0, event1);
 }
-void PythonQtShell_QSharedMemory::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QSharedMemory::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3460,7 +3460,7 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSharedMemory::timerEvent(arg__1);
+  QSharedMemory::timerEvent(event0);
 }
 QSharedMemory* PythonQtWrapper_QSharedMemory::new_QSharedMemory(QObject*  parent)
 { 
@@ -3551,15 +3551,15 @@ PythonQtShell_QSignalMapper::~PythonQtShell_QSignalMapper() {
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
 }
-void PythonQtShell_QSignalMapper::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QSignalMapper::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3568,17 +3568,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSignalMapper::childEvent(arg__1);
+  QSignalMapper::childEvent(event0);
 }
-void PythonQtShell_QSignalMapper::customEvent(QEvent*  arg__1)
+void PythonQtShell_QSignalMapper::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3587,18 +3587,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSignalMapper::customEvent(arg__1);
+  QSignalMapper::customEvent(event0);
 }
-bool  PythonQtShell_QSignalMapper::event(QEvent*  arg__1)
+bool  PythonQtShell_QSignalMapper::event(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
-    void* args[2] = {NULL, (void*)&arg__1};
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -3617,18 +3617,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSignalMapper::event(arg__1);
+  return QSignalMapper::event(event0);
 }
-bool  PythonQtShell_QSignalMapper::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QSignalMapper::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -3647,17 +3647,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSignalMapper::eventFilter(arg__1, arg__2);
+  return QSignalMapper::eventFilter(watched0, event1);
 }
-void PythonQtShell_QSignalMapper::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QSignalMapper::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3666,7 +3666,7 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSignalMapper::timerEvent(arg__1);
+  QSignalMapper::timerEvent(event0);
 }
 QSignalMapper* PythonQtWrapper_QSignalMapper::new_QSignalMapper(QObject*  parent)
 { 
@@ -3723,15 +3723,15 @@ PythonQtShell_QSignalTransition::~PythonQtShell_QSignalTransition() {
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
 }
-void PythonQtShell_QSignalTransition::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QSignalTransition::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3740,17 +3740,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSignalTransition::childEvent(arg__1);
+  QSignalTransition::childEvent(event0);
 }
-void PythonQtShell_QSignalTransition::customEvent(QEvent*  arg__1)
+void PythonQtShell_QSignalTransition::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3759,16 +3759,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSignalTransition::customEvent(arg__1);
+  QSignalTransition::customEvent(event0);
 }
 bool  PythonQtShell_QSignalTransition::event(QEvent*  e0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&e0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -3791,16 +3791,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QSignalTransition::event(e0);
 }
-bool  PythonQtShell_QSignalTransition::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QSignalTransition::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -3819,16 +3819,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QSignalTransition::eventFilter(arg__1, arg__2);
+  return QSignalTransition::eventFilter(watched0, event1);
 }
 bool  PythonQtShell_QSignalTransition::eventTest(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventTest");
+  PyObject* name = PyString_FromString("eventTest");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -3854,11 +3854,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QSignalTransition::onTransition(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("onTransition");
+  PyObject* name = PyString_FromString("onTransition");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -3870,15 +3870,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   QSignalTransition::onTransition(event0);
 }
-void PythonQtShell_QSignalTransition::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QSignalTransition::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3887,7 +3887,7 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QSignalTransition::timerEvent(arg__1);
+  QSignalTransition::timerEvent(event0);
 }
 QSignalTransition* PythonQtWrapper_QSignalTransition::new_QSignalTransition(QState*  sourceState)
 { 
@@ -3982,15 +3982,15 @@ PythonQtShell_QState::~PythonQtShell_QState() {
   PythonQtPrivate* priv = PythonQt::priv();
   if (priv) { priv->shellClassDeleted(this); }
 }
-void PythonQtShell_QState::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QState::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -3999,17 +3999,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QState::childEvent(arg__1);
+  QState::childEvent(event0);
 }
-void PythonQtShell_QState::customEvent(QEvent*  arg__1)
+void PythonQtShell_QState::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -4018,16 +4018,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QState::customEvent(arg__1);
+  QState::customEvent(event0);
 }
 bool  PythonQtShell_QState::event(QEvent*  e0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&e0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -4050,16 +4050,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QState::event(e0);
 }
-bool  PythonQtShell_QState::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QState::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -4078,16 +4078,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QState::eventFilter(arg__1, arg__2);
+  return QState::eventFilter(watched0, event1);
 }
 void PythonQtShell_QState::onEntry(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("onEntry");
+  PyObject* name = PyString_FromString("onEntry");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4102,11 +4102,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QState::onExit(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("onExit");
+  PyObject* name = PyString_FromString("onExit");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4118,15 +4118,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   QState::onExit(event0);
 }
-void PythonQtShell_QState::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QState::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -4135,7 +4135,7 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QState::timerEvent(arg__1);
+  QState::timerEvent(event0);
 }
 QState* PythonQtWrapper_QState::new_QState(QState*  parent)
 { 
@@ -4214,11 +4214,11 @@ PythonQtShell_QStateMachine::~PythonQtShell_QStateMachine() {
 void PythonQtShell_QStateMachine::beginMicrostep(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("beginMicrostep");
+  PyObject* name = PyString_FromString("beginMicrostep");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4233,11 +4233,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QStateMachine::beginSelectTransitions(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("beginSelectTransitions");
+  PyObject* name = PyString_FromString("beginSelectTransitions");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4249,15 +4249,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   QStateMachine::beginSelectTransitions(event0);
 }
-void PythonQtShell_QStateMachine::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QStateMachine::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -4266,17 +4266,17 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QStateMachine::childEvent(arg__1);
+  QStateMachine::childEvent(event0);
 }
-void PythonQtShell_QStateMachine::customEvent(QEvent*  arg__1)
+void PythonQtShell_QStateMachine::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -4285,16 +4285,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QStateMachine::customEvent(arg__1);
+  QStateMachine::customEvent(event0);
 }
 void PythonQtShell_QStateMachine::endMicrostep(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("endMicrostep");
+  PyObject* name = PyString_FromString("endMicrostep");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4309,11 +4309,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QStateMachine::endSelectTransitions(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("endSelectTransitions");
+  PyObject* name = PyString_FromString("endSelectTransitions");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4328,11 +4328,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QStateMachine::event(QEvent*  e0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&e0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -4358,11 +4358,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QStateMachine::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
     void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -4388,11 +4388,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QStateMachine::onEntry(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("onEntry");
+  PyObject* name = PyString_FromString("onEntry");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4407,11 +4407,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 void PythonQtShell_QStateMachine::onExit(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("onExit");
+  PyObject* name = PyString_FromString("onExit");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
     void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4423,15 +4423,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   QStateMachine::onExit(event0);
 }
-void PythonQtShell_QStateMachine::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QStateMachine::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -4440,7 +4440,7 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QStateMachine::timerEvent(arg__1);
+  QStateMachine::timerEvent(event0);
 }
 QStateMachine* PythonQtWrapper_QStateMachine::new_QStateMachine(QObject*  parent)
 { 
@@ -4666,6 +4666,11 @@ QString  PythonQtWrapper_QSysInfo::static_QSysInfo_kernelVersion()
   return (QSysInfo::kernelVersion());
 }
 
+QString  PythonQtWrapper_QSysInfo::static_QSysInfo_machineHostName()
+{
+  return (QSysInfo::machineHostName());
+}
+
 QString  PythonQtWrapper_QSysInfo::static_QSysInfo_prettyProductName()
 {
   return (QSysInfo::prettyProductName());
@@ -4732,6 +4737,11 @@ bool  PythonQtWrapper_QTemporaryDir::autoRemove(QTemporaryDir* theWrappedObject)
   return ( theWrappedObject->autoRemove());
 }
 
+QString  PythonQtWrapper_QTemporaryDir::errorString(QTemporaryDir* theWrappedObject) const
+{
+  return ( theWrappedObject->errorString());
+}
+
 bool  PythonQtWrapper_QTemporaryDir::isValid(QTemporaryDir* theWrappedObject) const
 {
   return ( theWrappedObject->isValid());
@@ -4761,11 +4771,11 @@ PythonQtShell_QTemporaryFile::~PythonQtShell_QTemporaryFile() {
 bool  PythonQtShell_QTemporaryFile::atEnd() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("atEnd");
+  PyObject* name = PyString_FromString("atEnd");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -4791,11 +4801,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QTemporaryFile::bytesAvailable() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("bytesAvailable");
+  PyObject* name = PyString_FromString("bytesAvailable");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -4821,11 +4831,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QTemporaryFile::bytesToWrite() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("bytesToWrite");
+  PyObject* name = PyString_FromString("bytesToWrite");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -4851,11 +4861,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QTemporaryFile::canReadLine() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("canReadLine");
+  PyObject* name = PyString_FromString("canReadLine");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -4878,15 +4888,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QTemporaryFile::canReadLine();
 }
-void PythonQtShell_QTemporaryFile::childEvent(QChildEvent*  arg__1)
+void PythonQtShell_QTemporaryFile::childEvent(QChildEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("childEvent");
+  PyObject* name = PyString_FromString("childEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QChildEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QChildEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -4895,16 +4905,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QTemporaryFile::childEvent(arg__1);
+  QTemporaryFile::childEvent(event0);
 }
 void PythonQtShell_QTemporaryFile::close()
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("close");
+  PyObject* name = PyString_FromString("close");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={""};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={""};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
@@ -4916,15 +4926,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   QTemporaryFile::close();
 }
-void PythonQtShell_QTemporaryFile::customEvent(QEvent*  arg__1)
+void PythonQtShell_QTemporaryFile::customEvent(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("customEvent");
+  PyObject* name = PyString_FromString("customEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -4933,18 +4943,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QTemporaryFile::customEvent(arg__1);
+  QTemporaryFile::customEvent(event0);
 }
-bool  PythonQtShell_QTemporaryFile::event(QEvent*  arg__1)
+bool  PythonQtShell_QTemporaryFile::event(QEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("event");
+  PyObject* name = PyString_FromString("event");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
-    void* args[2] = {NULL, (void*)&arg__1};
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -4963,18 +4973,18 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QTemporaryFile::event(arg__1);
+  return QTemporaryFile::event(event0);
 }
-bool  PythonQtShell_QTemporaryFile::eventFilter(QObject*  arg__1, QEvent*  arg__2)
+bool  PythonQtShell_QTemporaryFile::eventFilter(QObject*  watched0, QEvent*  event1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("eventFilter");
+  PyObject* name = PyString_FromString("eventFilter");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"bool" , "QObject*" , "QEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       bool returnValue;
-    void* args[3] = {NULL, (void*)&arg__1, (void*)&arg__2};
+    void* args[3] = {NULL, (void*)&watched0, (void*)&event1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) {
       args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, NULL, &returnValue);
@@ -4993,16 +5003,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  return QTemporaryFile::eventFilter(arg__1, arg__2);
+  return QTemporaryFile::eventFilter(watched0, event1);
 }
 bool  PythonQtShell_QTemporaryFile::isSequential() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("isSequential");
+  PyObject* name = PyString_FromString("isSequential");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5028,11 +5038,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QTemporaryFile::open(QIODevice::OpenMode  flags0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("open");
+  PyObject* name = PyString_FromString("open");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QIODevice::OpenMode"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QIODevice::OpenMode"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&flags0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5058,11 +5068,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 QFileDevice::Permissions  PythonQtShell_QTemporaryFile::permissions() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("permissions");
+  PyObject* name = PyString_FromString("permissions");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"QFileDevice::Permissions"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"QFileDevice::Permissions"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       QFileDevice::Permissions returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5088,11 +5098,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QTemporaryFile::pos() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("pos");
+  PyObject* name = PyString_FromString("pos");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5118,11 +5128,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QTemporaryFile::readData(char*  data0, qint64  maxlen1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("readData");
+  PyObject* name = PyString_FromString("readData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&maxlen1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5148,11 +5158,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QTemporaryFile::readLineData(char*  data0, qint64  maxlen1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("readLineData");
+  PyObject* name = PyString_FromString("readLineData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&maxlen1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5178,11 +5188,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QTemporaryFile::reset()
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("reset");
+  PyObject* name = PyString_FromString("reset");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"bool"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       bool returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5208,11 +5218,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QTemporaryFile::resize(qint64  sz0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("resize");
+  PyObject* name = PyString_FromString("resize");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&sz0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5238,11 +5248,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QTemporaryFile::seek(qint64  offset0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("seek");
+  PyObject* name = PyString_FromString("seek");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&offset0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5268,11 +5278,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QTemporaryFile::setPermissions(QFileDevice::Permissions  permissionSpec0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("setPermissions");
+  PyObject* name = PyString_FromString("setPermissions");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "QFileDevice::Permissions"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "QFileDevice::Permissions"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&permissionSpec0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5298,11 +5308,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QTemporaryFile::size() const
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("size");
+  PyObject* name = PyString_FromString("size");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
+    const char* argumentList[] ={"qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(1, argumentList);
       qint64 returnValue;
     void* args[1] = {NULL};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5325,15 +5335,15 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 }
   return QTemporaryFile::size();
 }
-void PythonQtShell_QTemporaryFile::timerEvent(QTimerEvent*  arg__1)
+void PythonQtShell_QTemporaryFile::timerEvent(QTimerEvent*  event0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("timerEvent");
+  PyObject* name = PyString_FromString("timerEvent");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"" , "QTimerEvent*"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
-    void* args[2] = {NULL, (void*)&arg__1};
+    const char* argumentList[] ={"" , "QTimerEvent*"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    void* args[2] = {NULL, (void*)&event0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
     if (result) { Py_DECREF(result); } 
     Py_DECREF(obj);
@@ -5342,16 +5352,16 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
     PyErr_Clear();
   }
 }
-  QTemporaryFile::timerEvent(arg__1);
+  QTemporaryFile::timerEvent(event0);
 }
 bool  PythonQtShell_QTemporaryFile::waitForBytesWritten(int  msecs0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("waitForBytesWritten");
+  PyObject* name = PyString_FromString("waitForBytesWritten");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&msecs0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5377,11 +5387,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 bool  PythonQtShell_QTemporaryFile::waitForReadyRead(int  msecs0)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("waitForReadyRead");
+  PyObject* name = PyString_FromString("waitForReadyRead");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"bool" , "int"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
+    const char* argumentList[] ={"bool" , "int"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(2, argumentList);
       bool returnValue;
     void* args[2] = {NULL, (void*)&msecs0};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);
@@ -5407,11 +5417,11 @@ if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
 qint64  PythonQtShell_QTemporaryFile::writeData(const char*  data0, qint64  len1)
 {
 if (_wrapper && (((PyObject*)_wrapper)->ob_refcnt > 0)) {
-  static PyObject* name = PyString_FromString("writeData");
+  PyObject* name = PyString_FromString("writeData");
   PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
   if (obj) {
-    static const char* argumentList[] ={"qint64" , "const char*" , "qint64"};
-    static const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
+    const char* argumentList[] ={"qint64" , "const char*" , "qint64"};
+    const PythonQtMethodInfo* methodInfo = PythonQtMethodInfo::getCachedMethodInfoFromArgumentList(3, argumentList);
       qint64 returnValue;
     void* args[3] = {NULL, (void*)&data0, (void*)&len1};
     PyObject* result = PythonQtSignalTarget::call(obj, methodInfo, args, true);

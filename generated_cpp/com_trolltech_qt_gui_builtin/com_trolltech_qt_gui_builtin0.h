@@ -36,6 +36,7 @@
 #include <qpolygon.h>
 #include <qrect.h>
 #include <qregion.h>
+#include <qrgba64.h>
 #include <qscreen.h>
 #include <qsize.h>
 #include <qsizepolicy.h>
@@ -53,7 +54,7 @@ public:
     PythonQtShell_QBitmap():QBitmap(),_wrapper(NULL) {};
     PythonQtShell_QBitmap(const QPixmap&  arg__1):QBitmap(arg__1),_wrapper(NULL) {};
     PythonQtShell_QBitmap(const QSize&  arg__1):QBitmap(arg__1),_wrapper(NULL) {};
-    PythonQtShell_QBitmap(const QString&  fileName, const char*  format = 0):QBitmap(fileName, format),_wrapper(NULL) {};
+    PythonQtShell_QBitmap(const QString&  fileName, const char*  format = NULL):QBitmap(fileName, format),_wrapper(NULL) {};
     PythonQtShell_QBitmap(int  w, int  h):QBitmap(w, h),_wrapper(NULL) {};
 
    ~PythonQtShell_QBitmap();
@@ -72,7 +73,7 @@ public slots:
 QBitmap* new_QBitmap();
 QBitmap* new_QBitmap(const QPixmap&  arg__1);
 QBitmap* new_QBitmap(const QSize&  arg__1);
-QBitmap* new_QBitmap(const QString&  fileName, const char*  format = 0);
+QBitmap* new_QBitmap(const QString&  fileName, const char*  format = NULL);
 QBitmap* new_QBitmap(int  w, int  h);
 QBitmap* new_QBitmap(const QBitmap& other) {
 PythonQtShell_QBitmap* a = new PythonQtShell_QBitmap();
@@ -142,6 +143,7 @@ enum Spec{
   Invalid = QColor::Invalid,   Rgb = QColor::Rgb,   Hsv = QColor::Hsv,   Cmyk = QColor::Cmyk,   Hsl = QColor::Hsl};
 public slots:
 QColor* new_QColor();
+QColor* new_QColor(QRgba64  rgba64);
 QColor* new_QColor(Qt::GlobalColor  color);
 QColor* new_QColor(const QColor&  color);
 QColor* new_QColor(const QString&  name);
@@ -169,8 +171,10 @@ void delete_QColor(QColor* obj) { delete obj; }
    QColor  static_QColor_fromRgb(unsigned int  rgb);
    QColor  static_QColor_fromRgbF(qreal  r, qreal  g, qreal  b, qreal  a = 1.0);
    QColor  static_QColor_fromRgba(unsigned int  rgba);
-   void getHsl(QColor* theWrappedObject, int*  h, int*  s, int*  l, int*  a = 0) const;
-   void getHslF(QColor* theWrappedObject, qreal*  h, qreal*  s, qreal*  l, qreal*  a = 0) const;
+   QColor  static_QColor_fromRgba64(QRgba64  rgba);
+   QColor  static_QColor_fromRgba64(ushort  r, ushort  g, ushort  b, ushort  a = USHRT_MAX);
+   void getHsl(QColor* theWrappedObject, int*  h, int*  s, int*  l, int*  a = NULL) const;
+   void getHslF(QColor* theWrappedObject, qreal*  h, qreal*  s, qreal*  l, qreal*  a = NULL) const;
    int  green(QColor* theWrappedObject) const;
    qreal  greenF(QColor* theWrappedObject) const;
    int  hslHue(QColor* theWrappedObject) const;
@@ -200,6 +204,7 @@ void delete_QColor(QColor* obj) { delete obj; }
    qreal  redF(QColor* theWrappedObject) const;
    unsigned int  rgb(QColor* theWrappedObject) const;
    unsigned int  rgba(QColor* theWrappedObject) const;
+   QRgba64  rgba64(QColor* theWrappedObject) const;
    int  saturation(QColor* theWrappedObject) const;
    qreal  saturationF(QColor* theWrappedObject) const;
    void setAlpha(QColor* theWrappedObject, int  alpha);
@@ -221,6 +226,7 @@ void delete_QColor(QColor* obj) { delete obj; }
    void setRgb(QColor* theWrappedObject, unsigned int  rgb);
    void setRgbF(QColor* theWrappedObject, qreal  r, qreal  g, qreal  b, qreal  a = 1.0);
    void setRgba(QColor* theWrappedObject, unsigned int  rgba);
+   void setRgba64(QColor* theWrappedObject, QRgba64  rgba);
    QColor::Spec  spec(QColor* theWrappedObject) const;
    QColor  toCmyk(QColor* theWrappedObject) const;
    QColor  toHsl(QColor* theWrappedObject) const;
@@ -397,6 +403,7 @@ void delete_QIcon(QIcon* obj) { delete obj; }
    qint64  cacheKey(QIcon* theWrappedObject) const;
    QIcon  static_QIcon_fromTheme(const QString&  name, const QIcon&  fallback = QIcon());
    bool  static_QIcon_hasThemeIcon(const QString&  name);
+   bool  isMask(QIcon* theWrappedObject) const;
    bool  isNull(QIcon* theWrappedObject) const;
    QString  name(QIcon* theWrappedObject) const;
    void writeTo(QIcon* theWrappedObject, QDataStream&  arg__1);
@@ -407,6 +414,7 @@ void delete_QIcon(QIcon* obj) { delete obj; }
    QPixmap  pixmap(QIcon* theWrappedObject, const QSize&  size, QIcon::Mode  mode = QIcon::Normal, QIcon::State  state = QIcon::Off) const;
    QPixmap  pixmap(QIcon* theWrappedObject, int  extent, QIcon::Mode  mode = QIcon::Normal, QIcon::State  state = QIcon::Off) const;
    QPixmap  pixmap(QIcon* theWrappedObject, int  w, int  h, QIcon::Mode  mode = QIcon::Normal, QIcon::State  state = QIcon::Off) const;
+   void setIsMask(QIcon* theWrappedObject, bool  isMask);
    void static_QIcon_setThemeName(const QString&  path);
    void static_QIcon_setThemeSearchPaths(const QStringList&  searchpath);
    void swap(QIcon* theWrappedObject, QIcon&  other);
@@ -426,7 +434,7 @@ public:
     PythonQtShell_QImage():QImage(),_wrapper(NULL) {};
     PythonQtShell_QImage(const QImage&  arg__1):QImage(arg__1),_wrapper(NULL) {};
     PythonQtShell_QImage(const QSize&  size, QImage::Format  format):QImage(size, format),_wrapper(NULL) {};
-    PythonQtShell_QImage(const QString&  fileName, const char*  format = 0):QImage(fileName, format),_wrapper(NULL) {};
+    PythonQtShell_QImage(const QString&  fileName, const char*  format = NULL):QImage(fileName, format),_wrapper(NULL) {};
     PythonQtShell_QImage(int  width, int  height, QImage::Format  format):QImage(width, height, format),_wrapper(NULL) {};
 
    ~PythonQtShell_QImage();
@@ -468,7 +476,7 @@ public slots:
 QImage* new_QImage();
 QImage* new_QImage(const QImage&  arg__1);
 QImage* new_QImage(const QSize&  size, QImage::Format  format);
-QImage* new_QImage(const QString&  fileName, const char*  format = 0);
+QImage* new_QImage(const QString&  fileName, const char*  format = NULL);
 QImage* new_QImage(int  width, int  height, QImage::Format  format);
 void delete_QImage(QImage* obj) { delete obj; } 
    bool  allGray(QImage* theWrappedObject) const;
@@ -498,15 +506,15 @@ void delete_QImage(QImage* obj) { delete obj; }
    void fill(QImage* theWrappedObject, const QColor&  color);
    void fill(QImage* theWrappedObject, uint  pixel);
    QImage::Format  format(QImage* theWrappedObject) const;
-   QImage  static_QImage_fromData(const QByteArray&  data, const char*  format = 0);
+   QImage  static_QImage_fromData(const QByteArray&  data, const char*  format = NULL);
    bool  hasAlphaChannel(QImage* theWrappedObject) const;
    int  height(QImage* theWrappedObject) const;
    void invertPixels(QImage* theWrappedObject, QImage::InvertMode  arg__1 = QImage::InvertRgb);
    bool  isGrayscale(QImage* theWrappedObject) const;
    bool  isNull(QImage* theWrappedObject) const;
    bool  load(QImage* theWrappedObject, QIODevice*  device, const char*  format);
-   bool  load(QImage* theWrappedObject, const QString&  fileName, const char*  format = 0);
-   bool  loadFromData(QImage* theWrappedObject, const QByteArray&  data, const char*  aformat = 0);
+   bool  load(QImage* theWrappedObject, const QString&  fileName, const char*  format = NULL);
+   bool  loadFromData(QImage* theWrappedObject, const QByteArray&  data, const char*  aformat = NULL);
    int  py_q_metric(QImage* theWrappedObject, QPaintDevice::PaintDeviceMetric  metric) const{  return (((PythonQtPublicPromoter_QImage*)theWrappedObject)->py_q_metric(metric));}
    QImage  mirrored(QImage* theWrappedObject, bool  horizontally = false, bool  vertically = true) const;
    QImage  mirrored_helper(QImage* theWrappedObject, bool  horizontal, bool  vertical) const;
@@ -519,6 +527,8 @@ void delete_QImage(QImage* obj) { delete obj; }
    QPaintEngine*  py_q_paintEngine(QImage* theWrappedObject) const{  return (((PythonQtPublicPromoter_QImage*)theWrappedObject)->py_q_paintEngine());}
    unsigned int  pixel(QImage* theWrappedObject, const QPoint&  pt) const;
    unsigned int  pixel(QImage* theWrappedObject, int  x, int  y) const;
+   QColor  pixelColor(QImage* theWrappedObject, const QPoint&  pt) const;
+   QColor  pixelColor(QImage* theWrappedObject, int  x, int  y) const;
    QPixelFormat  pixelFormat(QImage* theWrappedObject) const;
    int  pixelIndex(QImage* theWrappedObject, const QPoint&  pt) const;
    int  pixelIndex(QImage* theWrappedObject, int  x, int  y) const;
@@ -526,8 +536,8 @@ void delete_QImage(QImage* obj) { delete obj; }
    QImage  rgbSwapped(QImage* theWrappedObject) const;
    QImage  rgbSwapped_helper(QImage* theWrappedObject) const;
    void rgbSwapped_inplace(QImage* theWrappedObject);
-   bool  save(QImage* theWrappedObject, QIODevice*  device, const char*  format = 0, int  quality = -1) const;
-   bool  save(QImage* theWrappedObject, const QString&  fileName, const char*  format = 0, int  quality = -1) const;
+   bool  save(QImage* theWrappedObject, QIODevice*  device, const char*  format = NULL, int  quality = -1) const;
+   bool  save(QImage* theWrappedObject, const QString&  fileName, const char*  format = NULL, int  quality = -1) const;
    QImage  scaled(QImage* theWrappedObject, const QSize&  s, Qt::AspectRatioMode  aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode  mode = Qt::FastTransformation) const;
    QImage  scaled(QImage* theWrappedObject, int  w, int  h, Qt::AspectRatioMode  aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode  mode = Qt::FastTransformation) const;
    QImage  scaledToHeight(QImage* theWrappedObject, int  h, Qt::TransformationMode  mode = Qt::FastTransformation) const;
@@ -541,6 +551,8 @@ void delete_QImage(QImage* obj) { delete obj; }
    void setOffset(QImage* theWrappedObject, const QPoint&  arg__1);
    void setPixel(QImage* theWrappedObject, const QPoint&  pt, uint  index_or_rgb);
    void setPixel(QImage* theWrappedObject, int  x, int  y, uint  index_or_rgb);
+   void setPixelColor(QImage* theWrappedObject, const QPoint&  pt, const QColor&  c);
+   void setPixelColor(QImage* theWrappedObject, int  x, int  y, const QColor&  c);
    void setText(QImage* theWrappedObject, const QString&  key, const QString&  value);
    QSize  size(QImage* theWrappedObject) const;
    QImage  smoothScaled(QImage* theWrappedObject, int  w, int  h) const;
@@ -602,7 +614,7 @@ enum SequenceFormat{
 enum SequenceMatch{
   NoMatch = QKeySequence::NoMatch,   PartialMatch = QKeySequence::PartialMatch,   ExactMatch = QKeySequence::ExactMatch};
 enum StandardKey{
-  UnknownKey = QKeySequence::UnknownKey,   HelpContents = QKeySequence::HelpContents,   WhatsThis = QKeySequence::WhatsThis,   Open = QKeySequence::Open,   Close = QKeySequence::Close,   Save = QKeySequence::Save,   New = QKeySequence::New,   Delete = QKeySequence::Delete,   Cut = QKeySequence::Cut,   Copy = QKeySequence::Copy,   Paste = QKeySequence::Paste,   Undo = QKeySequence::Undo,   Redo = QKeySequence::Redo,   Back = QKeySequence::Back,   Forward = QKeySequence::Forward,   Refresh = QKeySequence::Refresh,   ZoomIn = QKeySequence::ZoomIn,   ZoomOut = QKeySequence::ZoomOut,   Print = QKeySequence::Print,   AddTab = QKeySequence::AddTab,   NextChild = QKeySequence::NextChild,   PreviousChild = QKeySequence::PreviousChild,   Find = QKeySequence::Find,   FindNext = QKeySequence::FindNext,   FindPrevious = QKeySequence::FindPrevious,   Replace = QKeySequence::Replace,   SelectAll = QKeySequence::SelectAll,   Bold = QKeySequence::Bold,   Italic = QKeySequence::Italic,   Underline = QKeySequence::Underline,   MoveToNextChar = QKeySequence::MoveToNextChar,   MoveToPreviousChar = QKeySequence::MoveToPreviousChar,   MoveToNextWord = QKeySequence::MoveToNextWord,   MoveToPreviousWord = QKeySequence::MoveToPreviousWord,   MoveToNextLine = QKeySequence::MoveToNextLine,   MoveToPreviousLine = QKeySequence::MoveToPreviousLine,   MoveToNextPage = QKeySequence::MoveToNextPage,   MoveToPreviousPage = QKeySequence::MoveToPreviousPage,   MoveToStartOfLine = QKeySequence::MoveToStartOfLine,   MoveToEndOfLine = QKeySequence::MoveToEndOfLine,   MoveToStartOfBlock = QKeySequence::MoveToStartOfBlock,   MoveToEndOfBlock = QKeySequence::MoveToEndOfBlock,   MoveToStartOfDocument = QKeySequence::MoveToStartOfDocument,   MoveToEndOfDocument = QKeySequence::MoveToEndOfDocument,   SelectNextChar = QKeySequence::SelectNextChar,   SelectPreviousChar = QKeySequence::SelectPreviousChar,   SelectNextWord = QKeySequence::SelectNextWord,   SelectPreviousWord = QKeySequence::SelectPreviousWord,   SelectNextLine = QKeySequence::SelectNextLine,   SelectPreviousLine = QKeySequence::SelectPreviousLine,   SelectNextPage = QKeySequence::SelectNextPage,   SelectPreviousPage = QKeySequence::SelectPreviousPage,   SelectStartOfLine = QKeySequence::SelectStartOfLine,   SelectEndOfLine = QKeySequence::SelectEndOfLine,   SelectStartOfBlock = QKeySequence::SelectStartOfBlock,   SelectEndOfBlock = QKeySequence::SelectEndOfBlock,   SelectStartOfDocument = QKeySequence::SelectStartOfDocument,   SelectEndOfDocument = QKeySequence::SelectEndOfDocument,   DeleteStartOfWord = QKeySequence::DeleteStartOfWord,   DeleteEndOfWord = QKeySequence::DeleteEndOfWord,   DeleteEndOfLine = QKeySequence::DeleteEndOfLine,   InsertParagraphSeparator = QKeySequence::InsertParagraphSeparator,   InsertLineSeparator = QKeySequence::InsertLineSeparator,   SaveAs = QKeySequence::SaveAs,   Preferences = QKeySequence::Preferences,   Quit = QKeySequence::Quit,   FullScreen = QKeySequence::FullScreen,   Deselect = QKeySequence::Deselect,   DeleteCompleteLine = QKeySequence::DeleteCompleteLine,   Backspace = QKeySequence::Backspace};
+  UnknownKey = QKeySequence::UnknownKey,   HelpContents = QKeySequence::HelpContents,   WhatsThis = QKeySequence::WhatsThis,   Open = QKeySequence::Open,   Close = QKeySequence::Close,   Save = QKeySequence::Save,   New = QKeySequence::New,   Delete = QKeySequence::Delete,   Cut = QKeySequence::Cut,   Copy = QKeySequence::Copy,   Paste = QKeySequence::Paste,   Undo = QKeySequence::Undo,   Redo = QKeySequence::Redo,   Back = QKeySequence::Back,   Forward = QKeySequence::Forward,   Refresh = QKeySequence::Refresh,   ZoomIn = QKeySequence::ZoomIn,   ZoomOut = QKeySequence::ZoomOut,   Print = QKeySequence::Print,   AddTab = QKeySequence::AddTab,   NextChild = QKeySequence::NextChild,   PreviousChild = QKeySequence::PreviousChild,   Find = QKeySequence::Find,   FindNext = QKeySequence::FindNext,   FindPrevious = QKeySequence::FindPrevious,   Replace = QKeySequence::Replace,   SelectAll = QKeySequence::SelectAll,   Bold = QKeySequence::Bold,   Italic = QKeySequence::Italic,   Underline = QKeySequence::Underline,   MoveToNextChar = QKeySequence::MoveToNextChar,   MoveToPreviousChar = QKeySequence::MoveToPreviousChar,   MoveToNextWord = QKeySequence::MoveToNextWord,   MoveToPreviousWord = QKeySequence::MoveToPreviousWord,   MoveToNextLine = QKeySequence::MoveToNextLine,   MoveToPreviousLine = QKeySequence::MoveToPreviousLine,   MoveToNextPage = QKeySequence::MoveToNextPage,   MoveToPreviousPage = QKeySequence::MoveToPreviousPage,   MoveToStartOfLine = QKeySequence::MoveToStartOfLine,   MoveToEndOfLine = QKeySequence::MoveToEndOfLine,   MoveToStartOfBlock = QKeySequence::MoveToStartOfBlock,   MoveToEndOfBlock = QKeySequence::MoveToEndOfBlock,   MoveToStartOfDocument = QKeySequence::MoveToStartOfDocument,   MoveToEndOfDocument = QKeySequence::MoveToEndOfDocument,   SelectNextChar = QKeySequence::SelectNextChar,   SelectPreviousChar = QKeySequence::SelectPreviousChar,   SelectNextWord = QKeySequence::SelectNextWord,   SelectPreviousWord = QKeySequence::SelectPreviousWord,   SelectNextLine = QKeySequence::SelectNextLine,   SelectPreviousLine = QKeySequence::SelectPreviousLine,   SelectNextPage = QKeySequence::SelectNextPage,   SelectPreviousPage = QKeySequence::SelectPreviousPage,   SelectStartOfLine = QKeySequence::SelectStartOfLine,   SelectEndOfLine = QKeySequence::SelectEndOfLine,   SelectStartOfBlock = QKeySequence::SelectStartOfBlock,   SelectEndOfBlock = QKeySequence::SelectEndOfBlock,   SelectStartOfDocument = QKeySequence::SelectStartOfDocument,   SelectEndOfDocument = QKeySequence::SelectEndOfDocument,   DeleteStartOfWord = QKeySequence::DeleteStartOfWord,   DeleteEndOfWord = QKeySequence::DeleteEndOfWord,   DeleteEndOfLine = QKeySequence::DeleteEndOfLine,   InsertParagraphSeparator = QKeySequence::InsertParagraphSeparator,   InsertLineSeparator = QKeySequence::InsertLineSeparator,   SaveAs = QKeySequence::SaveAs,   Preferences = QKeySequence::Preferences,   Quit = QKeySequence::Quit,   FullScreen = QKeySequence::FullScreen,   Deselect = QKeySequence::Deselect,   DeleteCompleteLine = QKeySequence::DeleteCompleteLine,   Backspace = QKeySequence::Backspace,   Cancel = QKeySequence::Cancel};
 public slots:
 QKeySequence* new_QKeySequence();
 QKeySequence* new_QKeySequence(QKeySequence::StandardKey  key);
@@ -647,7 +659,7 @@ void delete_QMatrix(QMatrix* obj) { delete obj; }
    qreal  determinant(QMatrix* theWrappedObject) const;
    qreal  dx(QMatrix* theWrappedObject) const;
    qreal  dy(QMatrix* theWrappedObject) const;
-   QMatrix  inverted(QMatrix* theWrappedObject, bool*  invertible = 0) const;
+   QMatrix  inverted(QMatrix* theWrappedObject, bool*  invertible = NULL) const;
    bool  isIdentity(QMatrix* theWrappedObject) const;
    bool  isInvertible(QMatrix* theWrappedObject) const;
    qreal  m11(QMatrix* theWrappedObject) const;
@@ -800,7 +812,7 @@ public:
     PythonQtShell_QPixmap():QPixmap(),_wrapper(NULL) {};
     PythonQtShell_QPixmap(const QPixmap&  arg__1):QPixmap(arg__1),_wrapper(NULL) {};
     PythonQtShell_QPixmap(const QSize&  arg__1):QPixmap(arg__1),_wrapper(NULL) {};
-    PythonQtShell_QPixmap(const QString&  fileName, const char*  format = 0, Qt::ImageConversionFlags  flags = Qt::AutoColor):QPixmap(fileName, format, flags),_wrapper(NULL) {};
+    PythonQtShell_QPixmap(const QString&  fileName, const char*  format = NULL, Qt::ImageConversionFlags  flags = Qt::AutoColor):QPixmap(fileName, format, flags),_wrapper(NULL) {};
     PythonQtShell_QPixmap(int  w, int  h):QPixmap(w, h),_wrapper(NULL) {};
 
    ~PythonQtShell_QPixmap();
@@ -830,7 +842,7 @@ public slots:
 QPixmap* new_QPixmap();
 QPixmap* new_QPixmap(const QPixmap&  arg__1);
 QPixmap* new_QPixmap(const QSize&  arg__1);
-QPixmap* new_QPixmap(const QString&  fileName, const char*  format = 0, Qt::ImageConversionFlags  flags = Qt::AutoColor);
+QPixmap* new_QPixmap(const QString&  fileName, const char*  format = NULL, Qt::ImageConversionFlags  flags = Qt::AutoColor);
 QPixmap* new_QPixmap(int  w, int  h);
 void delete_QPixmap(QPixmap* obj) { delete obj; } 
    qint64  cacheKey(QPixmap* theWrappedObject) const;
@@ -856,22 +868,22 @@ void delete_QPixmap(QPixmap* obj) { delete obj; }
    int  height(QPixmap* theWrappedObject) const;
    bool  isNull(QPixmap* theWrappedObject) const;
    bool  isQBitmap(QPixmap* theWrappedObject) const;
-   bool  load(QPixmap* theWrappedObject, const QString&  fileName, const char*  format = 0, Qt::ImageConversionFlags  flags = Qt::AutoColor);
-   bool  loadFromData(QPixmap* theWrappedObject, const QByteArray&  data, const char*  format = 0, Qt::ImageConversionFlags  flags = Qt::AutoColor);
+   bool  load(QPixmap* theWrappedObject, const QString&  fileName, const char*  format = NULL, Qt::ImageConversionFlags  flags = Qt::AutoColor);
+   bool  loadFromData(QPixmap* theWrappedObject, const QByteArray&  data, const char*  format = NULL, Qt::ImageConversionFlags  flags = Qt::AutoColor);
    QBitmap  mask(QPixmap* theWrappedObject) const;
    int  py_q_metric(QPixmap* theWrappedObject, QPaintDevice::PaintDeviceMetric  arg__1) const{  return (((PythonQtPublicPromoter_QPixmap*)theWrappedObject)->py_q_metric(arg__1));}
    void writeTo(QPixmap* theWrappedObject, QDataStream&  arg__1);
    void readFrom(QPixmap* theWrappedObject, QDataStream&  arg__1);
    QPaintEngine*  py_q_paintEngine(QPixmap* theWrappedObject) const{  return (((PythonQtPublicPromoter_QPixmap*)theWrappedObject)->py_q_paintEngine());}
    QRect  rect(QPixmap* theWrappedObject) const;
-   bool  save(QPixmap* theWrappedObject, QIODevice*  device, const char*  format = 0, int  quality = -1) const;
-   bool  save(QPixmap* theWrappedObject, const QString&  fileName, const char*  format = 0, int  quality = -1) const;
+   bool  save(QPixmap* theWrappedObject, QIODevice*  device, const char*  format = NULL, int  quality = -1) const;
+   bool  save(QPixmap* theWrappedObject, const QString&  fileName, const char*  format = NULL, int  quality = -1) const;
    QPixmap  scaled(QPixmap* theWrappedObject, const QSize&  s, Qt::AspectRatioMode  aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode  mode = Qt::FastTransformation) const;
    QPixmap  scaled(QPixmap* theWrappedObject, int  w, int  h, Qt::AspectRatioMode  aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode  mode = Qt::FastTransformation) const;
    QPixmap  scaledToHeight(QPixmap* theWrappedObject, int  h, Qt::TransformationMode  mode = Qt::FastTransformation) const;
    QPixmap  scaledToWidth(QPixmap* theWrappedObject, int  w, Qt::TransformationMode  mode = Qt::FastTransformation) const;
-   void scroll(QPixmap* theWrappedObject, int  dx, int  dy, const QRect&  rect, QRegion*  exposed = 0);
-   void scroll(QPixmap* theWrappedObject, int  dx, int  dy, int  x, int  y, int  width, int  height, QRegion*  exposed = 0);
+   void scroll(QPixmap* theWrappedObject, int  dx, int  dy, const QRect&  rect, QRegion*  exposed = NULL);
+   void scroll(QPixmap* theWrappedObject, int  dx, int  dy, int  x, int  y, int  width, int  height, QRegion*  exposed = NULL);
    void setDevicePixelRatio(QPixmap* theWrappedObject, qreal  scaleFactor);
    void setMask(QPixmap* theWrappedObject, const QBitmap&  arg__1);
    QSize  size(QPixmap* theWrappedObject) const;
@@ -895,7 +907,7 @@ class PythonQtWrapper_QPolygon : public QObject
 public:
 public slots:
 QPolygon* new_QPolygon();
-QPolygon* new_QPolygon(const QPolygon&  a);
+QPolygon* new_QPolygon(const QPolygon&  other);
 QPolygon* new_QPolygon(const QRect&  r, bool  closed = false);
 QPolygon* new_QPolygon(const QVector<QPoint >&  v);
 QPolygon* new_QPolygon(int  size);
@@ -906,6 +918,8 @@ void delete_QPolygon(QPolygon* obj) { delete obj; }
    QRect  boundingRect(QPolygon* theWrappedObject) const;
    int  capacity(QPolygon* theWrappedObject) const;
    void clear(QPolygon* theWrappedObject);
+   const QPoint*  constFirst(QPolygon* theWrappedObject) const;
+   const QPoint*  constLast(QPolygon* theWrappedObject) const;
    bool  contains(QPolygon* theWrappedObject, const QPoint&  t) const;
    bool  containsPoint(QPolygon* theWrappedObject, const QPoint&  pt, Qt::FillRule  fillRule) const;
    int  count(QPolygon* theWrappedObject) const;
@@ -923,10 +937,12 @@ void delete_QPolygon(QPolygon* obj) { delete obj; }
    int  lastIndexOf(QPolygon* theWrappedObject, const QPoint&  t, int  from = -1) const;
    int  length(QPolygon* theWrappedObject) const;
    QVector<QPoint >  mid(QPolygon* theWrappedObject, int  pos, int  len = -1) const;
+   void move(QPolygon* theWrappedObject, int  from, int  to);
    bool  __ne__(QPolygon* theWrappedObject, const QVector<QPoint >&  v) const;
    QPolygon  __mul__(QPolygon* theWrappedObject, const QMatrix&  m);
    QPolygon  __mul__(QPolygon* theWrappedObject, const QTransform&  m);
    void writeTo(QPolygon* theWrappedObject, QDataStream&  stream);
+   QPolygon*  operator_assign(QPolygon* theWrappedObject, const QPolygon&  other);
    bool  __eq__(QPolygon* theWrappedObject, const QVector<QPoint >&  v) const;
    void readFrom(QPolygon* theWrappedObject, QDataStream&  stream);
    void pop_back(QPolygon* theWrappedObject);

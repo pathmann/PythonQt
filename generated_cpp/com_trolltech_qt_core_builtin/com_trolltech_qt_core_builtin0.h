@@ -77,19 +77,6 @@ void delete_QBitArray(QBitArray* obj) { delete obj; }
 
 
 
-class PythonQtShell_QByteArray : public QByteArray
-{
-public:
-    PythonQtShell_QByteArray():QByteArray(),_wrapper(NULL) {};
-    PythonQtShell_QByteArray(const QByteArray&  arg__1):QByteArray(arg__1),_wrapper(NULL) {};
-    PythonQtShell_QByteArray(int  size, char  c):QByteArray(size, c),_wrapper(NULL) {};
-
-   ~PythonQtShell_QByteArray();
-
-
-  PythonQtInstanceWrapper* _wrapper; 
-};
-
 class PythonQtWrapper_QByteArray : public QObject
 { Q_OBJECT
 public:
@@ -197,13 +184,13 @@ void delete_QByteArray(QByteArray* obj) { delete obj; }
    void swap(QByteArray* theWrappedObject, QByteArray&  other);
    QByteArray  toBase64(QByteArray* theWrappedObject) const;
    QByteArray  toBase64(QByteArray* theWrappedObject, QByteArray::Base64Options  options) const;
-   double  toDouble(QByteArray* theWrappedObject, bool*  ok = 0) const;
-   float  toFloat(QByteArray* theWrappedObject, bool*  ok = 0) const;
+   double  toDouble(QByteArray* theWrappedObject, bool*  ok = NULL) const;
+   float  toFloat(QByteArray* theWrappedObject, bool*  ok = NULL) const;
    QByteArray  toHex(QByteArray* theWrappedObject) const;
-   int  toInt(QByteArray* theWrappedObject, bool*  ok = 0, int  base = 10) const;
+   int  toInt(QByteArray* theWrappedObject, bool*  ok = NULL, int  base = 10) const;
    QByteArray  toLower(QByteArray* theWrappedObject) const;
    QByteArray  toPercentEncoding(QByteArray* theWrappedObject, const QByteArray&  exclude = QByteArray(), const QByteArray&  include = QByteArray(), char  percent = '%') const;
-   ushort  toUShort(QByteArray* theWrappedObject, bool*  ok = 0, int  base = 10) const;
+   ushort  toUShort(QByteArray* theWrappedObject, bool*  ok = NULL, int  base = 10) const;
    QByteArray  toUpper(QByteArray* theWrappedObject) const;
    QByteArray  trimmed(QByteArray* theWrappedObject) const;
    void truncate(QByteArray* theWrappedObject, int  pos);
@@ -268,7 +255,7 @@ void delete_QDate(QDate* obj) { delete obj; }
    qint64  toJulianDay(QDate* theWrappedObject) const;
    QString  toString(QDate* theWrappedObject, Qt::DateFormat  f = Qt::TextDate) const;
    QString  toString(QDate* theWrappedObject, const QString&  format) const;
-   int  weekNumber(QDate* theWrappedObject, int*  yearNum = 0) const;
+   int  weekNumber(QDate* theWrappedObject, int*  yearNum = NULL) const;
    int  year(QDate* theWrappedObject) const;
     QString py_toString(QDate*);
     bool __nonzero__(QDate* obj) { return !obj->isNull(); }
@@ -538,17 +525,17 @@ void delete_QLocale(QLocale* obj) { delete obj; }
    QDate  toDate(QLocale* theWrappedObject, const QString&  string, const QString&  format) const;
    QDateTime  toDateTime(QLocale* theWrappedObject, const QString&  string, QLocale::FormatType  format = QLocale::LongFormat) const;
    QDateTime  toDateTime(QLocale* theWrappedObject, const QString&  string, const QString&  format) const;
-   double  toDouble(QLocale* theWrappedObject, const QString&  s, bool*  ok = 0) const;
-   double  toDouble(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = 0) const;
-   float  toFloat(QLocale* theWrappedObject, const QString&  s, bool*  ok = 0) const;
-   float  toFloat(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = 0) const;
-   int  toInt(QLocale* theWrappedObject, const QString&  s, bool*  ok = 0) const;
-   int  toInt(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = 0) const;
-   qlonglong  toLongLong(QLocale* theWrappedObject, const QString&  s, bool*  ok = 0) const;
-   qlonglong  toLongLong(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = 0) const;
+   double  toDouble(QLocale* theWrappedObject, const QString&  s, bool*  ok = NULL) const;
+   double  toDouble(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = NULL) const;
+   float  toFloat(QLocale* theWrappedObject, const QString&  s, bool*  ok = NULL) const;
+   float  toFloat(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = NULL) const;
+   int  toInt(QLocale* theWrappedObject, const QString&  s, bool*  ok = NULL) const;
+   int  toInt(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = NULL) const;
+   qlonglong  toLongLong(QLocale* theWrappedObject, const QString&  s, bool*  ok = NULL) const;
+   qlonglong  toLongLong(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = NULL) const;
    QString  toLower(QLocale* theWrappedObject, const QString&  str) const;
-   short  toShort(QLocale* theWrappedObject, const QString&  s, bool*  ok = 0) const;
-   short  toShort(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = 0) const;
+   short  toShort(QLocale* theWrappedObject, const QString&  s, bool*  ok = NULL) const;
+   short  toShort(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = NULL) const;
    QString  toString(QLocale* theWrappedObject, const QDate&  date, QLocale::FormatType  format = QLocale::LongFormat) const;
    QString  toString(QLocale* theWrappedObject, const QDate&  date, const QString&  formatStr) const;
    QString  toString(QLocale* theWrappedObject, const QDateTime&  dateTime, QLocale::FormatType  format = QLocale::LongFormat) const;
@@ -562,12 +549,12 @@ void delete_QLocale(QLocale* obj) { delete obj; }
    QString  toString(QLocale* theWrappedObject, short  i) const;
    QTime  toTime(QLocale* theWrappedObject, const QString&  string, QLocale::FormatType  arg__2 = QLocale::LongFormat) const;
    QTime  toTime(QLocale* theWrappedObject, const QString&  string, const QString&  format) const;
-   uint  toUInt(QLocale* theWrappedObject, const QString&  s, bool*  ok = 0) const;
-   uint  toUInt(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = 0) const;
-   qulonglong  toULongLong(QLocale* theWrappedObject, const QString&  s, bool*  ok = 0) const;
-   qulonglong  toULongLong(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = 0) const;
-   ushort  toUShort(QLocale* theWrappedObject, const QString&  s, bool*  ok = 0) const;
-   ushort  toUShort(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = 0) const;
+   uint  toUInt(QLocale* theWrappedObject, const QString&  s, bool*  ok = NULL) const;
+   uint  toUInt(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = NULL) const;
+   qulonglong  toULongLong(QLocale* theWrappedObject, const QString&  s, bool*  ok = NULL) const;
+   qulonglong  toULongLong(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = NULL) const;
+   ushort  toUShort(QLocale* theWrappedObject, const QString&  s, bool*  ok = NULL) const;
+   ushort  toUShort(QLocale* theWrappedObject, const QStringRef&  s, bool*  ok = NULL) const;
    QString  toUpper(QLocale* theWrappedObject, const QString&  str) const;
    QStringList  uiLanguages(QLocale* theWrappedObject) const;
    QList<Qt::DayOfWeek >  weekdays(QLocale* theWrappedObject) const;
@@ -1127,7 +1114,7 @@ enum AlignmentFlag{
 enum AnchorPoint{
   AnchorLeft = Qt::AnchorLeft,   AnchorHorizontalCenter = Qt::AnchorHorizontalCenter,   AnchorRight = Qt::AnchorRight,   AnchorTop = Qt::AnchorTop,   AnchorVerticalCenter = Qt::AnchorVerticalCenter,   AnchorBottom = Qt::AnchorBottom};
 enum ApplicationAttribute{
-  AA_ImmediateWidgetCreation = Qt::AA_ImmediateWidgetCreation,   AA_MSWindowsUseDirect3DByDefault = Qt::AA_MSWindowsUseDirect3DByDefault,   AA_DontShowIconsInMenus = Qt::AA_DontShowIconsInMenus,   AA_NativeWindows = Qt::AA_NativeWindows,   AA_DontCreateNativeWidgetSiblings = Qt::AA_DontCreateNativeWidgetSiblings,   AA_MacPluginApplication = Qt::AA_MacPluginApplication,   AA_DontUseNativeMenuBar = Qt::AA_DontUseNativeMenuBar,   AA_MacDontSwapCtrlAndMeta = Qt::AA_MacDontSwapCtrlAndMeta,   AA_Use96Dpi = Qt::AA_Use96Dpi,   AA_X11InitThreads = Qt::AA_X11InitThreads,   AA_SynthesizeTouchForUnhandledMouseEvents = Qt::AA_SynthesizeTouchForUnhandledMouseEvents,   AA_SynthesizeMouseForUnhandledTouchEvents = Qt::AA_SynthesizeMouseForUnhandledTouchEvents,   AA_UseHighDpiPixmaps = Qt::AA_UseHighDpiPixmaps,   AA_ForceRasterWidgets = Qt::AA_ForceRasterWidgets,   AA_UseDesktopOpenGL = Qt::AA_UseDesktopOpenGL,   AA_UseOpenGLES = Qt::AA_UseOpenGLES,   AA_UseSoftwareOpenGL = Qt::AA_UseSoftwareOpenGL,   AA_ShareOpenGLContexts = Qt::AA_ShareOpenGLContexts,   AA_SetPalette = Qt::AA_SetPalette,   AA_AttributeCount = Qt::AA_AttributeCount};
+  AA_ImmediateWidgetCreation = Qt::AA_ImmediateWidgetCreation,   AA_MSWindowsUseDirect3DByDefault = Qt::AA_MSWindowsUseDirect3DByDefault,   AA_DontShowIconsInMenus = Qt::AA_DontShowIconsInMenus,   AA_NativeWindows = Qt::AA_NativeWindows,   AA_DontCreateNativeWidgetSiblings = Qt::AA_DontCreateNativeWidgetSiblings,   AA_MacPluginApplication = Qt::AA_MacPluginApplication,   AA_DontUseNativeMenuBar = Qt::AA_DontUseNativeMenuBar,   AA_MacDontSwapCtrlAndMeta = Qt::AA_MacDontSwapCtrlAndMeta,   AA_Use96Dpi = Qt::AA_Use96Dpi,   AA_X11InitThreads = Qt::AA_X11InitThreads,   AA_SynthesizeTouchForUnhandledMouseEvents = Qt::AA_SynthesizeTouchForUnhandledMouseEvents,   AA_SynthesizeMouseForUnhandledTouchEvents = Qt::AA_SynthesizeMouseForUnhandledTouchEvents,   AA_UseHighDpiPixmaps = Qt::AA_UseHighDpiPixmaps,   AA_ForceRasterWidgets = Qt::AA_ForceRasterWidgets,   AA_UseDesktopOpenGL = Qt::AA_UseDesktopOpenGL,   AA_UseOpenGLES = Qt::AA_UseOpenGLES,   AA_UseSoftwareOpenGL = Qt::AA_UseSoftwareOpenGL,   AA_ShareOpenGLContexts = Qt::AA_ShareOpenGLContexts,   AA_SetPalette = Qt::AA_SetPalette,   AA_EnableHighDpiScaling = Qt::AA_EnableHighDpiScaling,   AA_DisableHighDpiScaling = Qt::AA_DisableHighDpiScaling,   AA_AttributeCount = Qt::AA_AttributeCount};
 enum ApplicationState{
   ApplicationSuspended = Qt::ApplicationSuspended,   ApplicationHidden = Qt::ApplicationHidden,   ApplicationInactive = Qt::ApplicationInactive,   ApplicationActive = Qt::ApplicationActive};
 enum ArrowType{
@@ -1195,11 +1182,11 @@ enum ImageConversionFlag{
 enum InputMethodHint{
   ImhNone = Qt::ImhNone,   ImhHiddenText = Qt::ImhHiddenText,   ImhSensitiveData = Qt::ImhSensitiveData,   ImhNoAutoUppercase = Qt::ImhNoAutoUppercase,   ImhPreferNumbers = Qt::ImhPreferNumbers,   ImhPreferUppercase = Qt::ImhPreferUppercase,   ImhPreferLowercase = Qt::ImhPreferLowercase,   ImhNoPredictiveText = Qt::ImhNoPredictiveText,   ImhDate = Qt::ImhDate,   ImhTime = Qt::ImhTime,   ImhPreferLatin = Qt::ImhPreferLatin,   ImhMultiLine = Qt::ImhMultiLine,   ImhDigitsOnly = Qt::ImhDigitsOnly,   ImhFormattedNumbersOnly = Qt::ImhFormattedNumbersOnly,   ImhUppercaseOnly = Qt::ImhUppercaseOnly,   ImhLowercaseOnly = Qt::ImhLowercaseOnly,   ImhDialableCharactersOnly = Qt::ImhDialableCharactersOnly,   ImhEmailCharactersOnly = Qt::ImhEmailCharactersOnly,   ImhUrlCharactersOnly = Qt::ImhUrlCharactersOnly,   ImhLatinOnly = Qt::ImhLatinOnly,   ImhExclusiveInputMask = Qt::ImhExclusiveInputMask};
 enum InputMethodQuery{
-  ImEnabled = Qt::ImEnabled,   ImCursorRectangle = Qt::ImCursorRectangle,   ImMicroFocus = Qt::ImMicroFocus,   ImFont = Qt::ImFont,   ImCursorPosition = Qt::ImCursorPosition,   ImSurroundingText = Qt::ImSurroundingText,   ImCurrentSelection = Qt::ImCurrentSelection,   ImMaximumTextLength = Qt::ImMaximumTextLength,   ImAnchorPosition = Qt::ImAnchorPosition,   ImHints = Qt::ImHints,   ImPreferredLanguage = Qt::ImPreferredLanguage,   ImAbsolutePosition = Qt::ImAbsolutePosition,   ImTextBeforeCursor = Qt::ImTextBeforeCursor,   ImTextAfterCursor = Qt::ImTextAfterCursor,   ImPlatformData = Qt::ImPlatformData,   ImQueryInput = Qt::ImQueryInput,   ImQueryAll = Qt::ImQueryAll};
+  ImEnabled = Qt::ImEnabled,   ImCursorRectangle = Qt::ImCursorRectangle,   ImMicroFocus = Qt::ImMicroFocus,   ImFont = Qt::ImFont,   ImCursorPosition = Qt::ImCursorPosition,   ImSurroundingText = Qt::ImSurroundingText,   ImCurrentSelection = Qt::ImCurrentSelection,   ImMaximumTextLength = Qt::ImMaximumTextLength,   ImAnchorPosition = Qt::ImAnchorPosition,   ImHints = Qt::ImHints,   ImPreferredLanguage = Qt::ImPreferredLanguage,   ImAbsolutePosition = Qt::ImAbsolutePosition,   ImTextBeforeCursor = Qt::ImTextBeforeCursor,   ImTextAfterCursor = Qt::ImTextAfterCursor,   ImEnterKeyType = Qt::ImEnterKeyType,   ImPlatformData = Qt::ImPlatformData,   ImQueryInput = Qt::ImQueryInput,   ImQueryAll = Qt::ImQueryAll};
 enum ItemDataRole{
   DisplayRole = Qt::DisplayRole,   DecorationRole = Qt::DecorationRole,   EditRole = Qt::EditRole,   ToolTipRole = Qt::ToolTipRole,   StatusTipRole = Qt::StatusTipRole,   WhatsThisRole = Qt::WhatsThisRole,   FontRole = Qt::FontRole,   TextAlignmentRole = Qt::TextAlignmentRole,   BackgroundColorRole = Qt::BackgroundColorRole,   BackgroundRole = Qt::BackgroundRole,   TextColorRole = Qt::TextColorRole,   ForegroundRole = Qt::ForegroundRole,   CheckStateRole = Qt::CheckStateRole,   AccessibleTextRole = Qt::AccessibleTextRole,   AccessibleDescriptionRole = Qt::AccessibleDescriptionRole,   SizeHintRole = Qt::SizeHintRole,   InitialSortOrderRole = Qt::InitialSortOrderRole,   DisplayPropertyRole = Qt::DisplayPropertyRole,   DecorationPropertyRole = Qt::DecorationPropertyRole,   ToolTipPropertyRole = Qt::ToolTipPropertyRole,   StatusTipPropertyRole = Qt::StatusTipPropertyRole,   WhatsThisPropertyRole = Qt::WhatsThisPropertyRole,   UserRole = Qt::UserRole};
 enum ItemFlag{
-  NoItemFlags = Qt::NoItemFlags,   ItemIsSelectable = Qt::ItemIsSelectable,   ItemIsEditable = Qt::ItemIsEditable,   ItemIsDragEnabled = Qt::ItemIsDragEnabled,   ItemIsDropEnabled = Qt::ItemIsDropEnabled,   ItemIsUserCheckable = Qt::ItemIsUserCheckable,   ItemIsEnabled = Qt::ItemIsEnabled,   ItemIsTristate = Qt::ItemIsTristate,   ItemNeverHasChildren = Qt::ItemNeverHasChildren,   ItemIsUserTristate = Qt::ItemIsUserTristate};
+  NoItemFlags = Qt::NoItemFlags,   ItemIsSelectable = Qt::ItemIsSelectable,   ItemIsEditable = Qt::ItemIsEditable,   ItemIsDragEnabled = Qt::ItemIsDragEnabled,   ItemIsDropEnabled = Qt::ItemIsDropEnabled,   ItemIsUserCheckable = Qt::ItemIsUserCheckable,   ItemIsEnabled = Qt::ItemIsEnabled,   ItemIsAutoTristate = Qt::ItemIsAutoTristate,   ItemIsTristate = Qt::ItemIsTristate,   ItemNeverHasChildren = Qt::ItemNeverHasChildren,   ItemIsUserTristate = Qt::ItemIsUserTristate};
 enum ItemSelectionMode{
   ContainsItemShape = Qt::ContainsItemShape,   IntersectsItemShape = Qt::IntersectsItemShape,   ContainsItemBoundingRect = Qt::ContainsItemBoundingRect,   IntersectsItemBoundingRect = Qt::IntersectsItemBoundingRect};
 enum Key{
@@ -1217,7 +1204,7 @@ enum MouseButton{
 enum MouseEventFlag{
   MouseEventCreatedDoubleClick = Qt::MouseEventCreatedDoubleClick,   MouseEventFlagMask = Qt::MouseEventFlagMask};
 enum MouseEventSource{
-  MouseEventNotSynthesized = Qt::MouseEventNotSynthesized,   MouseEventSynthesizedBySystem = Qt::MouseEventSynthesizedBySystem,   MouseEventSynthesizedByQt = Qt::MouseEventSynthesizedByQt};
+  MouseEventNotSynthesized = Qt::MouseEventNotSynthesized,   MouseEventSynthesizedBySystem = Qt::MouseEventSynthesizedBySystem,   MouseEventSynthesizedByQt = Qt::MouseEventSynthesizedByQt,   MouseEventSynthesizedByApplication = Qt::MouseEventSynthesizedByApplication};
 enum NativeGestureType{
   BeginNativeGesture = Qt::BeginNativeGesture,   EndNativeGesture = Qt::EndNativeGesture,   PanNativeGesture = Qt::PanNativeGesture,   ZoomNativeGesture = Qt::ZoomNativeGesture,   SmartZoomNativeGesture = Qt::SmartZoomNativeGesture,   RotateNativeGesture = Qt::RotateNativeGesture,   SwipeNativeGesture = Qt::SwipeNativeGesture};
 enum NavigationMode{
@@ -1235,7 +1222,7 @@ enum ScreenOrientation{
 enum ScrollBarPolicy{
   ScrollBarAsNeeded = Qt::ScrollBarAsNeeded,   ScrollBarAlwaysOff = Qt::ScrollBarAlwaysOff,   ScrollBarAlwaysOn = Qt::ScrollBarAlwaysOn};
 enum ScrollPhase{
-  ScrollBegin = Qt::ScrollBegin,   ScrollUpdate = Qt::ScrollUpdate,   ScrollEnd = Qt::ScrollEnd};
+  NoScrollPhase = Qt::NoScrollPhase,   ScrollBegin = Qt::ScrollBegin,   ScrollUpdate = Qt::ScrollUpdate,   ScrollEnd = Qt::ScrollEnd};
 enum ShortcutContext{
   WidgetShortcut = Qt::WidgetShortcut,   WindowShortcut = Qt::WindowShortcut,   ApplicationShortcut = Qt::ApplicationShortcut,   WidgetWithChildrenShortcut = Qt::WidgetWithChildrenShortcut};
 enum SizeHint{

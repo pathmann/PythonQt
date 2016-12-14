@@ -7,6 +7,50 @@
 
 
 
+class PythonQtShell_QStyleOptionComboBox : public QStyleOptionComboBox
+{
+public:
+    PythonQtShell_QStyleOptionComboBox():QStyleOptionComboBox(),_wrapper(NULL) {};
+    PythonQtShell_QStyleOptionComboBox(const QStyleOptionComboBox&  other):QStyleOptionComboBox(other),_wrapper(NULL) {};
+    PythonQtShell_QStyleOptionComboBox(int  version):QStyleOptionComboBox(version),_wrapper(NULL) {};
+
+   ~PythonQtShell_QStyleOptionComboBox();
+
+
+  PythonQtInstanceWrapper* _wrapper; 
+};
+
+class PythonQtWrapper_QStyleOptionComboBox : public QObject
+{ Q_OBJECT
+public:
+Q_ENUMS(StyleOptionType StyleOptionVersion )
+enum StyleOptionType{
+  Type = QStyleOptionComboBox::Type};
+enum StyleOptionVersion{
+  Version = QStyleOptionComboBox::Version};
+public slots:
+QStyleOptionComboBox* new_QStyleOptionComboBox();
+QStyleOptionComboBox* new_QStyleOptionComboBox(const QStyleOptionComboBox&  other);
+QStyleOptionComboBox* new_QStyleOptionComboBox(int  version);
+void delete_QStyleOptionComboBox(QStyleOptionComboBox* obj) { delete obj; } 
+void py_set_currentIcon(QStyleOptionComboBox* theWrappedObject, QIcon  currentIcon){ theWrappedObject->currentIcon = currentIcon; }
+QIcon  py_get_currentIcon(QStyleOptionComboBox* theWrappedObject){ return theWrappedObject->currentIcon; }
+void py_set_currentText(QStyleOptionComboBox* theWrappedObject, QString  currentText){ theWrappedObject->currentText = currentText; }
+QString  py_get_currentText(QStyleOptionComboBox* theWrappedObject){ return theWrappedObject->currentText; }
+void py_set_editable(QStyleOptionComboBox* theWrappedObject, bool  editable){ theWrappedObject->editable = editable; }
+bool  py_get_editable(QStyleOptionComboBox* theWrappedObject){ return theWrappedObject->editable; }
+void py_set_frame(QStyleOptionComboBox* theWrappedObject, bool  frame){ theWrappedObject->frame = frame; }
+bool  py_get_frame(QStyleOptionComboBox* theWrappedObject){ return theWrappedObject->frame; }
+void py_set_iconSize(QStyleOptionComboBox* theWrappedObject, QSize  iconSize){ theWrappedObject->iconSize = iconSize; }
+QSize  py_get_iconSize(QStyleOptionComboBox* theWrappedObject){ return theWrappedObject->iconSize; }
+void py_set_popupRect(QStyleOptionComboBox* theWrappedObject, QRect  popupRect){ theWrappedObject->popupRect = popupRect; }
+QRect  py_get_popupRect(QStyleOptionComboBox* theWrappedObject){ return theWrappedObject->popupRect; }
+};
+
+
+
+
+
 class PythonQtShell_QStyleOptionDockWidget : public QStyleOptionDockWidget
 {
 public:
@@ -1184,33 +1228,6 @@ Qt::TextElideMode  py_get_textElideMode(QStyleOptionViewItem* theWrappedObject){
 void py_set_viewItemPosition(QStyleOptionViewItem* theWrappedObject, QStyleOptionViewItem::ViewItemPosition  viewItemPosition){ theWrappedObject->viewItemPosition = viewItemPosition; }
 QStyleOptionViewItem::ViewItemPosition  py_get_viewItemPosition(QStyleOptionViewItem* theWrappedObject){ return theWrappedObject->viewItemPosition; }
 const QWidget*  py_get_widget(QStyleOptionViewItem* theWrappedObject){ return theWrappedObject->widget; }
-};
-
-
-
-
-
-class PythonQtShell_QStyleOptionViewItemV2 : public QStyleOptionViewItemV2
-{
-public:
-    PythonQtShell_QStyleOptionViewItemV2():QStyleOptionViewItemV2(),_wrapper(NULL) {};
-
-   ~PythonQtShell_QStyleOptionViewItemV2();
-
-
-  PythonQtInstanceWrapper* _wrapper; 
-};
-
-class PythonQtWrapper_QStyleOptionViewItemV2 : public QObject
-{ Q_OBJECT
-public:
-public slots:
-QStyleOptionViewItemV2* new_QStyleOptionViewItemV2();
-QStyleOptionViewItemV2* new_QStyleOptionViewItemV2(const QStyleOptionViewItemV2& other) {
-PythonQtShell_QStyleOptionViewItemV2* a = new PythonQtShell_QStyleOptionViewItemV2();
-*((QStyleOptionViewItemV2*)a) = other;
-return a; }
-void delete_QStyleOptionViewItemV2(QStyleOptionViewItemV2* obj) { delete obj; } 
 };
 
 

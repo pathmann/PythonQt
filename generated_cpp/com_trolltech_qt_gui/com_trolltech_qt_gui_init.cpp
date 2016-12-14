@@ -632,6 +632,7 @@ PythonQt::priv()->registerCPPClass("QRawFont", "", "QtGui", PythonQtCreateObject
 PythonQt::priv()->registerClass(&QRegExpValidator::staticMetaObject, "QtGui", PythonQtCreateObject<PythonQtWrapper_QRegExpValidator>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QRegExpValidator>, module, 0);
 PythonQt::priv()->registerClass(&QRegularExpressionValidator::staticMetaObject, "QtGui", PythonQtCreateObject<PythonQtWrapper_QRegularExpressionValidator>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QRegularExpressionValidator>, module, 0);
 PythonQt::priv()->registerCPPClass("QResizeEvent", "QEvent", "QtGui", PythonQtCreateObject<PythonQtWrapper_QResizeEvent>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QResizeEvent>, module, 0);
+PythonQt::priv()->registerCPPClass("QRgba64", "", "QtGui", PythonQtCreateObject<PythonQtWrapper_QRgba64>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QRgba64>, module, 0);
 PythonQt::priv()->registerClass(&QRubberBand::staticMetaObject, "QtGui", PythonQtCreateObject<PythonQtWrapper_QRubberBand>, PythonQtSetInstanceWrapperOnShell<PythonQtShell_QRubberBand>, module, 0);
 PythonQt::priv()->registerClass(&QScreen::staticMetaObject, "QtGui", PythonQtCreateObject<PythonQtWrapper_QScreen>, NULL, module, 0);
 PythonQt::priv()->registerCPPClass("QScreenOrientationChangeEvent", "QEvent", "QtGui", PythonQtCreateObject<PythonQtWrapper_QScreenOrientationChangeEvent>, NULL, module, 0);
