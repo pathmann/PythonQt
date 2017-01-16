@@ -179,7 +179,7 @@ inline void promoted_beginResetModel() { this->beginResetModel(); }
 inline void promoted_changePersistentIndex(const QModelIndex&  from, const QModelIndex&  to) { this->changePersistentIndex(from, to); }
 inline void promoted_changePersistentIndexList(const QList<QModelIndex >&  from, const QList<QModelIndex >&  to) { this->changePersistentIndexList(from, to); }
 inline QModelIndex  promoted_createIndex(int  row, int  column, quintptr  id) const { return this->createIndex(row, column, id); }
-inline QModelIndex  promoted_createIndex(int  row, int  column, void*  data = NULL) const { return this->createIndex(row, column, data); }
+inline QModelIndex  promoted_createIndex(int  row, int  column, QObject* data = NULL) const { return this->createIndex(row, column, data); }
 inline bool  promoted_decodeData(int  row, int  column, const QModelIndex&  parent, QDataStream&  stream) { return this->decodeData(row, column, parent, stream); }
 inline void promoted_encodeData(const QList<QModelIndex >&  indexes, QDataStream&  stream) const { this->encodeData(indexes, stream); }
 inline void promoted_endInsertColumns() { this->endInsertColumns(); }
@@ -251,7 +251,7 @@ void delete_QAbstractItemModel(QAbstractItemModel* obj) { delete obj; }
    int  columnCount(QAbstractItemModel* theWrappedObject, const QModelIndex&  parent = QModelIndex()) const;
    int  py_q_columnCount(QAbstractItemModel* theWrappedObject, const QModelIndex&  parent = QModelIndex()) const{  return (((PythonQtPublicPromoter_QAbstractItemModel*)theWrappedObject)->py_q_columnCount(parent));}
    QModelIndex  createIndex(QAbstractItemModel* theWrappedObject, int  row, int  column, quintptr  id) const;
-   QModelIndex  createIndex(QAbstractItemModel* theWrappedObject, int  row, int  column, void*  data = NULL) const;
+   QModelIndex  createIndex(QAbstractItemModel* theWrappedObject, int  row, int  column, QObject* data = NULL) const;
    QVariant  data(QAbstractItemModel* theWrappedObject, const QModelIndex&  index, int  role = Qt::DisplayRole) const;
    QVariant  py_q_data(QAbstractItemModel* theWrappedObject, const QModelIndex&  index, int  role = Qt::DisplayRole) const{  return (((PythonQtPublicPromoter_QAbstractItemModel*)theWrappedObject)->py_q_data(index, role));}
    bool  decodeData(QAbstractItemModel* theWrappedObject, int  row, int  column, const QModelIndex&  parent, QDataStream&  stream);

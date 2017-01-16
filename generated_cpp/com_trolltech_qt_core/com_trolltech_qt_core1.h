@@ -1167,7 +1167,7 @@ void delete_QModelIndex(QModelIndex* obj) { delete obj; }
    QVariant  data(QModelIndex* theWrappedObject, int  role = Qt::DisplayRole) const;
    Qt::ItemFlags  flags(QModelIndex* theWrappedObject) const;
    quintptr  internalId(QModelIndex* theWrappedObject) const;
-   void*  internalPointer(QModelIndex* theWrappedObject) const;
+   QObject* internalPointer(QModelIndex* theWrappedObject) const;
    bool  isValid(QModelIndex* theWrappedObject) const;
    const QAbstractItemModel*  model(QModelIndex* theWrappedObject) const;
    bool  __ne__(QModelIndex* theWrappedObject, const QModelIndex&  other) const;

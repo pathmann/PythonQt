@@ -4878,9 +4878,9 @@ quintptr  PythonQtWrapper_QModelIndex::internalId(QModelIndex* theWrappedObject)
   return ( theWrappedObject->internalId());
 }
 
-void*  PythonQtWrapper_QModelIndex::internalPointer(QModelIndex* theWrappedObject) const
+QObject* PythonQtWrapper_QModelIndex::internalPointer(QModelIndex* theWrappedObject) const
 {
-  return ( theWrappedObject->internalPointer());
+  return (QObject*)( theWrappedObject->internalPointer());
 }
 
 bool  PythonQtWrapper_QModelIndex::isValid(QModelIndex* theWrappedObject) const

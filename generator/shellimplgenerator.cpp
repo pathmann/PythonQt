@@ -271,6 +271,10 @@ void ShellImplGenerator::write(QTextStream &s, const AbstractMetaClass *meta_cla
       // call the C++ implementation
       if (fun->type()) {
         s << "return ";
+        //implicit cast if returntype is replaced
+        QString modtype = fun->typeReplaced(0);
+        if (!modtype.isEmpty())
+          s << "(" << modtype << ")";
         // call the C++ implementation
         if (fun->type()->isReference()) {
           s << "&";

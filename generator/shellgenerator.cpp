@@ -142,7 +142,10 @@ void ShellGenerator::writeFunctionArguments(QTextStream &s,
         if (option & AddOwnershipTemplates) {
           ownership = writeOwnershipTemplate(s, meta_function, i+1);
         }
-        writeTypeInfo(s, arg->type(), option, ownership);
+        QString modtype = meta_function->typeReplaced(i +1);
+        if (!modtype.isEmpty())
+          s << modtype;
+        else writeTypeInfo(s, arg->type(), option, ownership);
         if (ownership != TypeSystem::InvalidOwnership) {
           s << "> ";
         }
@@ -209,7 +212,10 @@ void ShellGenerator::writeFunctionSignature(QTextStream &s,
           if (option & AddOwnershipTemplates) {
             ownership = writeOwnershipTemplate(s, meta_function, 0);
           }
-          writeTypeInfo(s, function_type, option, ownership);
+          QString modname = meta_function->typeReplaced(0);
+          if (!modname.isEmpty())
+            s << modname;
+          else writeTypeInfo(s, function_type, option, ownership);
           s << " ";
           if (ownership != TypeSystem::InvalidOwnership) {
             s << "> ";
