@@ -86,9 +86,13 @@ inline void py_q_updateState(QAbstractAnimation::State  newState, QAbstractAnima
 class PythonQtWrapper_QAbstractAnimation : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(DeletionPolicy )
+Q_ENUMS(DeletionPolicy Direction State )
 enum DeletionPolicy{
   KeepWhenStopped = QAbstractAnimation::KeepWhenStopped,   DeleteWhenStopped = QAbstractAnimation::DeleteWhenStopped};
+enum Direction{
+  Forward = QAbstractAnimation::Forward,   Backward = QAbstractAnimation::Backward};
+enum State{
+  Stopped = QAbstractAnimation::Stopped,   Paused = QAbstractAnimation::Paused,   Running = QAbstractAnimation::Running};
 public slots:
 QAbstractAnimation* new_QAbstractAnimation(QObject*  parent = NULL);
 void delete_QAbstractAnimation(QAbstractAnimation* obj) { delete obj; } 
@@ -230,6 +234,9 @@ inline Qt::DropActions  py_q_supportedDropActions() const { return QAbstractItem
 class PythonQtWrapper_QAbstractItemModel : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(LayoutChangeHint )
+enum LayoutChangeHint{
+  NoLayoutChangeHint = QAbstractItemModel::NoLayoutChangeHint,   VerticalSortHint = QAbstractItemModel::VerticalSortHint,   HorizontalSortHint = QAbstractItemModel::HorizontalSortHint};
 public slots:
 QAbstractItemModel* new_QAbstractItemModel(QObject*  parent = NULL);
 void delete_QAbstractItemModel(QAbstractItemModel* obj) { delete obj; } 

@@ -194,6 +194,9 @@ inline void py_q_onExit(QEvent*  event) { QHistoryState::onExit(event); }
 class PythonQtWrapper_QHistoryState : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(HistoryType )
+enum HistoryType{
+  ShallowHistory = QHistoryState::ShallowHistory,   DeepHistory = QHistoryState::DeepHistory};
 public slots:
 QHistoryState* new_QHistoryState(QHistoryState::HistoryType  type, QState*  parent = NULL);
 QHistoryState* new_QHistoryState(QState*  parent = NULL);

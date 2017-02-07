@@ -142,6 +142,11 @@ inline void py_q_setVisible(bool  visible) { QFontDialog::setVisible(visible); }
 class PythonQtWrapper_QFontDialog : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(FontDialogOption )
+Q_FLAGS(FontDialogOptions )
+enum FontDialogOption{
+  NoButtons = QFontDialog::NoButtons,   DontUseNativeDialog = QFontDialog::DontUseNativeDialog,   ScalableFonts = QFontDialog::ScalableFonts,   NonScalableFonts = QFontDialog::NonScalableFonts,   MonospacedFonts = QFontDialog::MonospacedFonts,   ProportionalFonts = QFontDialog::ProportionalFonts};
+Q_DECLARE_FLAGS(FontDialogOptions, FontDialogOption)
 public slots:
 QFontDialog* new_QFontDialog(QWidget*  parent = NULL);
 QFontDialog* new_QFontDialog(const QFont&  initial, QWidget*  parent = NULL);
@@ -324,6 +329,13 @@ inline QLayoutItem*  py_q_takeAt(int  index) { return QFormLayout::takeAt(index)
 class PythonQtWrapper_QFormLayout : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(FieldGrowthPolicy ItemRole RowWrapPolicy )
+enum FieldGrowthPolicy{
+  FieldsStayAtSizeHint = QFormLayout::FieldsStayAtSizeHint,   ExpandingFieldsGrow = QFormLayout::ExpandingFieldsGrow,   AllNonFixedFieldsGrow = QFormLayout::AllNonFixedFieldsGrow};
+enum ItemRole{
+  LabelRole = QFormLayout::LabelRole,   FieldRole = QFormLayout::FieldRole,   SpanningRole = QFormLayout::SpanningRole};
+enum RowWrapPolicy{
+  DontWrapRows = QFormLayout::DontWrapRows,   WrapLongRows = QFormLayout::WrapLongRows,   WrapAllRows = QFormLayout::WrapAllRows};
 public slots:
 QFormLayout* new_QFormLayout(QWidget*  parent = NULL);
 void delete_QFormLayout(QFormLayout* obj) { delete obj; } 
@@ -450,7 +462,11 @@ inline void py_q_paintEvent(QPaintEvent*  arg__1) { QFrame::paintEvent(arg__1); 
 class PythonQtWrapper_QFrame : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(StyleMask )
+Q_ENUMS(Shadow Shape StyleMask )
+enum Shadow{
+  Plain = QFrame::Plain,   Raised = QFrame::Raised,   Sunken = QFrame::Sunken};
+enum Shape{
+  NoFrame = QFrame::NoFrame,   Box = QFrame::Box,   Panel = QFrame::Panel,   WinPanel = QFrame::WinPanel,   HLine = QFrame::HLine,   VLine = QFrame::VLine,   StyledPanel = QFrame::StyledPanel};
 enum StyleMask{
   Shadow_Mask = QFrame::Shadow_Mask,   Shape_Mask = QFrame::Shape_Mask};
 public slots:

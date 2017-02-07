@@ -182,12 +182,22 @@ inline qint64  py_q_writeData(const char*  data, qint64  len) { return QAbstract
 class PythonQtWrapper_QAbstractSocket : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(BindFlag PauseMode )
+Q_ENUMS(BindFlag NetworkLayerProtocol PauseMode SocketError SocketOption SocketState SocketType )
 Q_FLAGS(BindMode PauseModes )
 enum BindFlag{
   DefaultForPlatform = QAbstractSocket::DefaultForPlatform,   ShareAddress = QAbstractSocket::ShareAddress,   DontShareAddress = QAbstractSocket::DontShareAddress,   ReuseAddressHint = QAbstractSocket::ReuseAddressHint};
+enum NetworkLayerProtocol{
+  IPv4Protocol = QAbstractSocket::IPv4Protocol,   IPv6Protocol = QAbstractSocket::IPv6Protocol,   AnyIPProtocol = QAbstractSocket::AnyIPProtocol,   UnknownNetworkLayerProtocol = QAbstractSocket::UnknownNetworkLayerProtocol};
 enum PauseMode{
   PauseNever = QAbstractSocket::PauseNever,   PauseOnSslErrors = QAbstractSocket::PauseOnSslErrors};
+enum SocketError{
+  ConnectionRefusedError = QAbstractSocket::ConnectionRefusedError,   RemoteHostClosedError = QAbstractSocket::RemoteHostClosedError,   HostNotFoundError = QAbstractSocket::HostNotFoundError,   SocketAccessError = QAbstractSocket::SocketAccessError,   SocketResourceError = QAbstractSocket::SocketResourceError,   SocketTimeoutError = QAbstractSocket::SocketTimeoutError,   DatagramTooLargeError = QAbstractSocket::DatagramTooLargeError,   NetworkError = QAbstractSocket::NetworkError,   AddressInUseError = QAbstractSocket::AddressInUseError,   SocketAddressNotAvailableError = QAbstractSocket::SocketAddressNotAvailableError,   UnsupportedSocketOperationError = QAbstractSocket::UnsupportedSocketOperationError,   UnfinishedSocketOperationError = QAbstractSocket::UnfinishedSocketOperationError,   ProxyAuthenticationRequiredError = QAbstractSocket::ProxyAuthenticationRequiredError,   SslHandshakeFailedError = QAbstractSocket::SslHandshakeFailedError,   ProxyConnectionRefusedError = QAbstractSocket::ProxyConnectionRefusedError,   ProxyConnectionClosedError = QAbstractSocket::ProxyConnectionClosedError,   ProxyConnectionTimeoutError = QAbstractSocket::ProxyConnectionTimeoutError,   ProxyNotFoundError = QAbstractSocket::ProxyNotFoundError,   ProxyProtocolError = QAbstractSocket::ProxyProtocolError,   OperationError = QAbstractSocket::OperationError,   SslInternalError = QAbstractSocket::SslInternalError,   SslInvalidUserDataError = QAbstractSocket::SslInvalidUserDataError,   TemporaryError = QAbstractSocket::TemporaryError,   UnknownSocketError = QAbstractSocket::UnknownSocketError};
+enum SocketOption{
+  LowDelayOption = QAbstractSocket::LowDelayOption,   KeepAliveOption = QAbstractSocket::KeepAliveOption,   MulticastTtlOption = QAbstractSocket::MulticastTtlOption,   MulticastLoopbackOption = QAbstractSocket::MulticastLoopbackOption,   TypeOfServiceOption = QAbstractSocket::TypeOfServiceOption,   SendBufferSizeSocketOption = QAbstractSocket::SendBufferSizeSocketOption,   ReceiveBufferSizeSocketOption = QAbstractSocket::ReceiveBufferSizeSocketOption};
+enum SocketState{
+  UnconnectedState = QAbstractSocket::UnconnectedState,   HostLookupState = QAbstractSocket::HostLookupState,   ConnectingState = QAbstractSocket::ConnectingState,   ConnectedState = QAbstractSocket::ConnectedState,   BoundState = QAbstractSocket::BoundState,   ListeningState = QAbstractSocket::ListeningState,   ClosingState = QAbstractSocket::ClosingState};
+enum SocketType{
+  TcpSocket = QAbstractSocket::TcpSocket,   UdpSocket = QAbstractSocket::UdpSocket,   UnknownSocketType = QAbstractSocket::UnknownSocketType};
 Q_DECLARE_FLAGS(BindMode, BindFlag)
 Q_DECLARE_FLAGS(PauseModes, PauseMode)
 public slots:
@@ -1182,6 +1192,9 @@ inline qint64  py_q_writeData(const char*  data, qint64  len) { return QNetworkR
 class PythonQtWrapper_QNetworkReply : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(NetworkError )
+enum NetworkError{
+  NoError = QNetworkReply::NoError,   ConnectionRefusedError = QNetworkReply::ConnectionRefusedError,   RemoteHostClosedError = QNetworkReply::RemoteHostClosedError,   HostNotFoundError = QNetworkReply::HostNotFoundError,   TimeoutError = QNetworkReply::TimeoutError,   OperationCanceledError = QNetworkReply::OperationCanceledError,   SslHandshakeFailedError = QNetworkReply::SslHandshakeFailedError,   TemporaryNetworkFailureError = QNetworkReply::TemporaryNetworkFailureError,   NetworkSessionFailedError = QNetworkReply::NetworkSessionFailedError,   BackgroundRequestNotAllowedError = QNetworkReply::BackgroundRequestNotAllowedError,   TooManyRedirectsError = QNetworkReply::TooManyRedirectsError,   InsecureRedirectError = QNetworkReply::InsecureRedirectError,   UnknownNetworkError = QNetworkReply::UnknownNetworkError,   ProxyConnectionRefusedError = QNetworkReply::ProxyConnectionRefusedError,   ProxyConnectionClosedError = QNetworkReply::ProxyConnectionClosedError,   ProxyNotFoundError = QNetworkReply::ProxyNotFoundError,   ProxyTimeoutError = QNetworkReply::ProxyTimeoutError,   ProxyAuthenticationRequiredError = QNetworkReply::ProxyAuthenticationRequiredError,   UnknownProxyError = QNetworkReply::UnknownProxyError,   ContentAccessDenied = QNetworkReply::ContentAccessDenied,   ContentOperationNotPermittedError = QNetworkReply::ContentOperationNotPermittedError,   ContentNotFoundError = QNetworkReply::ContentNotFoundError,   AuthenticationRequiredError = QNetworkReply::AuthenticationRequiredError,   ContentReSendError = QNetworkReply::ContentReSendError,   ContentConflictError = QNetworkReply::ContentConflictError,   ContentGoneError = QNetworkReply::ContentGoneError,   UnknownContentError = QNetworkReply::UnknownContentError,   ProtocolUnknownError = QNetworkReply::ProtocolUnknownError,   ProtocolInvalidOperationError = QNetworkReply::ProtocolInvalidOperationError,   ProtocolFailure = QNetworkReply::ProtocolFailure,   InternalServerError = QNetworkReply::InternalServerError,   OperationNotImplementedError = QNetworkReply::OperationNotImplementedError,   ServiceUnavailableError = QNetworkReply::ServiceUnavailableError,   UnknownServerError = QNetworkReply::UnknownServerError};
 public slots:
 QNetworkReply* new_QNetworkReply(QObject*  parent = NULL);
 void delete_QNetworkReply(QNetworkReply* obj) { delete obj; } 

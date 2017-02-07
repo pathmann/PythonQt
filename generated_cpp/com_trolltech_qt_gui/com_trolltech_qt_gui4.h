@@ -493,6 +493,9 @@ void delete_QInputEvent(QInputEvent* obj) { delete obj; }
 class PythonQtWrapper_QInputMethod : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(Action )
+enum Action{
+  Click = QInputMethod::Click,   ContextMenu = QInputMethod::ContextMenu};
 public slots:
    QRectF  cursorRectangle(QInputMethod* theWrappedObject) const;
    Qt::LayoutDirection  inputDirection(QInputMethod* theWrappedObject) const;
@@ -1213,6 +1216,11 @@ inline void py_q_paintEvent(QPaintEvent*  arg__1) { QLCDNumber::paintEvent(arg__
 class PythonQtWrapper_QLCDNumber : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(Mode SegmentStyle )
+enum Mode{
+  Hex = QLCDNumber::Hex,   Dec = QLCDNumber::Dec,   Oct = QLCDNumber::Oct,   Bin = QLCDNumber::Bin};
+enum SegmentStyle{
+  Outline = QLCDNumber::Outline,   Filled = QLCDNumber::Filled,   Flat = QLCDNumber::Flat};
 public slots:
 QLCDNumber* new_QLCDNumber(QWidget*  parent = NULL);
 QLCDNumber* new_QLCDNumber(uint  numDigits, QWidget*  parent = NULL);
@@ -1437,6 +1445,9 @@ inline QLayoutItem*  py_q_takeAt(int  index) { return this->takeAt(index); }
 class PythonQtWrapper_QLayout : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(SizeConstraint )
+enum SizeConstraint{
+  SetDefaultConstraint = QLayout::SetDefaultConstraint,   SetNoConstraint = QLayout::SetNoConstraint,   SetMinimumSize = QLayout::SetMinimumSize,   SetFixedSize = QLayout::SetFixedSize,   SetMaximumSize = QLayout::SetMaximumSize,   SetMinAndMaxSize = QLayout::SetMinAndMaxSize};
 public slots:
 QLayout* new_QLayout();
 QLayout* new_QLayout(QWidget*  parent);
@@ -1684,6 +1695,11 @@ inline void py_q_paintEvent(QPaintEvent*  arg__1) { QLineEdit::paintEvent(arg__1
 class PythonQtWrapper_QLineEdit : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(ActionPosition EchoMode )
+enum ActionPosition{
+  LeadingPosition = QLineEdit::LeadingPosition,   TrailingPosition = QLineEdit::TrailingPosition};
+enum EchoMode{
+  Normal = QLineEdit::Normal,   NoEcho = QLineEdit::NoEcho,   Password = QLineEdit::Password,   PasswordEchoOnEdit = QLineEdit::PasswordEchoOnEdit};
 public slots:
 QLineEdit* new_QLineEdit(QWidget*  parent = NULL);
 QLineEdit* new_QLineEdit(const QString&  arg__1, QWidget*  parent = NULL);
@@ -1959,6 +1975,17 @@ inline void py_q_wheelEvent(QWheelEvent*  e) { QListView::wheelEvent(e); }
 class PythonQtWrapper_QListView : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(Flow LayoutMode Movement ResizeMode ViewMode )
+enum Flow{
+  LeftToRight = QListView::LeftToRight,   TopToBottom = QListView::TopToBottom};
+enum LayoutMode{
+  SinglePass = QListView::SinglePass,   Batched = QListView::Batched};
+enum Movement{
+  Static = QListView::Static,   Free = QListView::Free,   Snap = QListView::Snap};
+enum ResizeMode{
+  Fixed = QListView::Fixed,   Adjust = QListView::Adjust};
+enum ViewMode{
+  ListMode = QListView::ListMode,   IconMode = QListView::IconMode};
 public slots:
 QListView* new_QListView(QWidget*  parent = NULL);
 void delete_QListView(QListView* obj) { delete obj; } 
@@ -2352,6 +2379,11 @@ inline bool  py_q_event(QEvent*  event) { return QMainWindow::event(event); }
 class PythonQtWrapper_QMainWindow : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(DockOption )
+Q_FLAGS(DockOptions )
+enum DockOption{
+  AnimatedDocks = QMainWindow::AnimatedDocks,   AllowNestedDocks = QMainWindow::AllowNestedDocks,   AllowTabbedDocks = QMainWindow::AllowTabbedDocks,   ForceTabbedDocks = QMainWindow::ForceTabbedDocks,   VerticalTabs = QMainWindow::VerticalTabs,   GroupedDragging = QMainWindow::GroupedDragging};
+Q_DECLARE_FLAGS(DockOptions, DockOption)
 public slots:
 QMainWindow* new_QMainWindow(QWidget*  parent = NULL, Qt::WindowFlags  flags = Qt::WindowFlags());
 void delete_QMainWindow(QMainWindow* obj) { delete obj; } 

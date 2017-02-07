@@ -1967,9 +1967,11 @@ inline void py_q_wheelEvent(QWheelEvent*  arg__1) { QWindow::wheelEvent(arg__1);
 class PythonQtWrapper_QWindow : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(AncestorMode )
+Q_ENUMS(AncestorMode Visibility )
 enum AncestorMode{
   ExcludeTransients = QWindow::ExcludeTransients,   IncludeTransients = QWindow::IncludeTransients};
+enum Visibility{
+  Hidden = QWindow::Hidden,   AutomaticVisibility = QWindow::AutomaticVisibility,   Windowed = QWindow::Windowed,   Minimized = QWindow::Minimized,   Maximized = QWindow::Maximized,   FullScreen = QWindow::FullScreen};
 public slots:
 QWindow* new_QWindow(QScreen*  screen = NULL);
 QWindow* new_QWindow(QWindow*  parent);
@@ -2195,11 +2197,17 @@ inline bool  py_q_validateCurrentPage() { return QWizard::validateCurrentPage();
 class PythonQtWrapper_QWizard : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(WizardButton WizardPixmap )
+Q_ENUMS(WizardButton WizardOption WizardPixmap WizardStyle )
+Q_FLAGS(WizardOptions )
 enum WizardButton{
   BackButton = QWizard::BackButton,   NextButton = QWizard::NextButton,   CommitButton = QWizard::CommitButton,   FinishButton = QWizard::FinishButton,   CancelButton = QWizard::CancelButton,   HelpButton = QWizard::HelpButton,   CustomButton1 = QWizard::CustomButton1,   CustomButton2 = QWizard::CustomButton2,   CustomButton3 = QWizard::CustomButton3,   Stretch = QWizard::Stretch,   NoButton = QWizard::NoButton,   NStandardButtons = QWizard::NStandardButtons,   NButtons = QWizard::NButtons};
+enum WizardOption{
+  IndependentPages = QWizard::IndependentPages,   IgnoreSubTitles = QWizard::IgnoreSubTitles,   ExtendedWatermarkPixmap = QWizard::ExtendedWatermarkPixmap,   NoDefaultButton = QWizard::NoDefaultButton,   NoBackButtonOnStartPage = QWizard::NoBackButtonOnStartPage,   NoBackButtonOnLastPage = QWizard::NoBackButtonOnLastPage,   DisabledBackButtonOnLastPage = QWizard::DisabledBackButtonOnLastPage,   HaveNextButtonOnLastPage = QWizard::HaveNextButtonOnLastPage,   HaveFinishButtonOnEarlyPages = QWizard::HaveFinishButtonOnEarlyPages,   NoCancelButton = QWizard::NoCancelButton,   CancelButtonOnLeft = QWizard::CancelButtonOnLeft,   HaveHelpButton = QWizard::HaveHelpButton,   HelpButtonOnRight = QWizard::HelpButtonOnRight,   HaveCustomButton1 = QWizard::HaveCustomButton1,   HaveCustomButton2 = QWizard::HaveCustomButton2,   HaveCustomButton3 = QWizard::HaveCustomButton3,   NoCancelButtonOnLastPage = QWizard::NoCancelButtonOnLastPage};
 enum WizardPixmap{
   WatermarkPixmap = QWizard::WatermarkPixmap,   LogoPixmap = QWizard::LogoPixmap,   BannerPixmap = QWizard::BannerPixmap,   BackgroundPixmap = QWizard::BackgroundPixmap,   NPixmaps = QWizard::NPixmaps};
+enum WizardStyle{
+  ClassicStyle = QWizard::ClassicStyle,   ModernStyle = QWizard::ModernStyle,   MacStyle = QWizard::MacStyle,   AeroStyle = QWizard::AeroStyle,   NStyles = QWizard::NStyles};
+Q_DECLARE_FLAGS(WizardOptions, WizardOption)
 public slots:
 QWizard* new_QWizard(QWidget*  parent = NULL, Qt::WindowFlags  flags = Qt::WindowFlags());
 void delete_QWizard(QWizard* obj) { delete obj; } 

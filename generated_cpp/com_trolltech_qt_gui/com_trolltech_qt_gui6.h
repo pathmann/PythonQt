@@ -518,6 +518,9 @@ inline void py_q_wheelEvent(QWheelEvent*  e) { QPlainTextEdit::wheelEvent(e); }
 class PythonQtWrapper_QPlainTextEdit : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(LineWrapMode )
+enum LineWrapMode{
+  NoWrap = QPlainTextEdit::NoWrap,   WidgetWidth = QPlainTextEdit::WidgetWidth};
 public slots:
 QPlainTextEdit* new_QPlainTextEdit(QWidget*  parent = NULL);
 QPlainTextEdit* new_QPlainTextEdit(const QString&  text, QWidget*  parent = NULL);
@@ -800,6 +803,9 @@ inline QString  py_q_text() const { return QProgressBar::text(); }
 class PythonQtWrapper_QProgressBar : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(Direction )
+enum Direction{
+  TopToBottom = QProgressBar::TopToBottom,   BottomToTop = QProgressBar::BottomToTop};
 public slots:
 QProgressBar* new_QProgressBar(QWidget*  parent = NULL);
 void delete_QProgressBar(QProgressBar* obj) { delete obj; } 

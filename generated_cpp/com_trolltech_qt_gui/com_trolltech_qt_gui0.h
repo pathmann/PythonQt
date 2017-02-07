@@ -612,14 +612,24 @@ inline QRegion  py_q_visualRegionForSelection(const QItemSelection&  selection) 
 class PythonQtWrapper_QAbstractItemView : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(CursorAction DropIndicatorPosition EditTrigger State )
+Q_ENUMS(CursorAction DragDropMode DropIndicatorPosition EditTrigger ScrollHint ScrollMode SelectionBehavior SelectionMode State )
 Q_FLAGS(EditTriggers )
 enum CursorAction{
   MoveUp = PythonQtPublicPromoter_QAbstractItemView::MoveUp,   MoveDown = PythonQtPublicPromoter_QAbstractItemView::MoveDown,   MoveLeft = PythonQtPublicPromoter_QAbstractItemView::MoveLeft,   MoveRight = PythonQtPublicPromoter_QAbstractItemView::MoveRight,   MoveHome = PythonQtPublicPromoter_QAbstractItemView::MoveHome,   MoveEnd = PythonQtPublicPromoter_QAbstractItemView::MoveEnd,   MovePageUp = PythonQtPublicPromoter_QAbstractItemView::MovePageUp,   MovePageDown = PythonQtPublicPromoter_QAbstractItemView::MovePageDown,   MoveNext = PythonQtPublicPromoter_QAbstractItemView::MoveNext,   MovePrevious = PythonQtPublicPromoter_QAbstractItemView::MovePrevious};
+enum DragDropMode{
+  NoDragDrop = QAbstractItemView::NoDragDrop,   DragOnly = QAbstractItemView::DragOnly,   DropOnly = QAbstractItemView::DropOnly,   DragDrop = QAbstractItemView::DragDrop,   InternalMove = QAbstractItemView::InternalMove};
 enum DropIndicatorPosition{
   OnItem = PythonQtPublicPromoter_QAbstractItemView::OnItem,   AboveItem = PythonQtPublicPromoter_QAbstractItemView::AboveItem,   BelowItem = PythonQtPublicPromoter_QAbstractItemView::BelowItem,   OnViewport = PythonQtPublicPromoter_QAbstractItemView::OnViewport};
 enum EditTrigger{
   NoEditTriggers = QAbstractItemView::NoEditTriggers,   CurrentChanged = QAbstractItemView::CurrentChanged,   DoubleClicked = QAbstractItemView::DoubleClicked,   SelectedClicked = QAbstractItemView::SelectedClicked,   EditKeyPressed = QAbstractItemView::EditKeyPressed,   AnyKeyPressed = QAbstractItemView::AnyKeyPressed,   AllEditTriggers = QAbstractItemView::AllEditTriggers};
+enum ScrollHint{
+  EnsureVisible = QAbstractItemView::EnsureVisible,   PositionAtTop = QAbstractItemView::PositionAtTop,   PositionAtBottom = QAbstractItemView::PositionAtBottom,   PositionAtCenter = QAbstractItemView::PositionAtCenter};
+enum ScrollMode{
+  ScrollPerItem = QAbstractItemView::ScrollPerItem,   ScrollPerPixel = QAbstractItemView::ScrollPerPixel};
+enum SelectionBehavior{
+  SelectItems = QAbstractItemView::SelectItems,   SelectRows = QAbstractItemView::SelectRows,   SelectColumns = QAbstractItemView::SelectColumns};
+enum SelectionMode{
+  NoSelection = QAbstractItemView::NoSelection,   SingleSelection = QAbstractItemView::SingleSelection,   MultiSelection = QAbstractItemView::MultiSelection,   ExtendedSelection = QAbstractItemView::ExtendedSelection,   ContiguousSelection = QAbstractItemView::ContiguousSelection};
 enum State{
   NoState = PythonQtPublicPromoter_QAbstractItemView::NoState,   DraggingState = PythonQtPublicPromoter_QAbstractItemView::DraggingState,   DragSelectingState = PythonQtPublicPromoter_QAbstractItemView::DragSelectingState,   EditingState = PythonQtPublicPromoter_QAbstractItemView::EditingState,   ExpandingState = PythonQtPublicPromoter_QAbstractItemView::ExpandingState,   CollapsingState = PythonQtPublicPromoter_QAbstractItemView::CollapsingState,   AnimatingState = PythonQtPublicPromoter_QAbstractItemView::AnimatingState};
 Q_DECLARE_FLAGS(EditTriggers, EditTrigger)
@@ -1002,6 +1012,9 @@ inline void py_q_wheelEvent(QWheelEvent*  arg__1) { QAbstractScrollArea::wheelEv
 class PythonQtWrapper_QAbstractScrollArea : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(SizeAdjustPolicy )
+enum SizeAdjustPolicy{
+  AdjustIgnored = QAbstractScrollArea::AdjustIgnored,   AdjustToContentsOnFirstShow = QAbstractScrollArea::AdjustToContentsOnFirstShow,   AdjustToContents = QAbstractScrollArea::AdjustToContents};
 public slots:
 QAbstractScrollArea* new_QAbstractScrollArea(QWidget*  parent = NULL);
 void delete_QAbstractScrollArea(QAbstractScrollArea* obj) { delete obj; } 
@@ -1285,8 +1298,12 @@ inline void py_q_wheelEvent(QWheelEvent*  event) { QAbstractSpinBox::wheelEvent(
 class PythonQtWrapper_QAbstractSpinBox : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(StepEnabledFlag )
+Q_ENUMS(ButtonSymbols CorrectionMode StepEnabledFlag )
 Q_FLAGS(StepEnabled )
+enum ButtonSymbols{
+  UpDownArrows = QAbstractSpinBox::UpDownArrows,   PlusMinus = QAbstractSpinBox::PlusMinus,   NoButtons = QAbstractSpinBox::NoButtons};
+enum CorrectionMode{
+  CorrectToPreviousValue = QAbstractSpinBox::CorrectToPreviousValue,   CorrectToNearestValue = QAbstractSpinBox::CorrectToNearestValue};
 enum StepEnabledFlag{
   StepNone = QAbstractSpinBox::StepNone,   StepUpEnabled = QAbstractSpinBox::StepUpEnabled,   StepDownEnabled = QAbstractSpinBox::StepDownEnabled};
 Q_DECLARE_FLAGS(StepEnabled, StepEnabledFlag)
@@ -1631,9 +1648,13 @@ inline bool  py_q_event(QEvent*  arg__1) { return QAction::event(arg__1); }
 class PythonQtWrapper_QAction : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(ActionEvent )
+Q_ENUMS(ActionEvent MenuRole Priority )
 enum ActionEvent{
   Trigger = QAction::Trigger,   Hover = QAction::Hover};
+enum MenuRole{
+  NoRole = QAction::NoRole,   TextHeuristicRole = QAction::TextHeuristicRole,   ApplicationSpecificRole = QAction::ApplicationSpecificRole,   AboutQtRole = QAction::AboutQtRole,   AboutRole = QAction::AboutRole,   PreferencesRole = QAction::PreferencesRole,   QuitRole = QAction::QuitRole};
+enum Priority{
+  LowPriority = QAction::LowPriority,   NormalPriority = QAction::NormalPriority,   HighPriority = QAction::HighPriority};
 public slots:
 QAction* new_QAction(QObject*  parent);
 QAction* new_QAction(const QIcon&  icon, const QString&  text, QObject*  parent);
@@ -2044,6 +2065,13 @@ inline QSize  py_q_sizeHint() const { return QCalendarWidget::sizeHint(); }
 class PythonQtWrapper_QCalendarWidget : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(HorizontalHeaderFormat SelectionMode VerticalHeaderFormat )
+enum HorizontalHeaderFormat{
+  NoHorizontalHeader = QCalendarWidget::NoHorizontalHeader,   SingleLetterDayNames = QCalendarWidget::SingleLetterDayNames,   ShortDayNames = QCalendarWidget::ShortDayNames,   LongDayNames = QCalendarWidget::LongDayNames};
+enum SelectionMode{
+  NoSelection = QCalendarWidget::NoSelection,   SingleSelection = QCalendarWidget::SingleSelection};
+enum VerticalHeaderFormat{
+  NoVerticalHeader = QCalendarWidget::NoVerticalHeader,   ISOWeekNumbers = QCalendarWidget::ISOWeekNumbers};
 public slots:
 QCalendarWidget* new_QCalendarWidget(QWidget*  parent = NULL);
 void delete_QCalendarWidget(QCalendarWidget* obj) { delete obj; } 
@@ -2304,6 +2332,11 @@ inline void py_q_setVisible(bool  visible) { QColorDialog::setVisible(visible); 
 class PythonQtWrapper_QColorDialog : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(ColorDialogOption )
+Q_FLAGS(ColorDialogOptions )
+enum ColorDialogOption{
+  ShowAlphaChannel = QColorDialog::ShowAlphaChannel,   NoButtons = QColorDialog::NoButtons,   DontUseNativeDialog = QColorDialog::DontUseNativeDialog};
+Q_DECLARE_FLAGS(ColorDialogOptions, ColorDialogOption)
 public slots:
 QColorDialog* new_QColorDialog(QWidget*  parent = NULL);
 QColorDialog* new_QColorDialog(const QColor&  initial, QWidget*  parent = NULL);
@@ -2596,6 +2629,11 @@ inline void py_q_wheelEvent(QWheelEvent*  e) { QComboBox::wheelEvent(e); }
 class PythonQtWrapper_QComboBox : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(InsertPolicy SizeAdjustPolicy )
+enum InsertPolicy{
+  NoInsert = QComboBox::NoInsert,   InsertAtTop = QComboBox::InsertAtTop,   InsertAtCurrent = QComboBox::InsertAtCurrent,   InsertAtBottom = QComboBox::InsertAtBottom,   InsertAfterCurrent = QComboBox::InsertAfterCurrent,   InsertBeforeCurrent = QComboBox::InsertBeforeCurrent,   InsertAlphabetically = QComboBox::InsertAlphabetically};
+enum SizeAdjustPolicy{
+  AdjustToContents = QComboBox::AdjustToContents,   AdjustToContentsOnFirstShow = QComboBox::AdjustToContentsOnFirstShow,   AdjustToMinimumContentsLength = QComboBox::AdjustToMinimumContentsLength,   AdjustToMinimumContentsLengthWithIcon = QComboBox::AdjustToMinimumContentsLengthWithIcon};
 public slots:
 QComboBox* new_QComboBox(QWidget*  parent = NULL);
 void delete_QComboBox(QComboBox* obj) { delete obj; } 

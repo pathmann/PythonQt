@@ -308,10 +308,14 @@ inline bool  py_q_viewportEvent(QEvent*  event) { return QMdiArea::viewportEvent
 class PythonQtWrapper_QMdiArea : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(AreaOption )
+Q_ENUMS(AreaOption ViewMode WindowOrder )
 Q_FLAGS(AreaOptions )
 enum AreaOption{
   DontMaximizeSubWindowOnActivation = QMdiArea::DontMaximizeSubWindowOnActivation};
+enum ViewMode{
+  SubWindowView = QMdiArea::SubWindowView,   TabbedView = QMdiArea::TabbedView};
+enum WindowOrder{
+  CreationOrder = QMdiArea::CreationOrder,   StackingOrder = QMdiArea::StackingOrder,   ActivationHistoryOrder = QMdiArea::ActivationHistoryOrder};
 Q_DECLARE_FLAGS(AreaOptions, AreaOption)
 public slots:
 QMdiArea* new_QMdiArea(QWidget*  parent = NULL);
@@ -909,10 +913,12 @@ inline void py_q_showEvent(QShowEvent*  event) { QMessageBox::showEvent(event); 
 class PythonQtWrapper_QMessageBox : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(ButtonRole StandardButton )
+Q_ENUMS(ButtonRole Icon StandardButton )
 Q_FLAGS(StandardButtons )
 enum ButtonRole{
   InvalidRole = QMessageBox::InvalidRole,   AcceptRole = QMessageBox::AcceptRole,   RejectRole = QMessageBox::RejectRole,   DestructiveRole = QMessageBox::DestructiveRole,   ActionRole = QMessageBox::ActionRole,   HelpRole = QMessageBox::HelpRole,   YesRole = QMessageBox::YesRole,   NoRole = QMessageBox::NoRole,   ResetRole = QMessageBox::ResetRole,   ApplyRole = QMessageBox::ApplyRole,   NRoles = QMessageBox::NRoles};
+enum Icon{
+  NoIcon = QMessageBox::NoIcon,   Information = QMessageBox::Information,   Warning = QMessageBox::Warning,   Critical = QMessageBox::Critical,   Question = QMessageBox::Question};
 enum StandardButton{
   NoButton = QMessageBox::NoButton,   Ok = QMessageBox::Ok,   Save = QMessageBox::Save,   SaveAll = QMessageBox::SaveAll,   Open = QMessageBox::Open,   Yes = QMessageBox::Yes,   YesToAll = QMessageBox::YesToAll,   No = QMessageBox::No,   NoToAll = QMessageBox::NoToAll,   Abort = QMessageBox::Abort,   Retry = QMessageBox::Retry,   Ignore = QMessageBox::Ignore,   Close = QMessageBox::Close,   Cancel = QMessageBox::Cancel,   Discard = QMessageBox::Discard,   Help = QMessageBox::Help,   Apply = QMessageBox::Apply,   Reset = QMessageBox::Reset,   RestoreDefaults = QMessageBox::RestoreDefaults,   FirstButton = QMessageBox::FirstButton,   LastButton = QMessageBox::LastButton,   YesAll = QMessageBox::YesAll,   NoAll = QMessageBox::NoAll,   Default = QMessageBox::Default,   Escape = QMessageBox::Escape,   FlagMask = QMessageBox::FlagMask,   ButtonMask = QMessageBox::ButtonMask};
 Q_DECLARE_FLAGS(StandardButtons, StandardButton)
@@ -1112,6 +1118,11 @@ virtual void timerEvent(QTimerEvent*  event);
 class PythonQtWrapper_QMovie : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(CacheMode MovieState )
+enum CacheMode{
+  CacheNone = QMovie::CacheNone,   CacheAll = QMovie::CacheAll};
+enum MovieState{
+  NotRunning = QMovie::NotRunning,   Paused = QMovie::Paused,   Running = QMovie::Running};
 public slots:
 QMovie* new_QMovie(QIODevice*  device, const QByteArray&  format = QByteArray(), QObject*  parent = NULL);
 QMovie* new_QMovie(QObject*  parent = NULL);

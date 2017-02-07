@@ -203,10 +203,12 @@ inline void py_q_wheelEvent(QWheelEvent*  e) { QTextEdit::wheelEvent(e); }
 class PythonQtWrapper_QTextEdit : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(AutoFormattingFlag )
+Q_ENUMS(AutoFormattingFlag LineWrapMode )
 Q_FLAGS(AutoFormatting )
 enum AutoFormattingFlag{
   AutoNone = QTextEdit::AutoNone,   AutoBulletList = QTextEdit::AutoBulletList,   AutoAll = QTextEdit::AutoAll};
+enum LineWrapMode{
+  NoWrap = QTextEdit::NoWrap,   WidgetWidth = QTextEdit::WidgetWidth,   FixedPixelWidth = QTextEdit::FixedPixelWidth,   FixedColumnWidth = QTextEdit::FixedColumnWidth};
 Q_DECLARE_FLAGS(AutoFormatting, AutoFormattingFlag)
 public slots:
 QTextEdit* new_QTextEdit(QWidget*  parent = NULL);
@@ -1503,6 +1505,9 @@ inline void py_q_timerEvent(QTimerEvent*  arg__1) { QToolButton::timerEvent(arg_
 class PythonQtWrapper_QToolButton : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(ToolButtonPopupMode )
+enum ToolButtonPopupMode{
+  DelayedPopup = QToolButton::DelayedPopup,   MenuButtonPopup = QToolButton::MenuButtonPopup,   InstantPopup = QToolButton::InstantPopup};
 public slots:
 QToolButton* new_QToolButton(QWidget*  parent = NULL);
 void delete_QToolButton(QToolButton* obj) { delete obj; } 

@@ -183,6 +183,19 @@ inline qint64  py_q_writeData(const char*  data, qint64  len) { return QProcess:
 class PythonQtWrapper_QProcess : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(ExitStatus InputChannelMode ProcessChannel ProcessChannelMode ProcessError ProcessState )
+enum ExitStatus{
+  NormalExit = QProcess::NormalExit,   CrashExit = QProcess::CrashExit};
+enum InputChannelMode{
+  ManagedInputChannel = QProcess::ManagedInputChannel,   ForwardedInputChannel = QProcess::ForwardedInputChannel};
+enum ProcessChannel{
+  StandardOutput = QProcess::StandardOutput,   StandardError = QProcess::StandardError};
+enum ProcessChannelMode{
+  SeparateChannels = QProcess::SeparateChannels,   MergedChannels = QProcess::MergedChannels,   ForwardedChannels = QProcess::ForwardedChannels,   ForwardedOutputChannel = QProcess::ForwardedOutputChannel,   ForwardedErrorChannel = QProcess::ForwardedErrorChannel};
+enum ProcessError{
+  FailedToStart = QProcess::FailedToStart,   Crashed = QProcess::Crashed,   Timedout = QProcess::Timedout,   ReadError = QProcess::ReadError,   WriteError = QProcess::WriteError,   UnknownError = QProcess::UnknownError};
+enum ProcessState{
+  NotRunning = QProcess::NotRunning,   Starting = QProcess::Starting,   Running = QProcess::Running};
 public slots:
 QProcess* new_QProcess(QObject*  parent = NULL);
 void delete_QProcess(QProcess* obj) { delete obj; } 
@@ -967,6 +980,11 @@ inline void py_q_onExit(QEvent*  event) { QState::onExit(event); }
 class PythonQtWrapper_QState : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(ChildMode RestorePolicy )
+enum ChildMode{
+  ExclusiveStates = QState::ExclusiveStates,   ParallelStates = QState::ParallelStates};
+enum RestorePolicy{
+  DontRestoreProperties = QState::DontRestoreProperties,   RestoreProperties = QState::RestoreProperties};
 public slots:
 QState* new_QState(QState*  parent = NULL);
 QState* new_QState(QState::ChildMode  childMode, QState*  parent = NULL);

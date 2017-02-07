@@ -1159,12 +1159,18 @@ inline void py_q_wheelEvent(QWheelEvent*  event) { QGraphicsView::wheelEvent(eve
 class PythonQtWrapper_QGraphicsView : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(CacheModeFlag OptimizationFlag )
+Q_ENUMS(CacheModeFlag DragMode OptimizationFlag ViewportAnchor ViewportUpdateMode )
 Q_FLAGS(CacheMode OptimizationFlags )
 enum CacheModeFlag{
   CacheNone = QGraphicsView::CacheNone,   CacheBackground = QGraphicsView::CacheBackground};
+enum DragMode{
+  NoDrag = QGraphicsView::NoDrag,   ScrollHandDrag = QGraphicsView::ScrollHandDrag,   RubberBandDrag = QGraphicsView::RubberBandDrag};
 enum OptimizationFlag{
   DontClipPainter = QGraphicsView::DontClipPainter,   DontSavePainterState = QGraphicsView::DontSavePainterState,   DontAdjustForAntialiasing = QGraphicsView::DontAdjustForAntialiasing,   IndirectPainting = QGraphicsView::IndirectPainting};
+enum ViewportAnchor{
+  NoAnchor = QGraphicsView::NoAnchor,   AnchorViewCenter = QGraphicsView::AnchorViewCenter,   AnchorUnderMouse = QGraphicsView::AnchorUnderMouse};
+enum ViewportUpdateMode{
+  FullViewportUpdate = QGraphicsView::FullViewportUpdate,   MinimalViewportUpdate = QGraphicsView::MinimalViewportUpdate,   SmartViewportUpdate = QGraphicsView::SmartViewportUpdate,   NoViewportUpdate = QGraphicsView::NoViewportUpdate,   BoundingRectViewportUpdate = QGraphicsView::BoundingRectViewportUpdate};
 Q_DECLARE_FLAGS(CacheMode, CacheModeFlag)
 Q_DECLARE_FLAGS(OptimizationFlags, OptimizationFlag)
 public slots:
@@ -1968,6 +1974,9 @@ inline QRegion  py_q_visualRegionForSelection(const QItemSelection&  selection) 
 class PythonQtWrapper_QHeaderView : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(ResizeMode )
+enum ResizeMode{
+  Interactive = QHeaderView::Interactive,   Stretch = QHeaderView::Stretch,   Fixed = QHeaderView::Fixed,   ResizeToContents = QHeaderView::ResizeToContents,   Custom = QHeaderView::Custom};
 public slots:
 QHeaderView* new_QHeaderView(Qt::Orientation  orientation, QWidget*  parent = NULL);
 void delete_QHeaderView(QHeaderView* obj) { delete obj; } 

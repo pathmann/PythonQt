@@ -166,6 +166,9 @@ inline void py_q_setCurrentIndex(int  index) { QDataWidgetMapper::setCurrentInde
 class PythonQtWrapper_QDataWidgetMapper : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(SubmitPolicy )
+enum SubmitPolicy{
+  AutoSubmit = QDataWidgetMapper::AutoSubmit,   ManualSubmit = QDataWidgetMapper::ManualSubmit};
 public slots:
 QDataWidgetMapper* new_QDataWidgetMapper(QObject*  parent = NULL);
 void delete_QDataWidgetMapper(QDataWidgetMapper* obj) { delete obj; } 
@@ -367,6 +370,11 @@ inline void py_q_wheelEvent(QWheelEvent*  event) { QDateTimeEdit::wheelEvent(eve
 class PythonQtWrapper_QDateTimeEdit : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(Section )
+Q_FLAGS(Sections )
+enum Section{
+  NoSection = QDateTimeEdit::NoSection,   AmPmSection = QDateTimeEdit::AmPmSection,   MSecSection = QDateTimeEdit::MSecSection,   SecondSection = QDateTimeEdit::SecondSection,   MinuteSection = QDateTimeEdit::MinuteSection,   HourSection = QDateTimeEdit::HourSection,   DaySection = QDateTimeEdit::DaySection,   MonthSection = QDateTimeEdit::MonthSection,   YearSection = QDateTimeEdit::YearSection,   TimeSections_Mask = QDateTimeEdit::TimeSections_Mask,   DateSections_Mask = QDateTimeEdit::DateSections_Mask};
+Q_DECLARE_FLAGS(Sections, Section)
 public slots:
 QDateTimeEdit* new_QDateTimeEdit(QWidget*  parent = NULL);
 QDateTimeEdit* new_QDateTimeEdit(const QDate&  d, QWidget*  parent = NULL);
@@ -1235,6 +1243,9 @@ inline QValidator::State  py_q_validate(QString&  arg__1, int&  arg__2) const { 
 class PythonQtWrapper_QDoubleValidator : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(Notation )
+enum Notation{
+  StandardNotation = QDoubleValidator::StandardNotation,   ScientificNotation = QDoubleValidator::ScientificNotation};
 public slots:
 QDoubleValidator* new_QDoubleValidator(QObject*  parent = NULL);
 QDoubleValidator* new_QDoubleValidator(double  bottom, double  top, int  decimals, QObject*  parent = NULL);
@@ -1593,9 +1604,19 @@ inline void py_q_setVisible(bool  visible) { QFileDialog::setVisible(visible); }
 class PythonQtWrapper_QFileDialog : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(DialogLabel )
+Q_ENUMS(AcceptMode DialogLabel FileMode Option ViewMode )
+Q_FLAGS(Options )
+enum AcceptMode{
+  AcceptOpen = QFileDialog::AcceptOpen,   AcceptSave = QFileDialog::AcceptSave};
 enum DialogLabel{
   LookIn = QFileDialog::LookIn,   FileName = QFileDialog::FileName,   FileType = QFileDialog::FileType,   Accept = QFileDialog::Accept,   Reject = QFileDialog::Reject};
+enum FileMode{
+  AnyFile = QFileDialog::AnyFile,   ExistingFile = QFileDialog::ExistingFile,   Directory = QFileDialog::Directory,   ExistingFiles = QFileDialog::ExistingFiles,   DirectoryOnly = QFileDialog::DirectoryOnly};
+enum Option{
+  ShowDirsOnly = QFileDialog::ShowDirsOnly,   DontResolveSymlinks = QFileDialog::DontResolveSymlinks,   DontConfirmOverwrite = QFileDialog::DontConfirmOverwrite,   DontUseSheet = QFileDialog::DontUseSheet,   DontUseNativeDialog = QFileDialog::DontUseNativeDialog,   ReadOnly = QFileDialog::ReadOnly,   HideNameFilterDetails = QFileDialog::HideNameFilterDetails,   DontUseCustomDirectoryIcons = QFileDialog::DontUseCustomDirectoryIcons};
+enum ViewMode{
+  Detail = QFileDialog::Detail,   List = QFileDialog::List};
+Q_DECLARE_FLAGS(Options, Option)
 public slots:
 QFileDialog* new_QFileDialog(QWidget*  parent, Qt::WindowFlags  f);
 QFileDialog* new_QFileDialog(QWidget*  parent = NULL, const QString&  caption = QString(), const QString&  directory = QString(), const QString&  filter = QString());

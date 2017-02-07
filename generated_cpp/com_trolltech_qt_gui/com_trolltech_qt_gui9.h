@@ -446,6 +446,9 @@ virtual void timerEvent(QTimerEvent*  event);
 class PythonQtWrapper_QSwipeGesture : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(SwipeDirection )
+enum SwipeDirection{
+  NoDirection = QSwipeGesture::NoDirection,   Left = QSwipeGesture::Left,   Right = QSwipeGesture::Right,   Up = QSwipeGesture::Up,   Down = QSwipeGesture::Down};
 public slots:
 QSwipeGesture* new_QSwipeGesture(QObject*  parent = NULL);
 void delete_QSwipeGesture(QSwipeGesture* obj) { delete obj; } 
@@ -673,11 +676,13 @@ inline void py_q_wheelEvent(QWheelEvent*  event) { QTabBar::wheelEvent(event); }
 class PythonQtWrapper_QTabBar : public QObject
 { Q_OBJECT
 public:
-Q_ENUMS(ButtonPosition SelectionBehavior )
+Q_ENUMS(ButtonPosition SelectionBehavior Shape )
 enum ButtonPosition{
   LeftSide = QTabBar::LeftSide,   RightSide = QTabBar::RightSide};
 enum SelectionBehavior{
   SelectLeftTab = QTabBar::SelectLeftTab,   SelectRightTab = QTabBar::SelectRightTab,   SelectPreviousTab = QTabBar::SelectPreviousTab};
+enum Shape{
+  RoundedNorth = QTabBar::RoundedNorth,   RoundedSouth = QTabBar::RoundedSouth,   RoundedWest = QTabBar::RoundedWest,   RoundedEast = QTabBar::RoundedEast,   TriangularNorth = QTabBar::TriangularNorth,   TriangularSouth = QTabBar::TriangularSouth,   TriangularWest = QTabBar::TriangularWest,   TriangularEast = QTabBar::TriangularEast};
 public slots:
 QTabBar* new_QTabBar(QWidget*  parent = NULL);
 void delete_QTabBar(QTabBar* obj) { delete obj; } 
@@ -845,6 +850,11 @@ inline void py_q_tabRemoved(int  index) { QTabWidget::tabRemoved(index); }
 class PythonQtWrapper_QTabWidget : public QObject
 { Q_OBJECT
 public:
+Q_ENUMS(TabPosition TabShape )
+enum TabPosition{
+  North = QTabWidget::North,   South = QTabWidget::South,   West = QTabWidget::West,   East = QTabWidget::East};
+enum TabShape{
+  Rounded = QTabWidget::Rounded,   Triangular = QTabWidget::Triangular};
 public slots:
 QTabWidget* new_QTabWidget(QWidget*  parent = NULL);
 void delete_QTabWidget(QTabWidget* obj) { delete obj; } 
