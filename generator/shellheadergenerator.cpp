@@ -71,7 +71,7 @@ void ShellHeaderGenerator::writeFieldAccessors(QTextStream &s, const AbstractMet
                            Option(ConvertReferenceToPtr | FirstArgIsWrappedObject| IncludeDefaultExpression | ShowStatic | UnderscoreSpaces));
     s << "{ theWrappedObject->" << field->name() << " = " << setter->arguments()[0]->argumentName() << "; }\n";
   }
-  
+
   bool addIndirection = false;
   if (isInventorField && getter->type()->indirections() == 0) {
     // make it a field ptr:
@@ -119,7 +119,7 @@ void ShellHeaderGenerator::write(QTextStream &s, const AbstractMetaClass *meta_c
   qSort(list.begin(), list.end());
   foreach (const Include &inc, list) {
     ShellGenerator::writeInclude(s, inc);
-  }  
+  }
   s << endl;
 
   AbstractMetaFunctionList ctors = meta_class->queryFunctions(AbstractMetaClass::Constructors
@@ -196,7 +196,7 @@ void ShellHeaderGenerator::write(QTextStream &s, const AbstractMetaClass *meta_c
         s << "};" << endl;
       }
     }
-    
+
     foreach(AbstractMetaFunction* fun, promoteFunctions) {
       // normal promoter
       if (fun->wasProtected()) {
@@ -269,7 +269,7 @@ void ShellHeaderGenerator::write(QTextStream &s, const AbstractMetaClass *meta_c
   QList<FlagsTypeEntry*> flags;
   foreach(AbstractMetaEnum* enum1, enums1) {
     // catch gadgets and enums that are not exported on QObjects...
-    if ((enum1->wasProtected() || enum1->wasPublic()) && (!meta_class->isQObject() || !enum1->hasQEnumsDeclaration())) {
+    if (enum1->wasProtected() || enum1->wasPublic()) {
       enums << enum1;
       if (enum1->typeEntry()->flags()) {
         flags << enum1->typeEntry()->flags();
@@ -282,7 +282,7 @@ void ShellHeaderGenerator::write(QTextStream &s, const AbstractMetaClass *meta_c
       s << enum1->name() << " ";
     }
     s << ")" << endl;
-    
+
     if (flags.count()) {
       s << "Q_FLAGS(";
       foreach(FlagsTypeEntry* flag1, flags) {
@@ -295,7 +295,7 @@ void ShellHeaderGenerator::write(QTextStream &s, const AbstractMetaClass *meta_c
       }
       s << ")" << endl;
     }
-    
+
     foreach(AbstractMetaEnum* enum1, enums) {
       s << "enum " << enum1->name() << "{" << endl;
       bool first = true;
@@ -395,10 +395,10 @@ void ShellHeaderGenerator::write(QTextStream &s, const AbstractMetaClass *meta_c
     }
   }
   if (meta_class->hasDefaultToStringFunction() || meta_class->hasToStringCapability()) {
-    s << "    QString py_toString(" << meta_class->qualifiedCppName() << "*);" << endl; 
+    s << "    QString py_toString(" << meta_class->qualifiedCppName() << "*);" << endl;
   }
   if (meta_class->hasDefaultIsNull()) {
-    s << "    bool __nonzero__(" << meta_class->qualifiedCppName() << "* obj) { return !obj->isNull(); }" << endl; 
+    s << "    bool __nonzero__(" << meta_class->qualifiedCppName() << "* obj) { return !obj->isNull(); }" << endl;
   }
 
   AbstractMetaFieldList fields = meta_class->fields();
@@ -414,7 +414,7 @@ void ShellHeaderGenerator::write(QTextStream &s, const AbstractMetaClass *meta_c
 
   writeInjectedCode(s, meta_class, TypeSystem::PyWrapperDeclaration);
 
-  
+
   s  << "};" << endl << endl;
   if (meta_class->qualifiedCppName().contains("Ssl")) {
     s << "#endif"  << endl << endl;
