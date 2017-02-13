@@ -254,7 +254,7 @@ PyObject* PythonQtConv::convertQtValueToPythonInternal(int type, const void* dat
      default:
        // check if we have a QList of pointers, which we can circumvent with a QList<void*>
        if (info.isQList && (info.innerNamePointerCount == 1)) {
-         static int id = QMetaType::type("QList<void*>");
+         int id = QMetaType::type("QList<void*>");
          PythonQtValueStorage_ADD_VALUE(global_variantStorage, QVariant, QVariant::Type(id), ptr);
          // return the constData pointer that will be filled with the result value later on
          ptr = (void*)((QVariant*)ptr)->constData();
@@ -649,7 +649,7 @@ void* PythonQtConv::ConvertPythonToQt(const PythonQtMethodInfo::ParameterInfo& i
          if (info.typeId == PythonQtMethodInfo::Unknown || info.typeId >= QMetaType::User) {
            // check for QList<AnyPtr*> case, where we will use a QList<void*> QVariant
            if (info.isQList && (info.innerNamePointerCount == 1)) {
-             static int id = QMetaType::type("QList<void*>");
+             int id = QMetaType::type("QList<void*>");
              if (!alreadyAllocatedCPPObject) {
                PythonQtValueStorage_ADD_VALUE_IF_NEEDED(alreadyAllocatedCPPObject, global_variantStorage, QVariant, QVariant::Type(id), ptr);
                ptr = (void*)((QVariant*)ptr)->constData();

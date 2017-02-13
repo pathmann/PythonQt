@@ -224,6 +224,9 @@ int PythonQtMethodInfo::getInnerTemplateMetaType(const QByteArray& typeName)
 
 QByteArray PythonQtMethodInfo::getInnerTemplateTypeName(const QByteArray& typeName)
 {
+  if (typeName == "QModelIndexList")
+    return QByteArray("QModelIndex");
+
   int idx = typeName.indexOf("<");
   if (idx > 0) {
     int idx2 = typeName.lastIndexOf(">");

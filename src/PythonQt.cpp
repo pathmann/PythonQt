@@ -2091,7 +2091,10 @@ PythonQtClassInfo* PythonQtPrivate::getClassInfo( const QMetaObject* meta )
 
 PythonQtClassInfo* PythonQtPrivate::getClassInfo( const QByteArray& className )
 {
-  PythonQtClassInfo* result = _knownClassInfos.value(className);
+  PythonQtClassInfo* result = NULL;
+  if (_knownClassInfos.contains(className))
+      result = _knownClassInfos.value(className);
+
   if (!result) {
     static bool recursion = false;
     if (!recursion) {
@@ -2100,7 +2103,10 @@ PythonQtClassInfo* PythonQtPrivate::getClassInfo( const QByteArray& className )
         recursion = true;
         PyImport_ImportModule(module);
         recursion = false;
-        result = _knownClassInfos.value(className);
+        if (!_knownClassInfos.contains(className))
+          result = NULL;
+        else result = _knownClassInfos.value(className);
+
         if (!result) {
           std::cerr << "PythonQt lazy import " << module.constData() << " did not resolve " << className.constData() <<std::endl;
         }
