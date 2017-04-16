@@ -609,7 +609,7 @@ void* PythonQtConv::ConvertPythonToQt(const PythonQtMethodInfo::ParameterInfo& i
        {
          QStringList l = PyObjToStringList(obj, strict, ok);
          if (ok) {
-           PythonQtValueStorage_ADD_VALUE_IF_NEEDED(alreadyAllocatedCPPObject,global_variantStorage, QVariant, QVariant(l), ptr);
+           PythonQtValueStorage_ADD_VALUE_IF_NEEDED(NULL,global_variantStorage, QVariant, QVariant(l), ptr);
            ptr = (void*)((QVariant*)ptr)->constData();
          }
        }
